@@ -4,7 +4,6 @@ import FlipCard from '../components/FlipCard.astro';
 import TrustBar from '../components/TrustBar.astro';
 import AreasGrid from '../components/AreasGrid.astro';
 import FAQItem from '../components/FAQItem.astro';
-import MultiStepForm from '../components/MultiStepForm.astro';
 
 const services = [
   { title: 'Drylining Contractors', description: 'Expert drylining installation for residential and commercial properties across Edinburgh. We create smooth, paint-ready wall finishes quickly and cleanly.', link: '/services/drylining-contractors/', icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>' },
@@ -87,7 +86,32 @@ const schema = {
       </div>
       
       <div style="background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-lg);">
-        <MultiStepForm source="edinburgh-home-hero" />
+        <div style="background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-lg);">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--secondary);">Quick Quote Request</h3>
+          <form action="https://script.google.com/macros/s/AKfycbxB8ovk-ohPp_hzhkmHSOPVut_33L6mT5eSjtstmLuDx9laqcBk3qwv3GG7Lcyk9IB1/exec" method="POST" id="heroQuoteForm" style="display: flex; flex-direction: column; gap: 0.875rem;">
+            <input type="hidden" name="source" value="dryliningedinburgh.co.uk" />
+            <input type="hidden" name="sheet" value="Edinburgh" />
+            <input type="hidden" name="city" value="Edinburgh" />
+            <input type="text" name="name" placeholder="Your name" required style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit;" />
+            <input type="tel" name="phone" placeholder="Phone number" required style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit;" />
+            <input type="email" name="email" placeholder="Email address" style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit;" />
+            <input type="text" name="postcode" placeholder="Postcode" required style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit;" />
+            <select name="service" required style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit; background: var(--white); color: var(--text);">
+              <option value="" disabled selected>Select a service</option>
+              <option>Drylining Contractors</option>
+              <option>Partition Walls</option>
+              <option>Metal Stud Partitioning</option>
+              <option>Suspended Ceilings</option>
+              <option>Plasterboard Installation</option>
+              <option>Taping & Jointing</option>
+              <option>Commercial Drylining</option>
+              <option>Office Drylining</option>
+            </select>
+            <textarea name="details" placeholder="Project details (optional)" rows="3" style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit; resize: vertical;"></textarea>
+            <button type="submit" class="btn btn-primary" id="heroSubmitBtn" style="width: 100%; margin-top: 0.25rem;">Request Free Quote</button>
+            <div id="heroFormMessage" style="font-size: 0.875rem; margin-top: 0.5rem; display: none;"></div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -214,4 +238,37 @@ const schema = {
       </div>
     </div>
   </section>
+  <!-- Inline Form Handler Script -->
+  <script>
+    (function() {
+      var form = document.getElementById('heroQuoteForm');
+      var btn = document.getElementById('heroSubmitBtn');
+      var msg = document.getElementById('heroFormMessage');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+        if (msg) { msg.style.display = 'none'; }
+        var data = new FormData(form);
+        var payload = {};
+        data.forEach(function(v, k) { payload[k] = v; });
+        fetch(form.action, {
+          method: 'POST',
+          body: JSON.stringify(payload),
+          headers: { 'Content-Type': 'application/json' }
+        }).then(function(r) {
+          if (r.ok || r.status === 0) {
+            if (msg) { msg.style.display = 'block'; msg.style.color = '#15803d'; msg.textContent = 'Thank you! We will be in touch within 24 hours.'; }
+            form.reset();
+          } else {
+            throw new Error('Status ' + r.status);
+          }
+        }).catch(function(err) {
+          if (msg) { msg.style.display = 'block'; msg.style.color = '#c41e3a'; msg.textContent = 'Something went wrong. Please call us or try again.'; }
+        }).finally(function() {
+          if (btn) { btn.disabled = false; btn.textContent = 'Request Free Quote'; }
+        });
+      });
+    })();
+  </script>
 </Layout>
