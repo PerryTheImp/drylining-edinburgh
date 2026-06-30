@@ -1,0 +1,73 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+
+const title = "Privacy Policy | Drylining Edinburgh";
+const description = "Privacy policy for Drylining Edinburgh. How we collect, store, and protect your personal data. GDPR compliant.";
+const canonical = "/privacy/";
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <div class="container" style="padding: 5rem 1.5rem; max-width: 800px; margin: 0 auto;">
+    <h1 class="section-title" style="margin-bottom: 2rem;">Privacy Policy</h1>
+    <p style="color: var(--text-light); margin-bottom: 2rem;">Last updated: 30 June 2026</p>
+
+    <div style="display: flex; flex-direction: column; gap: 2rem; line-height: 1.7;">
+      <section>
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--secondary);">1. Introduction</h2>
+        <p>Drylining Edinburgh ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and protect your personal information when you visit our website or use our services.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--secondary);">2. What Data We Collect</h2>
+        <p>We may collect the following types of personal data:</p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+          <li>Name and contact details (phone, email, address) submitted via our quote form</li>
+          <li>Project details and requirements you share with us</li>
+          <li>Technical data such as IP address, browser type, and device information</li>
+          <li>Usage data via Google Analytics (see Cookies section below)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--secondary);">3. How We Store Your Data</h2>
+        <p>Quote form submissions are securely stored in Google Sheets for our internal use only. We do not sell, rent, or share your personal data with third parties for marketing purposes.</p>
+        <p>We retain your data for as long as necessary to fulfil the purposes for which it was collected, or as required by law.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--secondary);">4. Cookies</h2>
+        <p>Our website uses Google Analytics 4 (GA4) to help us understand how visitors interact with our site. GA4 uses cookies and similar technologies to collect data about your visit.</p>
+        <p>This data is anonymised and helps us improve our website and services. You can manage or disable cookies through your browser settings.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--secondary);">5. Your Rights</h2>
+        <p>Under the UK GDPR, you have the right to:</p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+          <li>Access the personal data we hold about you</li>
+          <li>Request correction of inaccurate data</li>
+          <li>Request deletion of your data ("right to be forgotten")</li>
+          <li>Object to or restrict processing of your data</li>
+          <li>Request a copy of your data in a portable format</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--secondary);">6. Contact Us</h2>
+        <p>To exercise your data rights or if you have any questions about this Privacy Policy, please contact us:</p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+          <li>Email: <a href="mailto:info@dryliningedinburgh.co.uk" style="color: var(--primary); text-decoration: underline;">info@dryliningedinburgh.co.uk</a></li>
+          <li>Phone: <a href="tel:0131XXXXXXX" style="color: var(--primary); text-decoration: underline;">0131 XXX XXXX</a></li>
+          <li>Post: Drylining Edinburgh, Edinburgh, UK</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--secondary);">7. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+      </section>
+    </div>
+  </div>
+</Layout>

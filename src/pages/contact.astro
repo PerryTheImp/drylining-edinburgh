@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "name": "Contact Drylining Edinburgh",
+      "url": "https://dryliningedinburgh.co.uk/contact/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://dryliningedinburgh.co.uk/contact/" }
+      ]
+    }
+  ]
+};
+---
+<Layout title="Contact Us | Drylining Edinburgh — Get in Touch" description="Contact Drylining Edinburgh for drylining, partition walls, and suspended ceiling services. Call, email, or fill out our quote form for a free consultation." canonical="/contact/" schema={schema}>
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
+  <img src="/images/contact-office.svg" alt="Drylining Edinburgh contact centre" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;">
+    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Contact Drylining Edinburgh</h1>
+    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Have a question or ready to start your project? We are here to help. Reach out by phone, email, or use our quick quote form.</p>
+  </div>
+</section>
+<section class="section"><div class="container"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:900px;margin:0 auto;">
+<div style="background:var(--accent);padding:2rem;border-radius:var(--radius);">
+<div style="font-size:2rem;margin-bottom:1rem;">📞</div>
+<h3 style="font-size:1.25rem;font-weight:700;color:var(--secondary);margin-bottom:0.5rem;">Phone</h3>
+<p style="color:var(--text-light);font-size:0.9375rem;margin-bottom:1rem;">Speak directly with our team for urgent enquiries or to book a site visit.</p>
+<a href="tel:0131XXXXXXX" style="color:var(--primary);font-weight:600;font-size:1.0625rem;">0131 XXX XXXX</a>
+</div>
+<div style="background:var(--accent);padding:2rem;border-radius:var(--radius);">
+<div style="font-size:2rem;margin-bottom:1rem;">✉️</div>
+<h3 style="font-size:1.25rem;font-weight:700;color:var(--secondary);margin-bottom:0.5rem;">Email</h3>
+<p style="color:var(--text-light);font-size:0.9375rem;margin-bottom:1rem;">Send us your project details and we will respond within 24 hours.</p>
+<a href="mailto:info@dryliningedinburgh.co.uk" style="color:var(--primary);font-weight:600;font-size:1.0625rem;">info@dryliningedinburgh.co.uk</a>
+</div>
+<div style="background:var(--accent);padding:2rem;border-radius:var(--radius);">
+<div style="font-size:2rem;margin-bottom:1rem;">📝</div>
+<h3 style="font-size:1.25rem;font-weight:700;color:var(--secondary);margin-bottom:0.5rem;">Quote Form</h3>
+<p style="color:var(--text-light);font-size:0.9375rem;margin-bottom:1rem;">Get a free, no-obligation quote in minutes. Fast response guaranteed.</p>
+<a href="/get-quote/" class="btn btn-primary" style="display:inline-block;">Get a Free Quote</a>
+</div>
+</div></div></section>
+<section class="section" style="background:var(--accent);"><div class="container" style="text-align:center;max-width:700px;">
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin-bottom:1rem;">Working Hours</h2>
+<p style="color:var(--text-light);font-size:1.0625rem;line-height:1.8;">We are available Monday to Friday, 8:00 AM to 6:00 PM. For commercial projects, we also offer evening and weekend appointments to minimise business disruption.</p>
+</div></section>
+</Layout>

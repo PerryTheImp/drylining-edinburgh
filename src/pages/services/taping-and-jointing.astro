@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "serviceType": "Taping and Jointing",
+      "provider": { "@type": "LocalBusiness", "name": "Drylining Edinburgh", "@id": "https://dryliningedinburgh.co.uk/#business" },
+      "areaServed": { "@type": "City", "name": "Edinburgh" },
+      "description": "Expert taping and jointing in Edinburgh. Smooth, crack-resistant finishes ready for decoration. No need for wet plastering."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://dryliningedinburgh.co.uk/services/" },
+        { "@type": "ListItem", "position": 3, "name": "Taping & Jointing", "item": "https://dryliningedinburgh.co.uk/services/taping-and-jointing/" }
+      ]
+    }
+  ]
+};
+---
+<Layout title="Taping & Jointing Edinburgh | Seamless Drywall Finishes" description="Professional taping and jointing in Edinburgh. Smooth, crack-resistant finishes ready for painting. No wet plaster needed. Faster, cleaner, and cost-effective. Free quotes." canonical="/services/taping-and-jointing/" schema={schema}>
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
+  <img src="/images/service-taping.svg" alt="Taping and jointing work in Edinburgh" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;">
+    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Taping & Jointing in Edinburgh</h1>
+    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Smooth, crack-resistant finishes with expert taping and jointing. No need for full plastering — faster, cleaner, and ready for decoration.</p>
+  </div>
+</section>
+<section class="section"><div class="container" style="max-width:900px;">
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Taping and jointing is the final stage of drylining that creates an invisible seam between plasterboard panels. At <strong>Drylining Edinburgh</strong>, our skilled finishers apply jointing compound and paper tape with precision, building up thin layers and sanding between coats to achieve a flawless surface ready for painting.</p>
+<img src="/images/service-taping.svg" alt="Professional taping and jointing finish in Edinburgh" style="border-radius:var(--radius);width:100%;max-width:800px;margin:2rem auto;display:block;box-shadow:var(--shadow-lg);">
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Choose Taping & Jointing?</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li><strong>No wet plaster</strong> — Avoid the mess and drying time of traditional plastering</li><li><strong>Faster completion</strong> — Rooms are ready for decoration sooner</li><li><strong>Crack-resistant</strong> — Properly taped joints prevent cracking over time</li><li><strong>Cost-effective</strong> — Less labour and material than full plastering</li><li><strong>Clean finish</strong> — Minimal dust and disruption during the process</li></ul>
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Taping & Jointing Process</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We apply paper tape to all board joints, embed corner beads for clean edges, and build up three coats of jointing compound — each sanded smooth before the next. The result is a professional-quality finish that is indistinguishable from plastered walls and ready for painting or wallpapering.</p>
+<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Taping Quote</a></div>
+</div></section>
+</Layout>

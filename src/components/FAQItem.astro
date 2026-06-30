@@ -1,0 +1,51 @@
+---
+export interface Props {
+  question: string;
+  answer: string;
+  open?: boolean;
+}
+const { question, answer, open = false } = Astro.props;
+---
+<div class="faq-item" style="border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 1rem;">
+  <button
+    type="button"
+    class="faq-toggle"
+    aria-expanded={open ? 'true' : 'false'}
+    style="width: 100%; text-align: left; background: var(--white); border: none; padding: 1.25rem 1.5rem; font-size: 1rem; font-weight: 600; color: var(--secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center;"
+  >
+    <span>{question}</span>
+    <span class="faq-icon" style="font-size: 1.25rem; transition: transform 0.2s ease;">{open ? '−' : '+'}</span>
+  </button>
+  <div
+    class="faq-content"
+    style={`padding: 0 1.5rem; color: var(--text-light); line-height: 1.7; font-size: 0.9375rem; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; max-height: ${open ? '500px' : '0px'}; padding-top: ${open ? '0.5rem' : '0'}; padding-bottom: ${open ? '1.25rem' : '0'};`}
+  >
+    {answer}
+  </div>
+</div>
+
+<script>
+  (function() {
+    var toggles = document.querySelectorAll('.faq-toggle');
+    toggles.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var content = btn.nextElementSibling;
+        var icon = btn.querySelector('.faq-icon');
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        if (expanded) {
+          btn.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0px';
+          content.style.paddingTop = '0';
+          content.style.paddingBottom = '0';
+          icon.textContent = '+';
+        } else {
+          btn.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = '500px';
+          content.style.paddingTop = '0.5rem';
+          content.style.paddingBottom = '1.25rem';
+          icon.textContent = '−';
+        }
+      });
+    });
+  })();
+</script>

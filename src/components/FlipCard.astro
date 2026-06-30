@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  link: string;
+  icon?: string;
+}
+const { title, description, link, icon } = Astro.props;
+---
+<a href={link} style="text-decoration: none; color: inherit; display: block;">
+  <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: all 0.3s ease; height: 100%; position: relative; overflow: hidden;"
+       onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='var(--shadow-lg)';this.style.borderColor='var(--primary)'"
+       onmouseleave="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='var(--border)'">
+    {icon && (
+      <div style="width: 56px; height: 56px; background: rgba(196,30,58,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; color: var(--primary); font-size: 1.5rem;"
+           set:html={icon} />
+    )}
+    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--secondary);">{title}</h3>
+    <p style="color: var(--text-light); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 1.25rem;">{description}</p>
+    <span style="color: var(--primary); font-weight: 600; font-size: 0.9375rem; display: inline-flex; align-items: center; gap: 0.25rem;"
+          onmouseenter="this.style.gap='0.5rem'" onmouseleave="this.style.gap='0.25rem'">
+      Learn more →
+    </span>
+  </div>
+</a>

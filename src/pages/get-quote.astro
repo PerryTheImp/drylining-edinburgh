@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MultiStepForm from '../components/MultiStepForm.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "serviceType": "Drylining Quote Request",
+      "provider": { "@type": "LocalBusiness", "name": "Drylining Edinburgh", "@id": "https://dryliningedinburgh.co.uk/#business" },
+      "areaServed": { "@type": "City", "name": "Edinburgh" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Get a Quote", "item": "https://dryliningedinburgh.co.uk/get-quote/" }
+      ]
+    }
+  ]
+};
+---
+<Layout title="Get a Free Quote | Drylining Edinburgh" description="Request a free, no-obligation quote for drylining, partition walls, and suspended ceilings in Edinburgh. Fast response within 24 hours." canonical="/get-quote/" schema={schema}>
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
+  <img src="/images/hero-main.svg" alt="Edinburgh renovation project ready for drylining quote" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;">
+    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Get Your Free Quote</h1>
+    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Tell us about your project and we will provide a free, no-obligation quote within 24 hours. No hidden fees, no pressure.</p>
+  </div>
+</section>
+<section class="section"><div class="container"><div style="max-width:600px;margin:0 auto;background:var(--white);padding:2.5rem;border-radius:var(--radius);box-shadow:var(--shadow);">
+  <MultiStepForm source="edinburgh-get-quote-page" />
+</div></div></section>
+</Layout>

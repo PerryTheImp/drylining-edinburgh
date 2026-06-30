@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Drylining Edinburgh",
+      "@id": "https://dryliningedinburgh.co.uk/#business",
+      "areaServed": { "@type": "City", "name": "Musselburgh" },
+      "serviceType": "Drylining, Partition Walls, Suspended Ceilings"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Areas", "item": "https://dryliningedinburgh.co.uk/areas/" },
+        { "@type": "ListItem", "position": 3, "name": "Musselburgh", "item": "https://dryliningedinburgh.co.uk/areas/musselburgh/" }
+      ]
+    }
+  ]
+};
+---
+<Layout title="Drylining Musselburgh | Partition Walls & Suspended Ceilings" description="Drylining contractors in Musselburgh. Partition walls, suspended ceilings, plasterboard installation for homes and businesses in East Lothian. Free quotes." canonical="/areas/musselburgh/" schema={schema}>
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
+  <img src="/images/area-musselburgh.svg" alt="Musselburgh with drylining services" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;">
+    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Drylining in Musselburgh</h1>
+    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Professional drylining services in Musselburgh and East Lothian. Residential and commercial partition walls, suspended ceilings, and plasterboard.</p>
+  </div>
+</section>
+<section class="section"><div class="container" style="max-width:900px;">
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Musselburgh, known as the 'Honest Toun', is Scotland's oldest burgh and one of East Lothian's most desirable places to live and work. <strong>Drylining Edinburgh</strong> brings professional drylining services to Musselburgh and the surrounding East Lothian area.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">From period property renovations near the racecourse to modern commercial fit-outs along the High Street, our experienced contractors deliver quality drylining with minimal disruption to your home or business.</p>
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Services in Musselburgh</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li>Residential drylining and plasterboard installation</li><li>Partition walls for homes and offices</li><li>Suspended ceilings for retail and commercial</li><li>Metal stud partitioning for industrial units</li><li>Taping & jointing for professional finishes</li></ul>
+<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Musselburgh Quote</a></div>
+</div></section>
+</Layout>

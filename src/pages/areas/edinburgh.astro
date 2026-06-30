@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Drylining Edinburgh",
+      "@id": "https://dryliningedinburgh.co.uk/#business",
+      "areaServed": { "@type": "City", "name": "Edinburgh" },
+      "serviceType": "Drylining, Partition Walls, Suspended Ceilings"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Areas", "item": "https://dryliningedinburgh.co.uk/areas/" },
+        { "@type": "ListItem", "position": 3, "name": "Edinburgh", "item": "https://dryliningedinburgh.co.uk/areas/edinburgh/" }
+      ]
+    }
+  ]
+};
+---
+<Layout title="Drylining Edinburgh | City Centre & Surrounding Neighbourhoods" description="Drylining contractors in Edinburgh city centre, New Town, Old Town, Leith, and all surrounding areas. Partition walls, suspended ceilings, plasterboard. Free quotes." canonical="/areas/edinburgh/" schema={schema}>
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
+  <img src="/images/area-edinburgh.svg" alt="Edinburgh cityscape with drylining services" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;">
+    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Drylining in Edinburgh</h1>
+    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Expert drylining, partition walls, and suspended ceiling services across Edinburgh city centre, New Town, Old Town, Leith, and all surrounding neighbourhoods.</p>
+  </div>
+</section>
+<section class="section"><div class="container" style="max-width:900px;">
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Edinburgh is a city of stunning architecture — from Georgian townhouses in the New Town to modern office blocks in the city centre and converted warehouses in Leith. At <strong>Drylining Edinburgh</strong>, we provide tailored drylining services that suit every property type across Scotland's capital.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Whether you are renovating a period property in Stockbridge, fitting out a new office in the Exchange district, or dividing a retail unit on Princes Street, our experienced drylining contractors deliver smooth, professional results with minimal disruption.</p>
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Edinburgh Neighbourhoods We Serve</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li>Edinburgh city centre and Exchange district</li><li>New Town and Stockbridge</li><li>Old Town and Grassmarket</li><li>Leith and the Shore</li><li>Bruntsfield and Morningside</li><li>Portobello and Joppa</li><li>Murrayfield and Corstorphine</li></ul>
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Services Available in Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We offer the full range of drylining services in Edinburgh including drylined walls and ceilings, partition wall installation, metal stud partitioning, suspended ceilings, plasterboard fitting, and taping & jointing. All work is carried out by CSCS-accredited contractors with £1 million public liability insurance.</p>
+<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Edinburgh Quote</a></div>
+</div></section>
+</Layout>

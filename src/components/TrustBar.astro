@@ -1,0 +1,21 @@
+---
+const items = [
+  { icon: '🛡️', title: 'CSCS Accredited', desc: 'Fully certified team' },
+  { icon: '✅', title: '£1M Insurance', desc: 'Public liability covered' },
+  { icon: '💷', title: 'Free Quotes', desc: 'No obligation pricing' },
+  { icon: '⚡', title: '24h Response', desc: 'Quick turnaround' },
+];
+---
+<section style="background: var(--secondary); color: var(--white); padding: 3rem 0;" aria-label="Trust indicators">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+      {items.map(item => (
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 2rem;" role="img" aria-label={item.title}>{item.icon}</span>
+          <div style="font-weight: 700; font-size: 1.125rem;">{item.title}</div>
+          <div style="color: #aaa; font-size: 0.875rem;">{item.desc}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

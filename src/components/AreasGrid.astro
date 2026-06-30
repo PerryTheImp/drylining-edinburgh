@@ -1,0 +1,16 @@
+---
+export interface Props {
+  areas: { name: string; slug: string; desc: string }[];
+}
+const { areas } = Astro.props;
+---
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+  {areas.map(area => (
+    <a href={`/areas/${area.slug}/`} style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; display: block; transition: all 0.2s ease;"
+       onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow)'"
+       onmouseleave="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+      <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--secondary);">{area.name}</h3>
+      <p style="color: var(--text-light); font-size: 0.9375rem; line-height: 1.6;">{area.desc}</p>
+    </a>
+  ))}
+</div>

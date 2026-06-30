@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQItem from '../components/FAQItem.astro';
+
+const faqs = [
+  { question: 'What is drylining and how does it work?', answer: 'Drylining is the process of fixing plasterboard to walls, ceilings, or stud frames without using wet plaster. It creates a smooth surface ready for painting or decorating. Our team measures, cuts, and fixes boards precisely, then tapes and joints the seams for an invisible finish.' },
+  { question: 'How long does a typical drylining project take?', answer: 'Most residential rooms can be drylined in 1–2 days. Larger commercial projects depend on scale, but our experienced crews work efficiently to minimise downtime. We provide a clear timeline with every quote.' },
+  { question: 'Do you offer free, no-obligation quotes?', answer: 'Yes. We provide completely free quotes for all drylining, partition wall, and suspended ceiling projects in Edinburgh and surrounding areas. Simply fill out our quote form or call us to arrange a site visit.' },
+  { question: 'Are your drylining contractors fully insured?', answer: 'Absolutely. We carry £1 million public liability insurance, and all our drylining contractors are CSCS accredited. We also comply with health and safety regulations on every site.' },
+  { question: 'Can you work around our business hours?', answer: 'Yes. For commercial and office drylining projects in Edinburgh, we can schedule work outside business hours, during weekends, or in phases to minimise disruption to your operations.' },
+  { question: 'What is the difference between drylining and plastering?', answer: 'Traditional plastering involves applying wet plaster over brick or blockwork, which then needs time to dry. Drylining uses pre-made plasterboard sheets fixed to frames or adhesive, with joints filled using jointing compound. It is faster, cleaner, and produces less mess.' },
+  { question: 'Do I need building regulations approval for partition walls?', answer: 'Internal non-load-bearing partition walls generally do not require building regulations approval. However, if the wall affects fire safety, structural stability, or involves plumbing or electrics, approval may be needed. We can advise during your quote.' },
+  { question: 'What types of plasterboard do you use?', answer: 'We use standard wallboard, moisture-resistant boards for bathrooms and kitchens, fire-rated boards where required, and acoustic boards for sound insulation. We select the right board for each application.' },
+  { question: 'Can drylining improve insulation?', answer: 'Yes. Insulated plasterboard or adding insulation behind standard boards can significantly improve thermal efficiency. This is particularly beneficial for external walls and loft conversions in Edinburgh older properties.' },
+  { question: 'How do I prepare for a drylining project?', answer: 'Clear the area of furniture and valuables. Ensure access for our team and materials. We will handle protection, dust sheets, and cleanup, but a clear workspace helps us work faster and more safely.' },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+      }))
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://dryliningedinburgh.co.uk/faq/" }
+      ]
+    }
+  ]
+};
+---
+
+<Layout
+  title="FAQ | Drylining Edinburgh — Common Questions Answered"
+  description="Find answers to common questions about drylining, partition walls, suspended ceilings, and our services in Edinburgh. Free quotes, CSCS accredited."
+  canonical="/faq/"
+  schema={schema}
+>
+  <section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);overflow:hidden;">
+    <img src="/images/trust-safety.svg" alt="Drylining Edinburgh safety and quality standards" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+    <div class="container" style="position:relative;z-index:1;text-align:center;">
+      <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">Frequently Asked Questions</h1>
+      <p style="font-size: 1.0625rem; color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto;">Everything you need to know about our drylining services in Edinburgh. Can not find an answer? <a href="/contact/" style="color: var(--primary); text-decoration: underline;">Contact us</a>.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width: 800px;">
+      {faqs.map(f => (
+        <FAQItem question={f.question} answer={f.answer} />
+      ))}
+      <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--accent); border-radius: var(--radius);">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.75rem;">Still Have Questions?</h3>
+        <p style="color: var(--text-light); margin-bottom: 1.5rem;">Our team is happy to help. Reach out for a free consultation or quote.</p>
+        <a href="/get-quote/" class="btn btn-primary">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
