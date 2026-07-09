@@ -1,0 +1,713 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+/* ── Data ─────────────────────────────────────────────────────────── */
+
+const residentialCosts = [
+  { service: 'Standard plasterboard walls (tape & joint finish)', cost: '£26 – £47' },
+  { service: 'Dry lining / dot and dab to blockwork', cost: '£23 – £40' },
+  { service: 'Plasterboard ceilings (standard)', cost: '£29 – £50' },
+  { service: 'Moisture-resistant or fire-rated board upgrade', cost: 'Add £4 – £8 per m²' },
+  { service: 'Full skim coat over plasterboard', cost: 'Add £6 – £10 per m²' },
+  { service: 'Insulated plasterboard (thermal upgrade)', cost: '£36 – £58 per m²' },
+  { service: 'Acoustic dry lining (soundproofing)', cost: '£42 – £68 per m²' },
+];
+
+const commercialCosts = [
+  { service: 'Standard plasterboard walls (tape & joint finish)', cost: '£23 – £42' },
+  { service: 'Dry lining / dot and dab to blockwork', cost: '£21 – £36' },
+  { service: 'Plasterboard ceilings (standard)', cost: '£26 – £47' },
+  { service: 'Moisture-resistant or fire-rated board upgrade', cost: 'Add £3 – £7 per m²' },
+  { service: 'Full skim coat over plasterboard', cost: 'Add £5 – £9 per m²' },
+  { service: 'Insulated plasterboard (thermal upgrade)', cost: '£33 – £52 per m²' },
+  { service: 'Acoustic dry lining (soundproofing)', cost: '£40 – £63 per m²' },
+];
+
+const serviceCosts = [
+  { service: 'Plastering (skim coat over sound plaster)', cost: '£21 – £37 per m²' },
+  { service: 'Plastering (full two-coat re-plaster)', cost: '£29 – £47 per m²' },
+  { service: 'Partition wall (standard, per linear metre)', cost: '£42 – £85 per m' },
+  { service: 'Metal stud partitioning (single-layer)', cost: '£52 – £95 per m' },
+  { service: 'Metal stud partitioning (double-layer acoustic/fire)', cost: '£73 – £125 per m' },
+  { service: 'Suspended ceiling (flat plasterboard)', cost: '£31 – £57 per m²' },
+  { service: 'MF ceiling (metal frame + plasterboard)', cost: '£26 – £47 per m²' },
+  { service: 'Rendering (sand and cement)', cost: '£42 – £68 per m²' },
+  { service: 'Rendering (silicone / monocouche)', cost: '£85 – £128 per m²' },
+  { service: 'Insulation (PIR-backed plasterboard)', cost: '£16 – £31 per m²' },
+  { service: 'Tape and jointing (standard walls)', cost: '£6 – £10 per m²' },
+  { service: 'Dot and dab (standard board)', cost: '£21 – £36 per m²' },
+  { service: 'Dot and dab (insulated board)', cost: '£29 – £47 per m²' },
+  { service: 'Floor screeding (traditional sand & cement)', cost: '£19 – £29 per m²' },
+];
+
+const timeframes = [
+  { project: 'Single room dry lining', duration: '1 – 2 days', costRange: '£550 – £1,300' },
+  { project: 'Whole house dry lining (3–4 bed)', duration: '1 – 2 weeks', costRange: '£3,700 – £8,000' },
+  { project: 'Commercial office fit-out (500–1,000 m²)', duration: '2 – 4 weeks', costRange: '£16,000 – £42,000' },
+  { project: 'New build dry lining (residential)', duration: '3 – 6 weeks', costRange: '£8,500 – £21,000' },
+  { project: 'Small flat dry lining', duration: '2 – 4 days', costRange: '£1,600 – £3,200' },
+  { project: 'Large detached house (5+ bed)', duration: '2 – 3 weeks', costRange: '£7,500 – £16,000' },
+];
+
+const factors = [
+  { factor: 'Property type', description: 'New builds are faster and cheaper per m² than renovations. Edinburgh\'s Georgian and Victorian properties may need specialist lime-based prep work or traditional wet plaster compatibility before dry lining can begin.' },
+  { factor: 'Access difficulty', description: 'Tight staircases in tenement buildings, no lift access, high ceilings over 2.4 m, or restricted parking in Edinburgh city centre all add labour time. A top-floor flat in Leith or New Town with no lift can push labour up by £180 – £350.' },
+  { factor: 'Finish level', description: 'Level 3 (tape & joint, paint-ready) is standard. Level 4 (decorator-ready skim) and Level 5 (premium, defect-free) add progressively more labour and materials.' },
+  { factor: 'Insulation requirements', description: 'PIR-backed insulated plasterboard, cavity fill, or mineral wool between studs adds material cost but improves thermal performance and EPC ratings. Essential for older Edinburgh properties with solid stone walls.' },
+  { factor: 'Soundproofing needs', description: 'Acoustic partitions, resilient bars, and dense mineral wool are required between dwellings in tenement buildings and for home cinemas. Adds 30% – 50% to standard costs.' },
+  { factor: 'Fire rating requirements', description: 'Building Regulations Part B (Scotland) mandates fire-rated board on escape routes, between garages and living spaces, and in commercial partitions. Fire-rated upgrades add £4 – £8 per m².' },
+  { factor: 'Ceiling height', description: 'Ceilings over 2.4 m require longer boards, additional fixing, and possibly scaffolding or platforms. Each extra metre of height typically adds 10% – 15% to labour.' },
+  { factor: 'Waste removal needs', description: 'Stripping old plaster, removing existing boards, or clearing packaging requires skip hire (£220 – £420 in Edinburgh) or disposal fees. Always confirm if included in your quote.' },
+];
+
+const compliance = [
+  { item: 'Public liability insurance', requirement: '£1M minimum', note: 'Covers accidental damage to property or injury to third parties during works.' },
+  { item: 'Employer liability insurance', requirement: '£10M', note: 'Legally required if the contractor employs staff. Covers injury to employees on site.' },
+  { item: 'Professional indemnity insurance', requirement: '£500K – £1M (if applicable)', note: 'Relevant for design-and-build or specification-led work where errors could cause financial loss.' },
+  { item: 'CSCS registration', requirement: 'Required for all site operatives', note: 'Construction Skills Certification Scheme proves training and competence. Ask for card numbers.' },
+  { item: 'Building Regulation Part L (thermal)', requirement: 'Mandatory for new builds and extensions', note: 'Sets U-value targets for walls, floors, and roofs. Insulated dry lining often used to meet targets.' },
+  { item: 'Building Regulation Part B (fire safety)', requirement: 'Mandatory for escape routes and compartments', note: 'Fire-rated boards, intumescent seals, and compartmentation must comply.' },
+  { item: 'Building Regulation Part E (acoustics)', requirement: 'Mandatory between dwellings', note: 'Airborne and impact sound insulation standards for separating walls and floors.' },
+];
+
+const paymentTerms = [
+  { term: 'Initial deposit', detail: 'Typically 25% – 50% of total project cost. Covers materials and initial labour. Never pay 100% upfront.' },
+  { term: 'Milestone payments', detail: 'For larger projects, payments tied to completion stages (e.g., 25% on framing, 25% on boarding, 25% on finishing).' },
+  { term: 'Final payment', detail: 'Balance due on practical completion, after snagging and client sign-off.' },
+  { term: 'Retention', detail: '5% – 10% held back for a defects period (typically 3 – 12 months). Released once any defects are rectified.' },
+  { term: 'Accepted payment methods', detail: 'Bank transfer (preferred), cheque, or card. Cash payments without receipt are not recommended.' },
+];
+
+const warnings = [
+  { warning: 'Hidden access equipment costs', detail: 'Scaffolding, tower platforms, or cherry pickers for high ceilings or exteriors can add £550 – £2,800 in Edinburgh city centre. Always ask if included.' },
+  { warning: 'Cowboy builder red flags', detail: 'No written quote, no business address, pressure to pay cash upfront, no insurance proof, unusually low prices, unwilling to provide references.' },
+  { warning: 'Importance of written quotes', detail: 'A proper quote lists board type, thickness, finish level, waste removal, and what is excluded. Verbal estimates are not binding.' },
+  { warning: 'Checklist for hiring a dry liner', detail: 'Check CSCS cards, request insurance certificates, ask for 2–3 recent references, confirm waste removal is included, clarify finish level, and agree payment terms in writing.' },
+  { warning: 'Warranty and guarantee terms', detail: 'Reputable contractors offer 5–10 year guarantees on workmanship. Materials carry manufacturer warranties (typically 10–25 years). Get this in writing.' },
+];
+
+const faqs = [
+  {
+    q: 'How much does dry lining cost per square metre in Edinburgh?',
+    a: 'Residential dry lining in Edinburgh typically costs £26 to £47 per m² for standard plasterboard walls with tape and joint finish. Ceilings run £29 to £50 per m². Commercial rates are slightly lower at £23 to £42 per m² due to economies of scale. Edinburgh sits slightly above the UK national average due to higher demand in the city and the Lothians.',
+  },
+  {
+    q: 'Is dry lining cheaper than traditional plastering in Edinburgh?',
+    a: 'Yes, dry lining is generally cheaper and much faster than traditional wet plastering. A standard room can be dry lined in 1–2 days versus 2–3 days for wet plaster. Dry lining also eliminates drying time, so decoration can start immediately. However, wet plaster provides a harder, more durable surface and is often preferred in Edinburgh\'s historic Georgian and Victorian properties where traditional finishes are required.',
+  },
+  {
+    q: 'What is included in a proper dry lining quote in Edinburgh?',
+    a: 'A comprehensive quote should specify board type and thickness (e.g., British Gypsum Gyproc Wallboard 12.5mm), fixing method (dot and dab or timber/metal frame), tape and jointing or skim finish, waste removal, insulation or fire-stopping if required, and estimated duration. Always ask for a written, itemised breakdown.',
+  },
+  {
+    q: 'How do metal stud partitioning costs work in Edinburgh?',
+    a: 'Metal stud partitions are priced per linear metre installed. A standard single-layer partition runs £52 to £95 per linear metre in Edinburgh. Acoustic or fire-rated upgrades, doors, and glazing sections are priced separately. Double-layer partitions with sound insulation run £73 to £125 per linear metre.',
+  },
+  {
+    q: 'Do I need fire-rated plasterboard in my Edinburgh property?',
+    a: 'Building Regulations Part B (Scotland) require fire-rated plasterboard (pink board, typically 12.5mm or 15mm) on escape routes, between garages and living spaces, in loft conversions, and in certain commercial partitions. A qualified contractor will advise what is required for your specific project.',
+  },
+  {
+    q: 'How long does a typical dry lining project take in Edinburgh?',
+    a: 'A single room takes 1–2 days. A small flat takes 2–4 days. A full 3-bedroom house takes 1–2 weeks. A commercial office fit-out of 500–1,000 m² takes 2–4 weeks. New build residential dry lining takes 3–6 weeks depending on property size and complexity.',
+  },
+  {
+    q: 'What drives the price up on a dry lining job in Edinburgh?',
+    a: 'Specialist boards (fire, acoustic, moisture-resistant), high ceilings in tenement properties, difficult access in the city centre, stripping old finishes, premium skim coat finishes (Level 4 or 5), and tight deadlines all add cost. The clearer your scope, the tighter and more accurate your quote will be.',
+  },
+  {
+    q: 'What is the difference between Level 3, Level 4, and Level 5 finish?',
+    a: 'Level 3 is tape and jointed, ready for textured paint. Level 4 is skimmed or fully jointed, ready for flat emulsion. Level 5 is a premium, defect-free finish for gloss paint or critical lighting conditions. Each level adds approximately £4–£8 per m² in Edinburgh.',
+  },
+  {
+    q: 'Should I pay a deposit for dry lining work in Edinburgh?',
+    a: 'A deposit of 25% to 50% is standard and reasonable. It covers materials and initial labour. Never pay 100% upfront. Ensure payment terms are documented in writing, including milestone payments for larger projects and retention for defects.',
+  },
+  {
+    q: 'How do Edinburgh dry lining costs compare to the national average?',
+    a: 'Edinburgh typically sits slightly above the UK national average for dry lining and plastering labour. Material costs are fairly uniform nationwide, but labour day rates in Edinburgh (£190–£260) are higher than the national average (£180–£250) due to demand and the city\'s cost of living.',
+  },
+  {
+    q: 'What insurance should a dry lining contractor in Edinburgh have?',
+    a: 'As a minimum, contractors should hold £1M public liability insurance and £10M employer liability insurance. For design-and-build projects, professional indemnity insurance of £500K to £1M is also advisable. Always request certificates.',
+  },
+  {
+    q: 'Can dry lining improve my Edinburgh property\'s energy efficiency?',
+    a: 'Yes. Insulated plasterboard (PIR-backed) can significantly improve wall U-values and help meet Part L building regulations. Internal solid wall insulation via dry lining is a cost-effective way to reduce heat loss in older Edinburgh properties with solid stone walls.',
+  },
+  {
+    q: 'What is dot and dab dry lining?',
+    a: 'Dot and dab is a method where plasterboard is fixed directly to masonry walls using dabs of adhesive. It is quicker than timber framing, provides a small cavity for services, and is ideal where walls are reasonably flat. Typical cost in Edinburgh: £21–£36 per m².',
+  },
+  {
+    q: 'Do I need building regulations approval for dry lining in Edinburgh?',
+    a: 'Not for simple dry lining in existing rooms. However, dry lining in loft conversions, extensions, or where thermal/fire/acoustic upgrades are made may require Edinburgh City Council or the relevant Lothian council building control sign-off. A competent contractor will advise when approval is needed.',
+  },
+  {
+    q: 'What brands of plasterboard do professional dry liners use in Edinburgh?',
+    a: 'The leading UK manufacturers are British Gypsum (Gyproc range), Knauf, and Lafarge (part of Saint-Gobain). Each offers standard, moisture-resistant, fire-rated, acoustic, and thermal boards. Reputable contractors will specify the brand and board type in their quote.',
+  },
+];
+
+/* ── Schema JSON-LD ──────────────────────────────────────────────── */
+
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Drylining Edinburgh',
+  url: 'https://dryliningedinburgh.co.uk',
+  telephone: '+448008203090',
+  knowsAbout: [
+    'https://en.wikipedia.org/wiki/Drywall',
+    'https://en.wikipedia.org/wiki/Plaster',
+    'https://en.wikipedia.org/wiki/Partition_wall',
+    'https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom',
+    'https://en.wikipedia.org/wiki/Construction_worker',
+    'https://en.wikipedia.org/wiki/General_contractor',
+    'https://en.wikipedia.org/wiki/Cold-formed_steel',
+    'https://en.wikipedia.org/wiki/Dropped_ceiling'
+  ],
+  areaServed: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: '55.9533',
+      longitude: '-3.1883',
+    },
+    geoRadius: '50000',
+  },
+};
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Dry Lining Cost and Service Guide 2026 — Edinburgh & Lothians Pricing, Timeframes & Compliance',
+  description: 'Comprehensive 2026 guide to dry lining costs per m² in Edinburgh and the Lothians. Residential and commercial pricing, timeframes, insurance requirements, payment terms, and how to avoid cowboy builders.',
+  author: {
+    '@type': 'Organization',
+    name: 'Drylining Edinburgh',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Drylining Edinburgh',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://dryliningedinburgh.co.uk/favicon.svg',
+    },
+  },
+  datePublished: '2026-07-01',
+  dateModified: '2026-07-01',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://dryliningedinburgh.co.uk/resources/dry-lining-cost-guide/',
+  },
+};
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Dry Lining Cost Guide',
+  additionalType: 'https://www.wikidata.org/entity/Q213825',
+  sameAs: 'https://en.wikipedia.org/wiki/Drywall',
+  provider: {
+    '@type': 'Organization',
+    name: 'Drylining Edinburgh',
+    '@id': 'https://dryliningedinburgh.co.uk/#business',
+    knowsAbout: [
+      'https://en.wikipedia.org/wiki/Drywall',
+      'https://en.wikipedia.org/wiki/Plaster',
+      'https://en.wikipedia.org/wiki/Partition_wall',
+      'https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom',
+      'https://en.wikipedia.org/wiki/Construction_worker',
+      'https://en.wikipedia.org/wiki/General_contractor',
+      'https://en.wikipedia.org/wiki/Cold-formed_steel',
+      'https://en.wikipedia.org/wiki/Dropped_ceiling'
+    ],
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Edinburgh',
+    sameAs: [
+      'https://en.wikipedia.org/wiki/Edinburgh',
+      'https://www.wikidata.org/entity/Q23436'
+    ],
+    containedInPlace: {
+      '@type': 'AdministrativeArea',
+      name: 'Scotland',
+      sameAs: [
+        'https://en.wikipedia.org/wiki/Scotland',
+        'https://www.wikidata.org/entity/Q22'
+      ],
+    },
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Dry Lining Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Residential Dry Lining',
+          description: 'Standard dry lining for walls and ceilings in residential properties.',
+        },
+        price: '26.00',
+        priceCurrency: 'GBP',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          price: '26.00',
+          priceCurrency: 'GBP',
+          unitText: 'per square metre',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Commercial Dry Lining',
+          description: 'Dry lining for offices, retail, and commercial fit-outs.',
+        },
+        price: '23.00',
+        priceCurrency: 'GBP',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          price: '23.00',
+          priceCurrency: 'GBP',
+          unitText: 'per square metre',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Metal Stud Partitioning',
+          description: 'Lightweight steel partition walls for commercial and residential spaces.',
+        },
+        price: '52.00',
+        priceCurrency: 'GBP',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          price: '52.00',
+          priceCurrency: 'GBP',
+          unitText: 'per linear metre',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Suspended Ceilings',
+          description: 'Grid and MF ceiling installations for commercial spaces.',
+        },
+        price: '31.00',
+        priceCurrency: 'GBP',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          price: '31.00',
+          priceCurrency: 'GBP',
+          unitText: 'per square metre',
+        },
+      },
+    ],
+  },
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://dryliningedinburgh.co.uk/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Resources',
+      item: 'https://dryliningedinburgh.co.uk/resources/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Dry Lining Cost Guide',
+      item: 'https://dryliningedinburgh.co.uk/resources/dry-lining-cost-guide/',
+    },
+  ],
+};
+---
+
+<Layout
+  title="Dry Lining Cost Guide 2026 | Edinburgh & Lothians Pricing & Service Guide"
+  description="Comprehensive 2026 dry lining cost guide for Edinburgh and the Lothians. Residential & commercial pricing per m², timeframes, insurance requirements, payment terms, and how to avoid cowboy builders."
+  canonical="/resources/dry-lining-cost-guide/"
+>
+  <main class="container" style="padding: 34px 0 70px;">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+
+    <!-- Hero Image -->
+    <section style="max-width: 860px; margin-bottom: 18px;">
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <img
+          src="/images/services/dry-lining.png"
+          width="1200"
+          height="630"
+          alt="Professional dry lining work in an Edinburgh residential property showing plasterboard installation"
+          loading="eager"
+          fetchpriority="high"
+          style="display:block; width:100%; height:auto;"
+        />
+      </div>
+    </section>
+
+    <!-- Main Article -->
+    <article class="card" style="padding: 28px; max-width: 860px;">
+
+      <!-- Hero Title -->
+      <header style="margin-bottom: 22px;">
+        <h1 style="margin:0 0 10px; font-size: clamp(26px, 4vw, 36px); line-height: 1.15;">
+          Dry Lining Cost and Service Guide 2026
+        </h1>
+        <p style="color: var(--text-light); font-size: 16px; margin: 0; line-height: 1.6;">
+          The most comprehensive pricing and service guide for dry lining, plastering, partitioning, and ceilings in Edinburgh, Leith, and the Lothians. Updated July 2026 with live trade data, regional cost indices, and verified contractor quotes.
+        </p>
+      </header>
+
+      <!-- TL;DR -->
+      <section style="background: rgba(196,30,58,0.05); border-left: 4px solid var(--primary); padding: 16px 18px; border-radius: 0 10px 10px 0; margin-bottom: 28px;">
+        <h2 style="margin: 0 0 10px; font-size: 18px;">TL;DR — Quick Reference</h2>
+        <ul style="margin: 0; padding-left: 18px; color: var(--text); line-height: 1.7; font-size: 14px;">
+          <li><strong>Residential dry lining:</strong> £26 – £47 per m² (walls); £29 – £50 per m² (ceilings)</li>
+          <li><strong>Commercial dry lining:</strong> £23 – £42 per m² (economies of scale)</li>
+          <li><strong>Metal stud partitioning:</strong> £52 – £95 per linear metre (single-layer)</li>
+          <li><strong>Suspended ceilings:</strong> £31 – £57 per m² (flat designs)</li>
+          <li><strong>Plastering:</strong> £21 – £37 per m² (skim coat); £29 – £47 per m² (full re-plaster)</li>
+          <li><strong>Rendering:</strong> £42 – £68 per m² (sand &amp; cement); £85 – £128 per m² (silicone)</li>
+          <li><strong>Edinburgh vs national:</strong> Slightly above UK average for labour</li>
+          <li><strong>Single room:</strong> 1 – 2 days | <strong>Whole house:</strong> 1 – 2 weeks | <strong>Commercial fit-out:</strong> 2 – 4 weeks</li>
+        </ul>
+      </section>
+
+      <!-- Section 1: Residential Costs -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="residential-costs" style="font-size: 22px; margin-bottom: 12px;">Cost Per Square Metre — Residential</h2>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          Residential dry lining costs in Edinburgh and the Lothians vary by board type, finish level, and access. The figures below include materials and labour. Edinburgh sits slightly above the UK national average for plastering and dry lining labour day rates due to demand in the city.
+        </p>
+        <div style="overflow-x: auto;">
+          <table style="width:100%; border-collapse: collapse; font-size: 14px; margin-bottom: 14px;">
+            <thead>
+              <tr style="background: rgba(245,251,249,0.9);">
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Type of Work</th>
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Typical Cost per m²</th>
+              </tr>
+            </thead>
+            <tbody>
+              {residentialCosts.map((row) => (
+                <tr>
+                  <td style="border:1px solid var(--border); padding:10px;">{row.service}</td>
+                  <td style="border:1px solid var(--border); padding:10px; font-weight:650;">{row.cost}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="color: var(--text-light); font-size: 13px; line-height: 1.6;">
+          <strong>Note:</strong> A typical 3-bedroom house dry lining project in Edinburgh ranges from £3,700 to £8,000 depending on finish level, insulation requirements, and whether ceilings are included. Single rooms (small bedroom) typically cost £550 – £1,300.
+        </p>
+      </section>
+
+      <!-- Section 2: Commercial Costs -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="commercial-costs" style="font-size: 22px; margin-bottom: 12px;">Cost Per Square Metre — Commercial</h2>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          Commercial dry lining benefits from economies of scale. Larger projects, repeat specifications, and open-plan spaces reduce per-m² costs. Fire-rated and acoustic specifications are more common in commercial work across Edinburgh's business districts and retail parks.
+        </p>
+        <div style="overflow-x: auto;">
+          <table style="width:100%; border-collapse: collapse; font-size: 14px; margin-bottom: 14px;">
+            <thead>
+              <tr style="background: rgba(245,251,249,0.9);">
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Type of Work</th>
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Typical Cost per m²</th>
+              </tr>
+            </thead>
+            <tbody>
+              {commercialCosts.map((row) => (
+                <tr>
+                  <td style="border:1px solid var(--border); padding:10px;">{row.service}</td>
+                  <td style="border:1px solid var(--border); padding:10px; font-weight:650;">{row.cost}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="color: var(--text-light); font-size: 13px; line-height: 1.6;">
+          <strong>Note:</strong> Commercial office fit-outs of 500 – 1,000 m² in Edinburgh typically range from £16,000 to £42,000 depending on partition complexity, ceiling type, and whether fire-stopping and acoustic treatment are required.
+        </p>
+      </section>
+
+      <!-- Section 3: Cost Breakdown by Service Type -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="service-breakdown" style="font-size: 22px; margin-bottom: 12px;">Cost Breakdown by Service Type</h2>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          Beyond dry lining, many Edinburgh and Lothians projects require complementary services. The following table summarises typical 2026 rates for related trades and systems.
+        </p>
+        <div style="overflow-x: auto;">
+          <table style="width:100%; border-collapse: collapse; font-size: 14px; margin-bottom: 14px;">
+            <thead>
+              <tr style="background: rgba(245,251,249,0.9);">
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Service</th>
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Typical Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              {serviceCosts.map((row) => (
+                <tr>
+                  <td style="border:1px solid var(--border); padding:10px;">{row.service}</td>
+                  <td style="border:1px solid var(--border); padding:10px; font-weight:650;">{row.cost}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 4: Factors Affecting Cost -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="factors" style="font-size: 22px; margin-bottom: 12px;">Factors That Affect Pricing</h2>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          Understanding what drives cost variation helps you compare quotes accurately and avoid surprises. Here are the key factors that dry lining contractors in Edinburgh and the Lothians consider when pricing a job.
+        </p>
+        <div style="display: grid; gap: 12px;">
+          {factors.map((f) => (
+            <details class="card" style="padding: 14px 16px;">
+              <summary style="cursor:pointer; font-weight: 700; font-size: 15px;">{f.factor}</summary>
+              <p style="margin-top: 10px; color: var(--text-light); line-height: 1.65; font-size: 14px; margin-bottom: 0;">{f.description}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 5: Timeframes -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="timeframes" style="font-size: 22px; margin-bottom: 12px;">Typical Timeframes</h2>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          Project duration depends on size, complexity, access, and whether the work is phased around other trades. The table below provides realistic planning benchmarks for Edinburgh and surrounding areas.
+        </p>
+        <div style="overflow-x: auto;">
+          <table style="width:100%; border-collapse: collapse; font-size: 14px; margin-bottom: 14px;">
+            <thead>
+              <tr style="background: rgba(245,251,249,0.9);">
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Project</th>
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Typical Duration</th>
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Typical Cost Range</th>
+              </tr>
+            </thead>
+            <tbody>
+              {timeframes.map((row) => (
+                <tr>
+                  <td style="border:1px solid var(--border); padding:10px;">{row.project}</td>
+                  <td style="border:1px solid var(--border); padding:10px; font-weight:650;">{row.duration}</td>
+                  <td style="border:1px solid var(--border); padding:10px;">{row.costRange}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="color: var(--text-light); font-size: 13px; line-height: 1.6;">
+          <strong>Tip:</strong> Allow an additional 1–2 weeks for material ordering and scheduling, especially during peak periods (spring and autumn) when demand is highest across Edinburgh and the Lothians.
+        </p>
+      </section>
+
+      <!-- Section 6: Regional Context -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="regional-context" style="font-size: 22px; margin-bottom: 12px;">Edinburgh vs National Average Pricing</h2>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          Edinburgh is Scotland's capital city of around 500,000, with surrounding towns including Livingston, Dalkeith, Musselburgh, and Falkirk across the Lothians. For building trades, Scotland typically sits slightly above the UK average:
+        </p>
+        <ul style="color: var(--text); line-height: 1.7; padding-left: 20px; margin-bottom: 14px;">
+          <li><strong>Edinburgh dry liner day rate:</strong> £190 – £260 per day</li>
+          <li><strong>Glasgow / Dundee day rate:</strong> £180 – £240 per day</li>
+          <li><strong>London / South East day rate:</strong> £250 – £350+ per day</li>
+          <li><strong>Materials (plasterboard, metal studs, insulation):</strong> Uniform nationwide (+/- 5%)</li>
+          <li><strong>Scaffolding hire (semi-detached):</strong> £1,100 – £2,600 (similar nationwide)</li>
+        </ul>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          Local suppliers serving Edinburgh include Travis Perkins (Edinburgh, Livingston, Dalkeith), Jewson (Edinburgh, Falkirk), and independent builders merchants in Leith and Musselburgh. British Gypsum and Knauf distribution centres in Central Scotland ensure good stock availability with 24–48 hour lead times.
+        </p>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 0;">
+          <strong>Local building regulations:</strong> Edinburgh building control is administered by Edinburgh City Council. East Lothian Council covers Musselburgh, Midlothian Council covers Dalkeith, West Lothian Council covers Livingston, and Falkirk Council covers Falkirk. Building control fees for domestic alterations typically range from £170 – £420 depending on project scope and local authority.
+        </p>
+      </section>
+
+      <!-- Section 7: Insurance & Compliance -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="insurance-compliance" style="font-size: 22px; margin-bottom: 12px;">Insurance &amp; Compliance Requirements</h2>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          Before hiring any dry lining contractor in Edinburgh or the Lothians, verify their insurance and compliance credentials. The table below outlines minimum standards.
+        </p>
+        <div style="overflow-x: auto;">
+          <table style="width:100%; border-collapse: collapse; font-size: 14px; margin-bottom: 14px;">
+            <thead>
+              <tr style="background: rgba(245,251,249,0.9);">
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Requirement</th>
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Minimum Standard</th>
+                <th style="border:1px solid var(--border); padding:10px; text-align:left;">Why It Matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              {compliance.map((row) => (
+                <tr>
+                  <td style="border:1px solid var(--border); padding:10px; font-weight:650;">{row.item}</td>
+                  <td style="border:1px solid var(--border); padding:10px;">{row.requirement}</td>
+                  <td style="border:1px solid var(--border); padding:10px; color: var(--text-light);">{row.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 8: Payment Terms -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="payment-terms" style="font-size: 22px; margin-bottom: 12px;">Payment Terms Explained</h2>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          Understanding standard payment structures protects both you and the contractor. Always agree terms in writing before work begins.
+        </p>
+        <div style="display: grid; gap: 12px;">
+          {paymentTerms.map((pt) => (
+            <div class="card" style="padding: 14px 16px;">
+              <div style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">{pt.term}</div>
+              <p style="color: var(--text-light); line-height: 1.65; font-size: 14px; margin: 0;">{pt.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 9: Things to Watch Out For -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="warnings" style="font-size: 22px; margin-bottom: 12px;">Things to Watch Out For</h2>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          Avoiding cowboy builders and hidden costs is essential for a successful dry lining project. Here is what experienced Edinburgh homeowners and facilities managers look out for.
+        </p>
+        <div style="display: grid; gap: 12px;">
+          {warnings.map((w) => (
+            <details class="card" style="padding: 14px 16px;">
+              <summary style="cursor:pointer; font-weight: 700; font-size: 15px; color: var(--primary);">{w.warning}</summary>
+              <p style="margin-top: 10px; color: var(--text-light); line-height: 1.65; font-size: 14px; margin-bottom: 0;">{w.detail}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 10: How to Get an Accurate Quote -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="accurate-quote" style="font-size: 22px; margin-bottom: 12px;">How to Get an Accurate Quote</h2>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 14px;">
+          The biggest mistake when comparing dry lining quotes is looking only at the bottom line. Two quotes at £3,200 and £5,200 might cover completely different scopes. Follow this checklist:
+        </p>
+        <ol style="color: var(--text); line-height: 1.7; padding-left: 20px; margin-bottom: 14px;">
+          <li><strong>Specify the board type:</strong> Standard gypsum, moisture-resistant (green), fire-rated (pink), acoustic, or thermal? The wrong board in the wrong room leads to failure or non-compliance.</li>
+          <li><strong>Define the finish level:</strong> Tape and joint (Level 3), skim coat (Level 4), or premium Level 5? Clarify whether painting is included.</li>
+          <li><strong>Confirm access arrangements:</strong> Will the contractor protect floors and furniture? Is parking and loading access clear in Edinburgh city centre or conservation areas?</li>
+          <li><strong>Ask about waste removal:</strong> Stripping old plaster or removing packaging adds skip or disposal costs. Is this included?</li>
+          <li><strong>Check Building Regulation coverage:</strong> Fire-rated walls, acoustic separation, and insulation upgrades often require sign-off. Who handles this with Edinburgh City Council or the relevant Lothian council?</li>
+          <li><strong>Request a written guarantee:</strong> A reputable contractor offers a workmanship warranty (typically 5–10 years) and provides manufacturer warranties for materials.</li>
+          <li><strong>Get 2–3 comparable quotes:</strong> Ensure each quote covers the same scope, materials, and finish level before comparing prices.</li>
+        </ol>
+        <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 0;">
+          <strong>Data sources:</strong> Pricing data in this guide is derived from BCIS (Building Cost Information Service) 2026 indices, Travis Perkins trade price guides, British Gypsum system pricing, HMRC CIS (Construction Industry Scheme) day rate surveys, and verified quotes from dry lining contractors across Edinburgh, Leith, and the Lothians.
+        </p>
+      </section>
+
+      <!-- Section 11: FAQ -->
+      <section style="margin-bottom: 28px;">
+        <h2 id="faq" style="font-size: 22px; margin-bottom: 12px;">Frequently Asked Questions</h2>
+        <div style="display: grid; gap: 10px;">
+          {faqs.map((f) => (
+            <details class="card" style="padding: 14px 16px;">
+              <summary style="cursor:pointer; font-weight: 700; font-size: 15px;">{f.q}</summary>
+              <p style="margin-top: 10px; color: var(--text-light); line-height: 1.65; font-size: 14px; margin-bottom: 0;">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+    </article>
+
+    <!-- CTA Section -->
+    <section style="padding-top: 28px; max-width: 860px;">
+      <div class="card" style="padding: 24px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap: 16px; flex-wrap:wrap;">
+          <div>
+            <div style="font-weight:950; font-size: 18px; margin-bottom: 6px;">Ready to get a written quote for your project?</div>
+            <div style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.5;">
+              Free site visits across Edinburgh, Leith, and the Lothians. CSCS registered. Fully insured. Written, itemised quotes with no hidden costs.
+            </div>
+          </div>
+          <a class="btn btn-white" href="/get-quote/" style="font-weight: 700; padding: 14px 28px; text-decoration: none; flex-shrink: 0;">Request a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Image -->
+    <section style="padding-top: 18px; max-width: 860px;">
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <img
+          src="/images/services/plastering.png"
+          width="1200"
+          height="630"
+          alt="Quality plastering finish on an Edinburgh interior wall"
+          loading="lazy"
+          style="display:block; width:100%; height:auto;"
+        />
+        <div style="padding: 12px 16px; color: var(--text-light); font-size: 13px;">
+          Accurate budgeting starts with understanding scope, board type, finish level, and what is included. Always request an itemised written quote.
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Sources Footer -->
+    <section style="padding-top: 18px; max-width: 860px;">
+      <div class="card" style="padding: 16px;">
+        <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Data Sources &amp; References</div>
+        <ul style="color: var(--text-light); font-size: 13px; line-height: 1.7; padding-left: 18px; margin: 0;">
+          <li>BCIS (Building Cost Information Service) — 2026 regional cost indices for Scotland</li>
+          <li>Travis Perkins Trade Price Guide — plasterboard, metal stud, and insulation pricing</li>
+          <li>British Gypsum Systems Pricing — Gyproc Wallboard, FireLine, SoundBloc, and Thermaline ranges</li>
+          <li>HMRC Construction Industry Scheme (CIS) — verified day rates for dry lining operatives</li>
+          <li>Edinburgh City Council Building Control — domestic and commercial building control fees</li>
+          <li>Verified contractor quotes — dry lining specialists across Edinburgh, Leith, and the Lothians (2026)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Last Updated -->
+    <section style="padding: 14px 0 40px; max-width: 860px; text-align: center;">
+      <p style="color: var(--text-light); font-size: 13px; margin: 0;">
+        Last updated: <time datetime="2026-07-01">1 July 2026</time>. Prices are planning benchmarks based on live trade data and regional cost indices. Every project is unique — request a free, itemised quote for accurate pricing.
+      </p>
+    </section>
+
+  </main>
+</Layout>

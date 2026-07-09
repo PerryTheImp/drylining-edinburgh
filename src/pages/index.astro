@@ -39,9 +39,33 @@ const schema = {
       "@id": "https://dryliningedinburgh.co.uk/#business",
       "name": "Drylining Edinburgh",
       "url": "https://dryliningedinburgh.co.uk",
-      "telephone": "0131-XXX-XXXX",
+      "telephone": "0800-820-3090",
       "email": "info@dryliningedinburgh.co.uk",
-      "areaServed": { "@type": "City", "name": "Edinburgh" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Edinburgh",
+        "addressRegion": "Scotland",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.9533,
+        "longitude": -3.1883
+      },
+      "sameAs": [
+        "https://www.wikidata.org/entity/Q23436",
+        "https://en.wikipedia.org/wiki/Edinburgh",
+        "https://www.wikidata.org/entity/Q213825",
+        "https://www.wikidata.org/entity/Q385378"
+      ],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Edinburgh",
+        "sameAs": [
+          "https://en.wikipedia.org/wiki/Edinburgh",
+          "https://www.wikidata.org/entity/Q23436"
+        ]
+      },
       "serviceType": "Drylining, Partition Walls, Suspended Ceilings",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -60,6 +84,85 @@ const schema = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" }]
+    },
+    {
+      "@type": "Organization",
+      "name": "Drylining Edinburgh",
+      "url": "https://dryliningedinburgh.co.uk",
+      "@id": "https://dryliningedinburgh.co.uk/#business",
+      "sameAs": [
+        "https://www.wikidata.org/entity/Q23436",
+        "https://en.wikipedia.org/wiki/Edinburgh",
+        "https://www.wikidata.org/entity/Q385378"
+      ],
+      "knowsAbout": [
+        "https://en.wikipedia.org/wiki/Drywall",
+        "https://en.wikipedia.org/wiki/Plaster",
+        "https://en.wikipedia.org/wiki/Partition_wall",
+        "https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom",
+        "https://en.wikipedia.org/wiki/Construction_worker",
+        "https://en.wikipedia.org/wiki/General_contractor",
+        "https://en.wikipedia.org/wiki/Cold-formed_steel",
+        "https://en.wikipedia.org/wiki/Dropped_ceiling"
+      ],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Edinburgh",
+        "sameAs": [
+          "https://en.wikipedia.org/wiki/Edinburgh",
+          "https://www.wikidata.org/entity/Q23436"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://dryliningedinburgh.co.uk",
+      "name": "Drylining Edinburgh",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://dryliningedinburgh.co.uk/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "ServiceArea",
+      "name": "Drylining Edinburgh Service Area",
+      "provider": { "@id": "https://dryliningedinburgh.co.uk/#business" },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Edinburgh",
+          "sameAs": ["https://en.wikipedia.org/wiki/Edinburgh", "https://www.wikidata.org/entity/Q23436"]
+        },
+        {
+          "@type": "City",
+          "name": "Leith",
+          "sameAs": ["https://en.wikipedia.org/wiki/Leith", "https://www.wikidata.org/entity/Q187402"]
+        },
+        {
+          "@type": "City",
+          "name": "Livingston",
+          "sameAs": ["https://en.wikipedia.org/wiki/Livingston,_West_Lothian", "https://www.wikidata.org/entity/Q163761"]
+        },
+        {
+          "@type": "City",
+          "name": "Falkirk",
+          "sameAs": ["https://en.wikipedia.org/wiki/Falkirk", "https://www.wikidata.org/entity/Q205060"]
+        },
+        {
+          "@type": "City",
+          "name": "Dalkeith",
+          "sameAs": ["https://en.wikipedia.org/wiki/Dalkeith", "https://www.wikidata.org/entity/Q192925"]
+        },
+        {
+          "@type": "City",
+          "name": "Musselburgh",
+          "sameAs": ["https://en.wikipedia.org/wiki/Musselburgh", "https://www.wikidata.org/entity/Q207214"]
+        }
+      ]
     }
   ]
 };
@@ -81,21 +184,19 @@ const schema = {
         <p style="font-size: 1.125rem; color: rgba(255,255,255,0.85); max-width: 500px; line-height: 1.7; margin-bottom: 2rem;">Expert drylining contractors serving Edinburgh, Leith, Livingston, Falkirk, and surrounding areas. Free quotes, fast turnaround, and solid results guaranteed.</p>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
           <a href="/get-quote/" class="btn btn-primary" style="font-size: 1.0625rem; padding: 1rem 2.25rem;">Get a Free Quote</a>
-          <a href="tel:0131XXXXXXX" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: var(--white); font-size: 1.0625rem; padding: 1rem 2.25rem;">Call 0131 XXX XXXX</a>
+          <a href="tel:08008203090" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: var(--white); font-size: 1.0625rem; padding: 1rem 2.25rem;">FREEPHONE 0800 820 3090</a>
         </div>
       </div>
       
       <div style="background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-lg);">
         <div style="background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-lg);">
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--secondary);">Quick Quote Request</h3>
-          <form action="https://script.google.com/macros/s/AKfycbxB8ovk-ohPp_hzhkmHSOPVut_33L6mT5eSjtstmLuDx9laqcBk3qwv3GG7Lcyk9IB1/exec" method="POST" id="heroQuoteForm" style="display: flex; flex-direction: column; gap: 0.875rem;">
+          <form action="https://script.google.com/macros/s/AKfycbx2ROgDcHu3ArLmfqPETQYCkFn_5YP6fy1WfZMbynAZsoARpnMRntm5iLlgKSFSJBkG/exec" method="POST" id="heroQuoteForm" style="display: flex; flex-direction: column; gap: 0.875rem;">
             <input type="hidden" name="source" value="dryliningedinburgh.co.uk" />
-            <input type="hidden" name="sheet" value="Edinburgh" />
             <input type="hidden" name="city" value="Edinburgh" />
             <input type="text" name="name" placeholder="Your name" required style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit;" />
             <input type="tel" name="phone" placeholder="Phone number" required style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit;" />
             <input type="email" name="email" placeholder="Email address" style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit;" />
-            <input type="text" name="postcode" placeholder="Postcode" required style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit;" />
             <select name="service" required style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9375rem; font-family: inherit; background: var(--white); color: var(--text);">
               <option value="" disabled selected>Select a service</option>
               <option>Drylining Contractors</option>
@@ -220,7 +321,7 @@ const schema = {
       <p style="font-size: 1.125rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 2rem;">Get your free, no-obligation quote today. We aim to respond within 24 hours to all enquiries across Edinburgh and the surrounding areas.</p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="/get-quote/" class="btn btn-white" style="font-size: 1.0625rem; padding: 1rem 2.5rem;">Get Your Free Quote</a>
-        <a href="tel:0131XXXXXXX" class="btn btn-outline" style="border-color: rgba(255,255,255,0.5); color: var(--white); font-size: 1.0625rem; padding: 1rem 2.5rem;">Call 0131 XXX XXXX</a>
+        <a href="tel:08008203090" class="btn btn-outline" style="border-color: rgba(255,255,255,0.5); color: var(--white); font-size: 1.0625rem; padding: 1rem 2.5rem;">FREEPHONE 0800 820 3090</a>
       </div>
     </div>
   </section>
@@ -238,6 +339,105 @@ const schema = {
       </div>
     </div>
   </section>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Drylining Edinburgh",
+      "url": "https://dryliningedinburgh.co.uk",
+      "telephone": "+448008203090",
+      "knowsAbout": [
+        "https://en.wikipedia.org/wiki/Drywall",
+        "https://en.wikipedia.org/wiki/Plaster",
+        "https://en.wikipedia.org/wiki/Partition_wall",
+        "https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom",
+        "https://en.wikipedia.org/wiki/Construction_worker",
+        "https://en.wikipedia.org/wiki/General_contractor",
+        "https://en.wikipedia.org/wiki/Cold-formed_steel",
+        "https://en.wikipedia.org/wiki/Dropped_ceiling"
+      ],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Edinburgh",
+        "sameAs": [
+          "https://en.wikipedia.org/wiki/Edinburgh",
+          "https://www.wikidata.org/entity/Q23436"
+        ]
+      }
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Drylining Edinburgh",
+      "@id": "https://dryliningedinburgh.co.uk/#business",
+      "url": "https://dryliningedinburgh.co.uk",
+      "telephone": "+448008203090",
+      "serviceType": "Drylining Services",
+      "additionalType": "https://www.wikidata.org/entity/Q213825",
+      "sameAs": "https://en.wikipedia.org/wiki/Drywall",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Edinburgh",
+        "addressRegion": "Scotland",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.9533,
+        "longitude": -3.1883
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Drylining Edinburgh",
+        "knowsAbout": [
+          "https://en.wikipedia.org/wiki/Drywall",
+          "https://en.wikipedia.org/wiki/Plaster",
+          "https://en.wikipedia.org/wiki/Partition_wall",
+          "https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom",
+          "https://en.wikipedia.org/wiki/Construction_worker",
+          "https://en.wikipedia.org/wiki/General_contractor",
+          "https://en.wikipedia.org/wiki/Cold-formed_steel",
+          "https://en.wikipedia.org/wiki/Dropped_ceiling"
+        ]
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Edinburgh",
+        "sameAs": [
+          "https://en.wikipedia.org/wiki/Edinburgh",
+          "https://www.wikidata.org/entity/Q23436"
+        ]
+      }
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is drylining and how does it work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Drylining is the process of fixing plasterboard to walls, ceilings, or stud frames without using wet plaster. It creates a smooth surface ready for painting or decorating. Our team measures, cuts, and fixes boards precisely, then tapes and joints the seams for an invisible finish.",
+            "about": {
+              "@type": "Thing",
+              "name": "Drywall",
+              "sameAs": "https://en.wikipedia.org/wiki/Drywall"
+            }
+          }
+        }
+      ]
+    }
+  </script>
+
   <!-- Inline Form Handler Script -->
   <script>
     (function() {
@@ -255,7 +455,8 @@ const schema = {
         fetch(form.action, {
           method: 'POST',
           body: JSON.stringify(payload),
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
+          mode: 'no-cors'
         }).then(function(r) {
           if (r.ok || r.status === 0) {
             if (msg) { msg.style.display = 'block'; msg.style.color = '#15803d'; msg.textContent = 'Thank you! We will be in touch within 24 hours.'; }

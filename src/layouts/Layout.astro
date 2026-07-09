@@ -10,6 +10,37 @@ const { title, description, canonical, schema, noindex } = Astro.props;
 const siteUrl = 'https://dryliningedinburgh.co.uk';
 const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
 const pageTitle = title.includes('Drylining Edinburgh') ? title : `${title} | Drylining Edinburgh`;
+
+const globalOrgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Drylining Edinburgh",
+  "url": "https://dryliningedinburgh.co.uk",
+  "@id": "https://dryliningedinburgh.co.uk/#business",
+  "sameAs": [
+    "https://www.wikidata.org/entity/Q23436",
+    "https://en.wikipedia.org/wiki/Edinburgh",
+    "https://www.wikidata.org/entity/Q385378"
+  ],
+  "knowsAbout": [
+    "https://en.wikipedia.org/wiki/Drywall",
+    "https://en.wikipedia.org/wiki/Plaster",
+    "https://en.wikipedia.org/wiki/Partition_wall",
+    "https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom",
+    "https://en.wikipedia.org/wiki/Construction_worker",
+    "https://en.wikipedia.org/wiki/General_contractor",
+    "https://en.wikipedia.org/wiki/Cold-formed_steel",
+    "https://en.wikipedia.org/wiki/Dropped_ceiling"
+  ],
+  "areaServed": {
+    "@type": "Place",
+    "name": "Edinburgh",
+    "sameAs": [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ]
+  }
+};
 ---
 <!DOCTYPE html>
 <html lang="en-GB">
@@ -20,9 +51,9 @@ const pageTitle = title.includes('Drylining Edinburgh') ? title : `${title} | Dr
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalUrl} />
   {noindex && <meta name="robots" content="noindex" />}
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#C41E3A" />
@@ -47,6 +78,7 @@ const pageTitle = title.includes('Drylining Edinburgh') ? title : `${title} | Dr
     gtag('js', new Date());
     gtag('config', 'G-0C6E28VESS');
   </script>
+  <script type="application/ld+json" set:html={JSON.stringify(globalOrgSchema)} />
   {schema && (
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   )}
@@ -102,6 +134,7 @@ const pageTitle = title.includes('Drylining Edinburgh') ? title : `${title} | Dr
         <a href="/areas/" style="font-weight: 500; color: var(--text);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text)'">Areas</a>
         <a href="/about/" style="font-weight: 500; color: var(--text);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text)'">About</a>
         <a href="/faq/" style="font-weight: 500; color: var(--text);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text)'">FAQ</a>
+        <a href="/resources/dry-lining-cost-guide/" style="font-weight: 500; color: var(--text);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text)'">Resources</a>
         <a href="/contact/" style="font-weight: 500; color: var(--text);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text)'">Contact</a>
         <a href="/get-quote/" class="btn btn-primary" style="padding: 0.625rem 1.25rem; font-size: 0.875rem;">Get a Quote</a>
       </nav>
@@ -113,6 +146,7 @@ const pageTitle = title.includes('Drylining Edinburgh') ? title : `${title} | Dr
       <a href="/areas/" style="font-weight: 500; color: var(--text); padding: 0.5rem 0;">Areas</a>
       <a href="/about/" style="font-weight: 500; color: var(--text); padding: 0.5rem 0;">About</a>
       <a href="/faq/" style="font-weight: 500; color: var(--text); padding: 0.5rem 0;">FAQ</a>
+      <a href="/resources/dry-lining-cost-guide/" style="font-weight: 500; color: var(--text); padding: 0.5rem 0;">Resources</a>
       <a href="/contact/" style="font-weight: 500; color: var(--text); padding: 0.5rem 0;">Contact</a>
       <a href="/get-quote/" class="btn btn-primary" style="text-align: center;">Get a Quote</a>
     </nav>
@@ -148,8 +182,7 @@ const pageTitle = title.includes('Drylining Edinburgh') ? title : `${title} | Dr
         <div>
           <h4 style="font-weight: 700; margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">Contact</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; color: #aaa; font-size: 0.9375rem;">
-            <li>📞 <a href="tel:0131XXXXXXX" style="color: #aaa;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#aaa'">0131 XXX XXXX</a></li>
-            <li>✉️ <a href="mailto:info@dryliningedinburgh.co.uk" style="color: #aaa;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#aaa'">info@dryliningedinburgh.co.uk</a></li>
+            <li>📞 <a href="tel:08008203090" style="color: #aaa;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#aaa'">FREEPHONE 0800 820 3090</a></li>
             <li><a href="/get-quote/" class="btn btn-primary" style="margin-top: 0.5rem; display: inline-block;">Get a Free Quote</a></li>
           </ul>
         </div>

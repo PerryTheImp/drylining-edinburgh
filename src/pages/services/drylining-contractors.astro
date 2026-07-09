@@ -1,42 +1,195 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-const schema = {
+
+const serviceName = 'Drylining Contractors';
+const serviceSlug = 'drylining-contractors';
+
+const faqJsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "serviceType": "Drylining Contractors",
-      "provider": { "@type": "LocalBusiness", "name": "Drylining Edinburgh", "@id": "https://dryliningedinburgh.co.uk/#business" },
-      "areaServed": { "@type": "City", "name": "Edinburgh" },
-      "description": "Expert drylining contractors in Edinburgh providing residential and commercial drylining installation. CSCS accredited, fully insured, free quotes."
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://dryliningedinburgh.co.uk/services/" },
-        { "@type": "ListItem", "position": 3, "name": "Drylining Contractors", "item": "https://dryliningedinburgh.co.uk/services/drylining-contractors/" }
-      ]
-    }
-  ]
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is drylining?","acceptedAnswer":{"@type":"Answer","text":"Drylining is the process of fixing plasterboard to interior walls and ceilings without using wet plaster. It is faster, cleaner, and provides a smooth finish ready for decorating or painting."}},
+    {"@type":"Question","name":"How long does drylining take?","acceptedAnswer":{"@type":"Answer","text":"A typical room takes 1-2 days depending on size and complexity. Whole-property drylining can take 1-2 weeks. We will give you a clear timeline during your quote."}},
+    {"@type":"Question","name":"Is drylining cheaper than traditional plastering?","acceptedAnswer":{"@type":"Answer","text":"Drylining is generally more cost-effective than wet plastering for large areas. It requires less drying time, less labour, and produces minimal mess."}},
+    {"@type":"Question","name":"Can drylining include insulation?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install insulation-backed plasterboard to improve thermal performance and meet Part L building regulations."}},
+    {"@type":"Question","name":"Do you provide a guarantee?","acceptedAnswer":{"@type":"Answer","text":"Yes. All our drylining work comes with a 12-month workmanship guarantee. We also use manufacturer-guaranteed materials from British Gypsum and Knauf."}},
+    {"@type":"Question","name":"Is drylining suitable for bathrooms?","acceptedAnswer":{"@type":"Answer","text":"Yes, when moisture-resistant plasterboard is used. We also recommend appropriate tanking in high-moisture areas."}},
+    {"@type":"Question","name":"What areas do you cover?","acceptedAnswer":{"@type":"Answer","text":"We provide drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Drylining Contractors Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q213825",
+  sameAs: "https://en.wikipedia.org/wiki/Drywall",
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business",
+    knowsAbout: ['https://en.wikipedia.org/wiki/Drywall', 'https://en.wikipedia.org/wiki/Plaster', 'https://en.wikipedia.org/wiki/Partition_wall', 'https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom', 'https://en.wikipedia.org/wiki/Construction_worker', 'https://en.wikipedia.org/wiki/General_contractor', 'https://en.wikipedia.org/wiki/Cold-formed_steel', 'https://en.wikipedia.org/wiki/Dropped_ceiling'],
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and surrounding areas",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+  },
 };
 ---
-<Layout title="Drylining Contractors Edinburgh | Expert Installation & Finishing" description="Professional drylining contractors in Edinburgh. Residential & commercial drylining, plasterboard installation, taping & jointing. Free quotes. CSCS accredited." canonical="/services/drylining-contractors/" schema={schema}>
-<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
+
+<Layout title="Drylining Contractors Edinburgh | Expert Installation & Finishing" description="Professional drylining contractors in Edinburgh. Residential & commercial drylining, plasterboard installation, taping & jointing. Free quotes. CSCS accredited." canonical="/services/drylining-contractors/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<!-- Hero -->
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
   <img src="/images/service-drylining.jpg" alt="Drylining contractors working on a construction site in Edinburgh" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
-  <div class="container" style="position:relative;z-index:1;text-align:center;">
-    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Drylining Contractors in Edinburgh</h1>
-    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Expert drylining installation for homes and businesses across Edinburgh. Smooth finishes, fast turnaround, and quality you can trust.</p>
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Drylining Contractors</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Expert Drylining Contractors in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Professional drylining installation for homes and businesses across Edinburgh. Smooth finishes, fast turnaround, and quality you can trust.</p>
   </div>
 </section>
+
 <section class="section"><div class="container" style="max-width:900px;">
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Drylining is one of the most efficient ways to create smooth, modern interior walls and ceilings without the mess and drying time of traditional wet plastering. At <strong>Drylining Edinburgh</strong>, our experienced contractors install plasterboard to timber or metal stud frames, tape the joints, and finish the surface so it is ready for painting or wallpapering.</p>
-<img src="/images/service-drylining.jpg" alt="Professional drylining installation on an Edinburgh construction site" style="border-radius:var(--radius);width:100%;max-width:800px;margin:2rem auto;display:block;box-shadow:var(--shadow-lg);">
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We work on projects of all sizes - from single-room residential renovations to multi-floor commercial fit-outs. Our team is CSCS accredited and carries £1 million public liability insurance, giving you complete confidence on every site.</p>
+
+<!-- TL;DR -->
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Professional drylining and plasterboard installation for walls and ceilings across Edinburgh and the Lothians. CSCS-registered operatives, free quotes, and 12-month workmanship guarantee.</p>
+</div>
+
+<!-- What We Offer -->
 <h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">What Our Drylining Service Includes</h2>
-<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li>Site survey and measurement</li><li>Plasterboard cutting and fitting</li><li>Timber and metal stud frame construction</li><li>Professional taping and jointing</li><li>Corner bead and trim installation</li><li>Full cleanup and waste removal</li></ul>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our drylining service is tailored to domestic and commercial clients across Edinburgh and surrounding areas. We combine quality materials, skilled tradesmen, and efficient project management to deliver results that last.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Site survey and measurement</li>
+  <li>Plasterboard cutting and fitting</li>
+  <li>Timber and metal stud frame construction</li>
+  <li>Professional taping and jointing</li>
+  <li>Corner bead and trim installation</li>
+  <li>Insulation-backed drylining for thermal upgrades</li>
+  <li>Soundproofing solutions for noise reduction</li>
+  <li>Fire-rated plasterboard for safety compliance</li>
+  <li>Full cleanup and waste removal</li>
+</ul>
+
+<!-- Why Choose Us -->
 <h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Choose Our Drylining Contractors?</h2>
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We understand that every project has its own timeline, budget, and quality expectations. That is why we tailor our approach to each client. Whether you are a homeowner renovating a kitchen in Leith or a project manager overseeing a new office build in the city centre, we deliver consistent, professional results with minimal disruption.</p>
-<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Drylining Quote</a></div>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>CSCS-registered team:</strong> All our drylining operatives hold valid CSCS cards and are fully insured for domestic and commercial work.</li>
+  <li><strong>15+ years experience:</strong> We have completed drylining projects ranging from single rooms to multi-floor commercial fit-outs.</li>
+  <li><strong>Free, detailed quotes:</strong> No obligation site visits with clear breakdowns of labour, materials, and timeline.</li>
+  <li><strong>Building regulation compliance:</strong> We ensure all work meets Part L thermal efficiency and Part B fire safety standards.</li>
+  <li><strong>Fast turnaround:</strong> Drylining is significantly faster than wet plastering, reducing project downtime.</li>
+</ul>
+
+<!-- Materials -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials & Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use industry-leading products from trusted manufacturers to ensure durability, compliance, and a premium finish.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>British Gypsum Gyproc plasterboard (standard, moisture-resistant, fire-rated, soundbloc)</li>
+  <li>Knauf plasterboard and jointing systems</li>
+  <li>Metal C-studs and U-tracks (50mm, 70mm, 92mm profiles)</li>
+  <li>Gyproc drywall adhesive for dot and dab applications</li>
+  <li>Joint compound, paper tape, and scrim tape</li>
+  <li>Insulation-backed plasterboard (Celotex, Kingspan, Rockwool)</li>
+  <li>Fire-rated intumescent sealants and cavity barriers</li>
+</ul>
+
+<!-- Applications -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications & Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our drylining services are suitable for a wide range of building types and project sizes across Edinburgh.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>New build residential properties and housing estates</li>
+  <li>Home renovations, extensions, and loft conversions</li>
+  <li>Commercial office fit-outs and refurbishments</li>
+  <li>Retail shop fitting and display wall construction</li>
+  <li>School and education building upgrades</li>
+  <li>Healthcare and care home interior works</li>
+  <li>Industrial unit partitioning and warehouse linings</li>
+</ul>
+
+<!-- How It Works -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will assess your project and provide a detailed, no-obligation quote.</li>
+  <li><strong>Detailed Plan:</strong> We confirm materials, timeline, and specifications. No hidden extras - everything is agreed upfront.</li>
+  <li><strong>Professional Installation:</strong> Our CSCS-registered team works cleanly, efficiently, and to the highest standards.</li>
+  <li><strong>Quality Check & Handover:</strong> We inspect every detail, ensure compliance, and leave your space ready for the next stage.</li>
+</ol>
+
+<!-- Areas -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Drylining Services Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide drylining services in the following areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<!-- Related Services -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book drylining often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/partition-walls/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Partition Walls</a>
+  <a href="/services/taping-and-jointing/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Taping & Jointing</a>
+  <a href="/services/plasterboard-installation/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Plasterboard Installation</a>
+  <a href="/services/suspended-ceilings/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Suspended Ceilings</a>
+</div>
+
+<!-- CTA -->
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Drylining</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Drylining is the process of fixing plasterboard to interior walls and ceilings without using wet plaster. It is faster, cleaner, and provides a smooth finish ready for decorating or painting.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How long does drylining take?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">A typical room takes 1-2 days depending on size and complexity. Whole-property drylining can take 1-2 weeks. We will give you a clear timeline during your quote.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Is drylining cheaper than traditional plastering?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Drylining is generally more cost-effective than wet plastering for large areas. It requires less drying time, less labour, and produces minimal mess.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can drylining include insulation?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We install insulation-backed plasterboard to improve thermal performance and meet Part L building regulations.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Do you provide a guarantee?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. All our drylining work comes with a 12-month workmanship guarantee. We also use manufacturer-guaranteed materials from British Gypsum and Knauf.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Is drylining suitable for bathrooms?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes, when moisture-resistant plasterboard is used. We also recommend appropriate tanking in high-moisture areas.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas.</p>
+  </div>
+</div>
+
 </div></section>
 </Layout>
