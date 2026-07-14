@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import paas from '../../data/paas.json';
+import state from '../../data/paa-state.json';
+
+const generated = state.generated ?? [];
+const remaining = Math.max(paas.length - generated.length, 0);
+---
+
+<Layout
+  title="People Also Ask | Drylining Edinburgh"
+  description="Daily People Also Ask dry lining pages for Edinburgh. New question pages publish one per day until the list is complete."
+  canonical="/paa/"
+>
+  <main class="container" style="padding: 34px 0 70px;">
+    <article class="card" style="padding: 28px; max-width: 860px;">
+      <header style="margin-bottom: 22px;">
+        <h1 style="margin: 0 0 10px; font-size: clamp(26px, 4vw, 36px); line-height: 1.15;">People Also Ask Pages</h1>
+        <p style="margin: 0; color: var(--text-light); line-height: 1.65;">
+          We publish one new dry lining PAA page every day. This hub shows the pages already generated and tracks what is still to come.
+        </p>
+      </header>
+
+      <section style="background: rgba(196,30,58,0.05); border-left: 4px solid var(--primary); padding: 16px 18px; border-radius: 0 10px 10px 0; margin-bottom: 24px;">
+        <p style="margin: 0; line-height: 1.7;">
+          <strong>{generated.length}</strong> of <strong>{paas.length}</strong> pages are live.
+          {remaining > 0 ? ` ${remaining} more pages will be published automatically.` : ' All pages have been published.'}
+        </p>
+      </section>
+
+      {generated.length > 0 ? (
+        <div>
+          <h2 style="font-size: 22px; margin: 0 0 14px;">Live Pages</h2>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 12px;">
+            {generated.map((entry) => (
+              <li style="border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; background: #fff;">
+                <a href={`/paa/${entry.slug}/`} style="font-weight: 700; color: var(--text); text-decoration: none; line-height: 1.45;">
+                  {entry.question}
+                </a>
+                <div style="margin-top: 6px; font-size: 13px; color: var(--text-light);">
+                  Published {entry.createdAt}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <p style="margin: 0; color: var(--text-light); line-height: 1.7;">
+          The first page will appear here when the daily generator runs.
+        </p>
+      )}
+
+      <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="/faq/" class="btn btn-outline">View FAQ</a>
+        <a href="/get-quote/" class="btn btn-primary">Get a Quote</a>
+      </div>
+    </article>
+  </main>
+</Layout>

@@ -1,19 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FAQItem from '../components/FAQItem.astro';
+import paas from '../data/paas.json';
 
-const faqs = [
-  { question: 'What is drylining and how does it work?', answer: 'Drylining is the process of fixing plasterboard to walls, ceilings, or stud frames without using wet plaster. It creates a smooth surface ready for painting or decorating. Our team measures, cuts, and fixes boards precisely, then tapes and joints the seams for an invisible finish.' },
-  { question: 'How long does a typical drylining project take?', answer: 'Most residential rooms can be drylined in 1–2 days. Larger commercial projects depend on scale, but our experienced crews work efficiently to minimise downtime. We provide a clear timeline with every quote.' },
-  { question: 'Do you offer free, no-obligation quotes?', answer: 'Yes. We provide completely free quotes for all drylining, partition wall, and suspended ceiling projects in Edinburgh and surrounding areas. Simply fill out our quote form or call us to arrange a site visit.' },
-  { question: 'Are your drylining contractors fully insured?', answer: 'Absolutely. We carry £1 million public liability insurance, and all our drylining contractors are CSCS accredited. We also comply with health and safety regulations on every site.' },
-  { question: 'Can you work around our business hours?', answer: 'Yes. For commercial and office drylining projects in Edinburgh, we can schedule work outside business hours, during weekends, or in phases to minimise disruption to your operations.' },
-  { question: 'What is the difference between drylining and plastering?', answer: 'Traditional plastering involves applying wet plaster over brick or blockwork, which then needs time to dry. Drylining uses pre-made plasterboard sheets fixed to frames or adhesive, with joints filled using jointing compound. It is faster, cleaner, and produces less mess.' },
-  { question: 'Do I need building regulations approval for partition walls?', answer: 'Internal non-load-bearing partition walls generally do not require building regulations approval. However, if the wall affects fire safety, structural stability, or involves plumbing or electrics, approval may be needed. We can advise during your quote.' },
-  { question: 'What types of plasterboard do you use?', answer: 'We use standard wallboard, moisture-resistant boards for bathrooms and kitchens, fire-rated boards where required, and acoustic boards for sound insulation. We select the right board for each application.' },
-  { question: 'Can drylining improve insulation?', answer: 'Yes. Insulated plasterboard or adding insulation behind standard boards can significantly improve thermal efficiency. This is particularly beneficial for external walls and loft conversions in Edinburgh older properties.' },
-  { question: 'How do I prepare for a drylining project?', answer: 'Clear the area of furniture and valuables. Ensure access for our team and materials. We will handle protection, dust sheets, and cleanup, but a clear workspace helps us work faster and more safely.' },
-];
+const faqs = paas;
 
 const schema = {
   "@context": "https://schema.org",
