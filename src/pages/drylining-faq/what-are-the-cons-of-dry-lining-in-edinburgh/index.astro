@@ -1,0 +1,63 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const question = "What are the cons of dry lining in Edinburgh?";
+const answer = "Dry lining has several disadvantages to consider. It reduces the size of a room slightly because plasterboard, adhesive, framing and insulation are added inside the existing walls. Dry-lined surfaces can also feel less solid than traditional plaster and may be easier to damage through impact. Heavy shelves, televisions and cupboards often need specialist fixings or additional support behind the boards. Poor installation can lead to visible joints, cracking, hollow areas or condensation forming inside concealed cavities. Dry lining may also hide damp, structural movement or damaged masonry rather than resolving the cause. In older Edinburgh properties, unsuitable boards or vapour barriers can trap moisture in traditional stone walls. Careful assessment, correct materials and professional installation are therefore essential for a durable result.";
+const canonical = '/drylining-faq/what-are-the-cons-of-dry-lining-in-edinburgh/';
+const description = "Dry lining has several disadvantages to consider. It reduces the size of a room slightly because plasterboard, adhesive, framing and insulation are added ins...";
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: answer,
+          },
+        },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dryliningedinburgh.co.uk/' },
+        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/drylining-faq/' },
+        { '@type': 'ListItem', position: 3, name: "What are the cons of dry lining in Edinburgh?", item: 'https://dryliningedinburgh.co.uk/drylining-faq/what-are-the-cons-of-dry-lining-in-edinburgh/' },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="What are the cons of dry lining in Edinburgh? | Drylining Edinburgh"
+  description={description}
+  canonical={canonical}
+  schema={schema}
+>
+  <main class="container" style="padding: 34px 0 70px;">
+    <article class="card" style="padding: 28px; max-width: 860px;">
+      <header style="margin-bottom: 22px;">
+        <p style="margin: 0 0 10px; color: var(--primary); font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; font-size: 13px;">
+          People Also Ask
+        </p>
+        <h1 style="margin: 0; font-size: clamp(26px, 4vw, 36px); line-height: 1.15;">{question}</h1>
+      </header>
+
+      <section style="padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 22px;">
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text); white-space: pre-wrap;">{answer}</p>
+      </section>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="/drylining-faq/" class="btn btn-outline">Back to FAQ Hub</a>
+        <a href="/faq/" class="btn btn-outline">View FAQ</a>
+        <a href="/get-quote/" class="btn btn-primary">Get a Quote</a>
+      </div>
+    </article>
+  </main>
+</Layout>

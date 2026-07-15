@@ -1,5 +1,5 @@
 {
-  "nextIndex": 2,
+  "nextIndex": 3,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -9,6 +9,11 @@
     {
       "slug": "what-is-the-difference-between-drywall-and-drylining",
       "question": "What is the difference between drywall and drylining?",
+      "createdAt": "2026-07-15"
+    },
+    {
+      "slug": "what-are-the-cons-of-dry-lining-in-edinburgh",
+      "question": "What are the cons of dry lining in Edinburgh?",
       "createdAt": "2026-07-15"
     }
   ]

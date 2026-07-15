@@ -1,5 +1,27 @@
 {
   "framework": "astro",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/paa",
+      "destination": "/drylining-faq",
+      "statusCode": 301
+    },
+    {
+      "source": "/paa/",
+      "destination": "/drylining-faq/",
+      "statusCode": 301
+    },
+    {
+      "source": "/paa/:slug",
+      "destination": "/drylining-faq/:slug",
+      "statusCode": 301
+    },
+    {
+      "source": "/paa/:slug/",
+      "destination": "/drylining-faq/:slug/",
+      "statusCode": 301
+    }
+  ]
 }

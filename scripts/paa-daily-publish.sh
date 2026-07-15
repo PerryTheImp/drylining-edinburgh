@@ -24,7 +24,7 @@ if git diff --cached --quiet; then
   exit 0
 fi
 
-git commit -m "feat: add Edinburgh PAA page ${slug}"
+git commit -m "feat: add Edinburgh FAQ page ${slug}"
 git push origin main
 
 curl -fsSL "https://api.vercel.com/v1/integrations/deploy/prj_pisSftzEpJSGg0StHoID3np6gKZj/ms4AGymCqX" >/dev/null

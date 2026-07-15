@@ -5,7 +5,7 @@ const root = process.cwd();
 const dataPath = path.join(root, 'src/data/paas.json');
 const statePath = path.join(root, 'src/data/paa-state.json');
 const sitemapPath = path.join(root, 'public/sitemap.xml');
-const pagesDir = path.join(root, 'src/pages/paa');
+const pagesDir = path.join(root, 'src/pages/drylining-faq');
 const siteUrl = 'https://dryliningedinburgh.co.uk';
 
 function slugify(input) {
@@ -26,7 +26,7 @@ import Layout from '../../../layouts/Layout.astro';
 
 const question = ${JSON.stringify(question)};
 const answer = ${JSON.stringify(answer)};
-const canonical = '/paa/${slug}/';
+const canonical = '/drylining-faq/${slug}/';
 const description = ${JSON.stringify(description)};
 
 const schema = {
@@ -49,8 +49,8 @@ const schema = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: '${siteUrl}/' },
-        { '@type': 'ListItem', position: 2, name: 'PAA', item: '${siteUrl}/paa/' },
-        { '@type': 'ListItem', position: 3, name: ${JSON.stringify(question)}, item: '${siteUrl}/paa/${slug}/' },
+        { '@type': 'ListItem', position: 2, name: 'PAA', item: '${siteUrl}/drylining-faq/' },
+        { '@type': 'ListItem', position: 3, name: ${JSON.stringify(question)}, item: '${siteUrl}/drylining-faq/${slug}/' },
       ],
     },
   ],
@@ -77,7 +77,7 @@ const schema = {
       </section>
 
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="/paa/" class="btn btn-outline">Back to PAA Hub</a>
+        <a href="/drylining-faq/" class="btn btn-outline">Back to FAQ Hub</a>
         <a href="/faq/" class="btn btn-outline">View FAQ</a>
         <a href="/get-quote/" class="btn btn-primary">Get a Quote</a>
       </div>
@@ -121,8 +121,8 @@ async function main() {
   });
 
   await writeFile(statePath, `${JSON.stringify({ nextIndex: nextIndex + 1, generated }, null, 2)}\n`);
-  await updateSitemap(`${siteUrl}/paa/${slug}/`);
-  await updateSitemap(`${siteUrl}/paa/`);
+  await updateSitemap(`${siteUrl}/drylining-faq/${slug}/`);
+  await updateSitemap(`${siteUrl}/drylining-faq/`);
 
   process.stdout.write(`${slug}\n`);
 }
