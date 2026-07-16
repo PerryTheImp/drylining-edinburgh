@@ -1,0 +1,63 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const question = "What is the difference between a plasterer and a dryliner?";
+const answer = "A plasterer mainly works with wet plaster, applying it to walls and ceilings to create a smooth, solid finish. They may carry out skimming, rendering, patch repairs and restoration work. A dryliner specialises in installing plasterboard systems. This can include dot and dab boarding, metal stud partitions, suspended ceilings, insulation, acoustic systems and fire-rated walls. There is some overlap between the trades because many dry-lined walls are later skimmed by a plasterer, and some tradespeople are trained in both areas. The right professional depends on the work required. Choose a dryliner for plasterboard installation, partitions and framed systems. Choose a plasterer for wet plaster finishes, repairs and traditional surfaces. For larger projects, both trades may be involved at different stages.";
+const canonical = '/drylining-faq/what-is-the-difference-between-a-plasterer-and-a-dryliner/';
+const description = "A plasterer mainly works with wet plaster, applying it to walls and ceilings to create a smooth, solid finish. They may carry out skimming, rendering, patch...";
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: answer,
+          },
+        },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dryliningedinburgh.co.uk/' },
+        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/drylining-faq/' },
+        { '@type': 'ListItem', position: 3, name: "What is the difference between a plasterer and a dryliner?", item: 'https://dryliningedinburgh.co.uk/drylining-faq/what-is-the-difference-between-a-plasterer-and-a-dryliner/' },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="What is the difference between a plasterer and a dryliner? | Drylining Edinburgh"
+  description={description}
+  canonical={canonical}
+  schema={schema}
+>
+  <main class="container" style="padding: 34px 0 70px;">
+    <article class="card" style="padding: 28px; max-width: 860px;">
+      <header style="margin-bottom: 22px;">
+        <p style="margin: 0 0 10px; color: var(--primary); font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; font-size: 13px;">
+          People Also Ask
+        </p>
+        <h1 style="margin: 0; font-size: clamp(26px, 4vw, 36px); line-height: 1.15;">{question}</h1>
+      </header>
+
+      <section style="padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 22px;">
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text); white-space: pre-wrap;">{answer}</p>
+      </section>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="/drylining-faq/" class="btn btn-outline">Back to FAQ Hub</a>
+        <a href="/faq/" class="btn btn-outline">View FAQ</a>
+        <a href="/get-quote/" class="btn btn-primary">Get a Quote</a>
+      </div>
+    </article>
+  </main>
+</Layout>
