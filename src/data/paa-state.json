@@ -1,5 +1,5 @@
 {
-  "nextIndex": 4,
+  "nextIndex": 5,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -20,6 +20,11 @@
       "slug": "what-is-the-difference-between-a-plasterer-and-a-dryliner",
       "question": "What is the difference between a plasterer and a dryliner?",
       "createdAt": "2026-07-16"
+    },
+    {
+      "slug": "what-is-dry-lining-and-how-does-it-work",
+      "question": "What is dry lining and how does it work?",
+      "createdAt": "2026-07-17"
     }
   ]
 }
