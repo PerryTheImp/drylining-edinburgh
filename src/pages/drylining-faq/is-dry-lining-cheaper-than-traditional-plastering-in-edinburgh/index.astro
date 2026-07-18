@@ -1,0 +1,63 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const question = "Is dry lining cheaper than traditional plastering in Edinburgh?";
+const answer = "Dry lining is often cheaper than traditional plastering, especially where large areas or several rooms need to be completed. Plasterboard can be installed quickly, reducing labour time and allowing decorating to begin sooner. Traditional plastering normally requires several wet coats, skilled application and longer drying periods. However, the final cost depends on the condition of the walls and the materials required. Insulated, acoustic, moisture-resistant or fire-rated plasterboard can increase the cost. A framed system may also be needed where walls are badly uneven or additional insulation is required. Traditional plastering can still be the better choice when restoring original features or matching existing surfaces in an older property. Comparing both methods for the specific building will give a more accurate picture of value.";
+const canonical = '/drylining-faq/is-dry-lining-cheaper-than-traditional-plastering-in-edinburgh/';
+const description = "Dry lining is often cheaper than traditional plastering, especially where large areas or several rooms need to be completed. Plasterboard can be installed qu...";
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: answer,
+          },
+        },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dryliningedinburgh.co.uk/' },
+        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/drylining-faq/' },
+        { '@type': 'ListItem', position: 3, name: "Is dry lining cheaper than traditional plastering in Edinburgh?", item: 'https://dryliningedinburgh.co.uk/drylining-faq/is-dry-lining-cheaper-than-traditional-plastering-in-edinburgh/' },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Is dry lining cheaper than traditional plastering in Edinburgh? | Drylining Edinburgh"
+  description={description}
+  canonical={canonical}
+  schema={schema}
+>
+  <main class="container" style="padding: 34px 0 70px;">
+    <article class="card" style="padding: 28px; max-width: 860px;">
+      <header style="margin-bottom: 22px;">
+        <p style="margin: 0 0 10px; color: var(--primary); font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; font-size: 13px;">
+          People Also Ask
+        </p>
+        <h1 style="margin: 0; font-size: clamp(26px, 4vw, 36px); line-height: 1.15;">{question}</h1>
+      </header>
+
+      <section style="padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 22px;">
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text); white-space: pre-wrap;">{answer}</p>
+      </section>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="/drylining-faq/" class="btn btn-outline">Back to FAQ Hub</a>
+        <a href="/faq/" class="btn btn-outline">View FAQ</a>
+        <a href="/get-quote/" class="btn btn-primary">Get a Quote</a>
+      </div>
+    </article>
+  </main>
+</Layout>

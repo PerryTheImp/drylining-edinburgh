@@ -1,5 +1,5 @@
 {
-  "nextIndex": 5,
+  "nextIndex": 6,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -25,6 +25,11 @@
       "slug": "what-is-dry-lining-and-how-does-it-work",
       "question": "What is dry lining and how does it work?",
       "createdAt": "2026-07-17"
+    },
+    {
+      "slug": "is-dry-lining-cheaper-than-traditional-plastering-in-edinburgh",
+      "question": "Is dry lining cheaper than traditional plastering in Edinburgh?",
+      "createdAt": "2026-07-18"
     }
   ]
 }
