@@ -1,0 +1,63 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const question = "How long does dry lining take to install?";
+const answer = "Dry lining is generally quicker to install than traditional wet plaster. A straightforward room may be boarded within one or two days, although finishing the joints can add extra time. The full schedule depends on the size of the area, wall condition, ceiling height and whether timber or metal framing is required. Adding insulation, soundproofing or specialist plasterboard can also extend the job. After installation, the joints and screw heads must be taped and filled. Jointing compound may need several coats, with drying and sanding between each stage. If the surface is skimmed, additional drying time will be needed before painting. Larger properties, commercial projects and older buildings with difficult access may take considerably longer than a standard residential room.";
+const canonical = '/drylining-faq/how-long-does-dry-lining-take-to-install/';
+const description = "Dry lining is generally quicker to install than traditional wet plaster. A straightforward room may be boarded within one or two days, although finishing the...";
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: answer,
+          },
+        },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dryliningedinburgh.co.uk/' },
+        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/drylining-faq/' },
+        { '@type': 'ListItem', position: 3, name: "How long does dry lining take to install?", item: 'https://dryliningedinburgh.co.uk/drylining-faq/how-long-does-dry-lining-take-to-install/' },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="How long does dry lining take to install? | Drylining Edinburgh"
+  description={description}
+  canonical={canonical}
+  schema={schema}
+>
+  <main class="container" style="padding: 34px 0 70px;">
+    <article class="card" style="padding: 28px; max-width: 860px;">
+      <header style="margin-bottom: 22px;">
+        <p style="margin: 0 0 10px; color: var(--primary); font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; font-size: 13px;">
+          People Also Ask
+        </p>
+        <h1 style="margin: 0; font-size: clamp(26px, 4vw, 36px); line-height: 1.15;">{question}</h1>
+      </header>
+
+      <section style="padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 22px;">
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text); white-space: pre-wrap;">{answer}</p>
+      </section>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="/drylining-faq/" class="btn btn-outline">Back to FAQ Hub</a>
+        <a href="/faq/" class="btn btn-outline">View FAQ</a>
+        <a href="/get-quote/" class="btn btn-primary">Get a Quote</a>
+      </div>
+    </article>
+  </main>
+</Layout>

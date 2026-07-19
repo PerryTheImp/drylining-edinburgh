@@ -1,5 +1,5 @@
 {
-  "nextIndex": 6,
+  "nextIndex": 7,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -30,6 +30,11 @@
       "slug": "is-dry-lining-cheaper-than-traditional-plastering-in-edinburgh",
       "question": "Is dry lining cheaper than traditional plastering in Edinburgh?",
       "createdAt": "2026-07-18"
+    },
+    {
+      "slug": "how-long-does-dry-lining-take-to-install",
+      "question": "How long does dry lining take to install?",
+      "createdAt": "2026-07-19"
     }
   ]
 }
