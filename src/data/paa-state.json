@@ -1,5 +1,5 @@
 {
-  "nextIndex": 7,
+  "nextIndex": 8,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -35,6 +35,11 @@
       "slug": "how-long-does-dry-lining-take-to-install",
       "question": "How long does dry lining take to install?",
       "createdAt": "2026-07-19"
+    },
+    {
+      "slug": "what-are-the-main-benefits-of-dry-lining-in-edinburgh",
+      "question": "What are the main benefits of dry lining in Edinburgh?",
+      "createdAt": "2026-07-20"
     }
   ]
 }
