@@ -1,5 +1,5 @@
 {
-  "nextIndex": 8,
+  "nextIndex": 9,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -40,6 +40,11 @@
       "slug": "what-are-the-main-benefits-of-dry-lining-in-edinburgh",
       "question": "What are the main benefits of dry lining in Edinburgh?",
       "createdAt": "2026-07-20"
+    },
+    {
+      "slug": "is-dry-lining-suitable-for-older-properties-in-edinburgh",
+      "question": "Is dry lining suitable for older properties in Edinburgh?",
+      "createdAt": "2026-07-21"
     }
   ]
 }
