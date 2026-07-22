@@ -22,6 +22,8 @@ const areas = [
   { name: 'Falkirk', slug: 'falkirk', desc: 'Reliable drylining contractors covering Falkirk and the surrounding Central Scotland area.' },
   { name: 'Dalkeith', slug: 'dalkeith', desc: 'Drylining, partition walls, and plasterboard installation for Dalkeith and Midlothian.' },
   { name: 'Musselburgh', slug: 'musselburgh', desc: 'Drylining, partition walls, and suspended ceilings for Musselburgh and East Lothian.' },
+  { name: 'Peebles', slug: 'peebles', desc: 'Drylining and partition wall services for homes and businesses in Peebles and the Scottish Borders.' },
+  { name: 'East Kilbride', slug: 'east-kilbride', desc: 'Drylining, partition walls, and suspended ceilings for East Kilbride and South Lanarkshire.' },
 ];
 
 const faqs = paas.slice(0, 5).map((item) => ({
@@ -254,6 +256,46 @@ const schema = {
       <AreasGrid areas={areas} />
       <div style="text-align: center; margin-top: 3rem;">
         <a href="/areas/" class="btn btn-secondary">View All Areas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work -->
+  <section class="section" style="background: var(--accent);">
+    <div class="container">
+      <h2 class="section-title">How We Work</h2>
+      <p class="section-subtitle">From your initial enquiry to project completion, we follow a clear, professional process that delivers consistent quality on time and on budget.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem;">
+        <div class="card-hover" style="background: var(--white); border-radius: var(--radius); padding: 2rem; text-align: center; box-shadow: var(--shadow);">
+          <div style="background: var(--primary); color: var(--white); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 1.5rem;">1</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.75rem;">Free Site Survey</h3>
+          <p style="color: var(--text-light); font-size: 0.9375rem;">We visit your property to assess the project requirements, measure the space, and identify the most suitable drylining system for your building type.</p>
+        </div>
+        <div class="card-hover" style="background: var(--white); border-radius: var(--radius); padding: 2rem; text-align: center; box-shadow: var(--shadow);">
+          <div style="background: var(--primary); color: var(--white); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 1.5rem;">2</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.75rem;">Detailed Quotation</h3>
+          <p style="color: var(--text-light); font-size: 0.9375rem;">A clear, written breakdown of materials, labour, and timeline with no hidden charges. We explain every line item so you know exactly what you are paying for.</p>
+        </div>
+        <div class="card-hover" style="background: var(--white); border-radius: var(--radius); padding: 2rem; text-align: center; box-shadow: var(--shadow);">
+          <div style="background: var(--primary); color: var(--white); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 1.5rem;">3</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.75rem;">Scheduling</h3>
+          <p style="color: var(--text-light); font-size: 0.9375rem;">We agree a start date and timeline that works for you. Our CSCS-accredited team arrives on site prepared with all materials and tools needed.</p>
+        </div>
+        <div class="card-hover" style="background: var(--white); border-radius: var(--radius); padding: 2rem; text-align: center; box-shadow: var(--shadow);">
+          <div style="background: var(--primary); color: var(--white); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 1.5rem;">4</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.75rem;">Installation</h3>
+          <p style="color: var(--text-light); font-size: 0.9375rem;">Expert fixing of plasterboard using the most appropriate method, whether dot and dab, timber frame, or metal stud system, depending on your requirements.</p>
+        </div>
+        <div class="card-hover" style="background: var(--white); border-radius: var(--radius); padding: 2rem; text-align: center; box-shadow: var(--shadow);">
+          <div style="background: var(--primary); color: var(--white); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 1.5rem;">5</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.75rem;">Taping &amp; Finishing</h3>
+          <p style="color: var(--text-light); font-size: 0.9375rem;">Joints are taped, filled, and sanded to a smooth, crack-resistant finish. Optional skim coats can be applied for a traditional plastered appearance.</p>
+        </div>
+        <div class="card-hover" style="background: var(--white); border-radius: var(--radius); padding: 2rem; text-align: center; box-shadow: var(--shadow);">
+          <div style="background: var(--primary); color: var(--white); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 1.5rem;">6</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.75rem;">Quality Inspection</h3>
+          <p style="color: var(--text-light); font-size: 0.9375rem;">We carry out a thorough quality check, ensure the site is left clean and tidy, and provide a guarantee on all our work before handover.</p>
+        </div>
       </div>
     </div>
   </section>

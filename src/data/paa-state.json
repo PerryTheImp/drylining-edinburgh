@@ -1,5 +1,5 @@
 {
-  "nextIndex": 9,
+  "nextIndex": 10,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -45,6 +45,11 @@
       "slug": "is-dry-lining-suitable-for-older-properties-in-edinburgh",
       "question": "Is dry lining suitable for older properties in Edinburgh?",
       "createdAt": "2026-07-21"
+    },
+    {
+      "slug": "can-dry-lining-be-installed-over-stone-walls",
+      "question": "Can dry lining be installed over stone walls?",
+      "createdAt": "2026-07-22"
     }
   ]
 }
