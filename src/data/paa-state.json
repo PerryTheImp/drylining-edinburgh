@@ -1,5 +1,5 @@
 {
-  "nextIndex": 10,
+  "nextIndex": 11,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -50,6 +50,11 @@
       "slug": "can-dry-lining-be-installed-over-stone-walls",
       "question": "Can dry lining be installed over stone walls?",
       "createdAt": "2026-07-22"
+    },
+    {
+      "slug": "can-dry-lining-help-insulate-a-cold-room",
+      "question": "Can dry lining help insulate a cold room?",
+      "createdAt": "2026-07-23"
     }
   ]
 }
