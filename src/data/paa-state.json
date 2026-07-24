@@ -1,5 +1,5 @@
 {
-  "nextIndex": 11,
+  "nextIndex": 12,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -55,6 +55,11 @@
       "slug": "can-dry-lining-help-insulate-a-cold-room",
       "question": "Can dry lining help insulate a cold room?",
       "createdAt": "2026-07-23"
+    },
+    {
+      "slug": "does-dry-lining-improve-a-propertys-energy-efficiency",
+      "question": "Does dry lining improve a property's energy efficiency?",
+      "createdAt": "2026-07-24"
     }
   ]
 }
