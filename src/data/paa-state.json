@@ -1,5 +1,5 @@
 {
-  "nextIndex": 12,
+  "nextIndex": 13,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -60,6 +60,11 @@
       "slug": "does-dry-lining-improve-a-propertys-energy-efficiency",
       "question": "Does dry lining improve a property's energy efficiency?",
       "createdAt": "2026-07-24"
+    },
+    {
+      "slug": "can-dry-lining-help-reduce-condensation",
+      "question": "Can dry lining help reduce condensation?",
+      "createdAt": "2026-07-25"
     }
   ]
 }
