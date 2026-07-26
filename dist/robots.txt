@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://dryliningedinburgh.co.uk/sitemap.xml

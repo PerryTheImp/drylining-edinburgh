@@ -1,5 +1,5 @@
 {
-  "nextIndex": 17,
+  "nextIndex": 18,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -84,6 +84,11 @@
     {
       "slug": "can-dry-lining-cover-uneven-or-damaged-walls",
       "question": "Can dry lining cover uneven or damaged walls?",
+      "createdAt": "2026-07-26"
+    },
+    {
+      "slug": "how-thick-is-a-dry-lined-wall",
+      "question": "How thick is a dry-lined wall?",
       "createdAt": "2026-07-26"
     }
   ]
