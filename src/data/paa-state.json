@@ -1,5 +1,5 @@
 {
-  "nextIndex": 18,
+  "nextIndex": 19,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -89,6 +89,11 @@
     {
       "slug": "how-thick-is-a-dry-lined-wall",
       "question": "How thick is a dry-lined wall?",
+      "createdAt": "2026-07-26"
+    },
+    {
+      "slug": "can-ceilings-be-dry-lined",
+      "question": "Can ceilings be dry lined?",
       "createdAt": "2026-07-26"
     }
   ]
