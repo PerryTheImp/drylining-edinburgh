@@ -1,5 +1,5 @@
 {
-  "nextIndex": 14,
+  "nextIndex": 17,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -70,6 +70,21 @@
       "slug": "is-dry-lining-suitable-for-damp-walls",
       "question": "Is dry lining suitable for damp walls?",
       "createdAt": "2026-07-25"
+    },
+    {
+      "slug": "can-dry-lining-improve-soundproofing",
+      "question": "Can dry lining improve soundproofing?",
+      "createdAt": "2026-07-26"
+    },
+    {
+      "slug": "do-dry-lined-walls-need-to-be-plastered",
+      "question": "Do dry-lined walls need to be plastered?",
+      "createdAt": "2026-07-26"
+    },
+    {
+      "slug": "can-dry-lining-cover-uneven-or-damaged-walls",
+      "question": "Can dry lining cover uneven or damaged walls?",
+      "createdAt": "2026-07-26"
     }
   ]
 }
