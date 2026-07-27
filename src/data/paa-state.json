@@ -1,5 +1,5 @@
 {
-  "nextIndex": 19,
+  "nextIndex": 20,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -95,6 +95,11 @@
       "slug": "can-ceilings-be-dry-lined",
       "question": "Can ceilings be dry lined?",
       "createdAt": "2026-07-26"
+    },
+    {
+      "slug": "is-dry-lining-suitable-for-bathrooms-and-kitchens",
+      "question": "Is dry lining suitable for bathrooms and kitchens?",
+      "createdAt": "2026-07-27"
     }
   ]
 }
