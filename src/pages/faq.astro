@@ -1,51 +1,78 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import FAQItem from '../components/FAQItem.astro';
 import paas from '../data/paas.json';
 
-const faqs = paas;
+function toSlug(str: string): string {
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
 
 const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(f => ({
-        "@type": "Question",
-        "name": f.question,
-        "acceptedAnswer": { "@type": "Answer", "text": f.answer }
-      }))
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dryliningedinburgh.co.uk/' },
+        { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://dryliningedinburgh.co.uk/faq/' },
+      ],
     },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://dryliningedinburgh.co.uk/faq/" }
-      ]
-    }
-  ]
+  ],
 };
 ---
 
 <Layout
-  title="FAQ | Drylining Edinburgh - Common Questions Answered"
-  description="Find answers to common questions about drylining, partition walls, suspended ceilings, and our services in Edinburgh. Free quotes, CSCS accredited."
+  title="FAQ | Drylining Edinburgh"
+  description="Browse our most asked questions about drylining, partition walls, suspended ceilings and our services in Edinburgh. Click any question to read the full answer."
   canonical="/faq/"
   schema={schema}
 >
   <section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);overflow:hidden;">
-    <img src="/images/trust-badge.jpg" alt="Drylining Edinburgh safety and quality standards" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+    <img src="/images/trust-badge.jpg" alt="Drylining Edinburgh" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
     <div class="container" style="position:relative;z-index:1;text-align:center;">
       <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">Frequently Asked Questions</h1>
-      <p style="font-size: 1.0625rem; color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto;">Everything you need to know about our drylining services in Edinburgh. Can not find an answer? <a href="/contact/" style="color: var(--primary); text-decoration: underline;">Contact us</a>.</p>
+      <p style="font-size: 1.0625rem; color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto;">Browse our most asked questions below. Click any question to read the full answer.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container" style="max-width: 800px;">
-      {faqs.map(f => (
-        <FAQItem question={f.question} answer={f.answer} />
-      ))}
+      <ul style="list-style: none; padding: 0; margin: 0;">
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/how-much-does-drylining-cost-in-edinburgh" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">How much does drylining cost in Edinburgh?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/what-is-the-difference-between-drywall-and-drylining" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">What is the difference between drywall and drylining?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/what-are-the-cons-of-dry-lining-in-edinburgh" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">What are the cons of dry lining in Edinburgh?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/what-is-the-difference-between-a-plasterer-and-a-dryliner" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">What is the difference between a plasterer and a dryliner?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/what-is-dry-lining-and-how-does-it-work" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">What is dry lining and how does it work?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/is-dry-lining-cheaper-than-traditional-plastering-in-edinburgh" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Is dry lining cheaper than traditional plastering in Edinburgh?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/how-long-does-dry-lining-take-to-install" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">How long does dry lining take to install?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/what-are-the-main-benefits-of-dry-lining-in-edinburgh" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">What are the main benefits of dry lining in Edinburgh?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/is-dry-lining-suitable-for-older-properties-in-edinburgh" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Is dry lining suitable for older properties in Edinburgh?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/can-dry-lining-be-installed-over-stone-walls" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Can dry lining be installed over stone walls?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/can-dry-lining-help-insulate-a-cold-room" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Can dry lining help insulate a cold room?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/does-dry-lining-improve-a-propertys-energy-efficiency" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Does dry lining improve a property's energy efficiency?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/can-dry-lining-help-reduce-condensation" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Can dry lining help reduce condensation?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/is-dry-lining-suitable-for-damp-walls" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Is dry lining suitable for damp walls?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/can-dry-lining-improve-soundproofing" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Can dry lining improve soundproofing?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/do-dry-lined-walls-need-to-be-plastered" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Do dry-lined walls need to be plastered?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/can-dry-lining-cover-uneven-or-damaged-walls" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Can dry lining cover uneven or damaged walls?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/how-thick-is-a-dry-lined-wall" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">How thick is a dry-lined wall?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/can-ceilings-be-dry-lined" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Can ceilings be dry lined?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/is-dry-lining-suitable-for-bathrooms-and-kitchens" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Is dry lining suitable for bathrooms and kitchens?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/what-is-dot-and-dab-dry-lining" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">What is dot and dab dry lining?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/what-is-metal-frame-dry-lining" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">What is metal frame dry lining?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/is-insulated-plasterboard-worth-using" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Is insulated plasterboard worth using?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/can-pipes-and-electrical-cables-be-hidden-behind-dry-lining" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Can pipes and electrical cables be hidden behind dry lining?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/does-dry-lining-reduce-the-size-of-a-room" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Does dry lining reduce the size of a room?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/can-dry-lining-be-used-in-loft-conversions" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Can dry lining be used in loft conversions?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/how-long-does-dry-lining-last" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">How long does dry lining last?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/do-i-need-planning-permission-for-dry-lining-in-edinburgh" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Do I need planning permission for dry lining in Edinburgh?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/is-dry-lining-suitable-for-commercial-properties" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">Is dry lining suitable for commercial properties?</a></li>
+<li style="border-bottom: 1px solid var(--border); padding: 16px 0;"><a href="/drylining-faq/how-do-i-choose-a-reliable-dry-lining-contractor-in-edinburgh" style="font-size: 1.1rem; font-weight: 600; color: var(--primary); text-decoration: none;">How do I choose a reliable dry lining contractor in Edinburgh?</a></li>
+      </ul>
       <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--accent); border-radius: var(--radius);">
         <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.75rem;">Still Have Questions?</h3>
         <p style="color: var(--text-light); margin-bottom: 1.5rem;">Our team is happy to help. Reach out for a free consultation or quote.</p>

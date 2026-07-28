@@ -3,31 +3,26 @@ import Layout from '../../../layouts/Layout.astro';
 
 const question = "What is dry lining and how does it work?";
 const answer = "Dry lining is a method of finishing internal walls and ceilings using plasterboard instead of applying several coats of wet plaster. The boards can be fixed directly to brick, block or stone with drywall adhesive, commonly called dot and dab, or attached to a timber or metal frame. Once installed, the joints and screw heads are covered with tape and jointing compound. The surface can then be sanded, painted, wallpapered or finished with a thin plaster skim. Dry lining is widely used in new builds, renovations, loft conversions and commercial properties because it is relatively quick and creates less moisture than traditional plastering. It can also conceal uneven walls, wiring and pipework while providing space for insulation or soundproofing materials.";
+const description = "Dry lining is a method of finishing internal walls and ceilings using plasterboard instead of applying several coats of wet plaster. The boards can be fixe";
 const canonical = '/drylining-faq/what-is-dry-lining-and-how-does-it-work/';
-const description = "Dry lining is a method of finishing internal walls and ceilings using plasterboard instead of applying several coats of wet plaster. The boards can be fixed...";
 
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: answer,
-          },
-        },
-      ],
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dryliningedinburgh.co.uk/' },
-        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/drylining-faq/' },
-        { '@type': 'ListItem', position: 3, name: "What is dry lining and how does it work?", item: 'https://dryliningedinburgh.co.uk/drylining-faq/what-is-dry-lining-and-how-does-it-work/' },
+        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/faq/' },
+        { '@type': 'ListItem', position: 3, name: question, item: 'https://dryliningedinburgh.co.uk/drylining-faq/what-is-dry-lining-and-how-does-it-work/' },
       ],
     },
   ],
@@ -35,7 +30,7 @@ const schema = {
 ---
 
 <Layout
-  title="What is dry lining and how does it work? | Drylining Edinburgh"
+  title={question + ' | Drylining Edinburgh'}
   description={description}
   canonical={canonical}
   schema={schema}
@@ -50,12 +45,21 @@ const schema = {
       </header>
 
       <section style="padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 22px;">
-        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text); white-space: pre-wrap;">{answer}</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text);">{answer}</p>
       </section>
 
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="/drylining-faq/" class="btn btn-outline">Back to FAQ Hub</a>
-        <a href="/faq/" class="btn btn-outline">View FAQ</a>
+      <section style="margin: 24px 0; padding: 18px 0; border-top: 1px solid var(--border);">
+        <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text);">Related Questions</h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+<li><a href="/drylining-faq/how-much-does-drylining-cost-in-edinburgh">How much does drylining cost in Edinburgh?</a></li>
+<li><a href="/drylining-faq/what-is-the-difference-between-drywall-and-drylining">What is the difference between drywall and drylining?</a></li>
+<li><a href="/drylining-faq/what-are-the-cons-of-dry-lining-in-edinburgh">What are the cons of dry lining in Edinburgh?</a></li>
+<li><a href="/drylining-faq/what-is-the-difference-between-a-plasterer-and-a-dryliner">What is the difference between a plasterer and a dryliner?</a></li>
+        </ul>
+      </section>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
+        <a href="/faq/" class="btn btn-outline">All FAQs</a>
         <a href="/get-quote/" class="btn btn-primary">Get a Quote</a>
       </div>
     </article>

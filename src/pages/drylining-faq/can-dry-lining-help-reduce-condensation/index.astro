@@ -3,31 +3,26 @@ import Layout from '../../../layouts/Layout.astro';
 
 const question = "Can dry lining help reduce condensation?";
 const answer = "Dry lining can help reduce condensation when it includes insulation that raises the internal surface temperature of cold walls. Warmer wall surfaces are less likely to attract moisture from humid indoor air. This can be useful in older properties with solid stone walls. However, dry lining does not automatically solve condensation. Poor ventilation, high humidity, drying clothes indoors and ineffective extractor fans can continue to create moisture problems. The wall system must also be designed carefully so condensation does not form behind the plasterboard. Gaps, cold bridges and incorrectly positioned vapour control layers can increase this risk. The best solution usually combines suitable insulation with reliable heating and ventilation. Existing damp, leaks or water penetration should always be repaired before the wall is covered.";
+const description = "Dry lining can help reduce condensation when it includes insulation that raises the internal surface temperature of cold walls. Warmer wall surfaces are le";
 const canonical = '/drylining-faq/can-dry-lining-help-reduce-condensation/';
-const description = "Dry lining can help reduce condensation when it includes insulation that raises the internal surface temperature of cold walls. Warmer wall surfaces are less...";
 
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: answer,
-          },
-        },
-      ],
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dryliningedinburgh.co.uk/' },
-        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/drylining-faq/' },
-        { '@type': 'ListItem', position: 3, name: "Can dry lining help reduce condensation?", item: 'https://dryliningedinburgh.co.uk/drylining-faq/can-dry-lining-help-reduce-condensation/' },
+        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/faq/' },
+        { '@type': 'ListItem', position: 3, name: question, item: 'https://dryliningedinburgh.co.uk/drylining-faq/can-dry-lining-help-reduce-condensation/' },
       ],
     },
   ],
@@ -35,7 +30,7 @@ const schema = {
 ---
 
 <Layout
-  title="Can dry lining help reduce condensation? | Drylining Edinburgh"
+  title={question + ' | Drylining Edinburgh'}
   description={description}
   canonical={canonical}
   schema={schema}
@@ -50,12 +45,21 @@ const schema = {
       </header>
 
       <section style="padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 22px;">
-        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text); white-space: pre-wrap;">{answer}</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text);">{answer}</p>
       </section>
 
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="/drylining-faq/" class="btn btn-outline">Back to FAQ Hub</a>
-        <a href="/faq/" class="btn btn-outline">View FAQ</a>
+      <section style="margin: 24px 0; padding: 18px 0; border-top: 1px solid var(--border);">
+        <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text);">Related Questions</h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+<li><a href="/drylining-faq/how-much-does-drylining-cost-in-edinburgh">How much does drylining cost in Edinburgh?</a></li>
+<li><a href="/drylining-faq/what-is-the-difference-between-drywall-and-drylining">What is the difference between drywall and drylining?</a></li>
+<li><a href="/drylining-faq/what-are-the-cons-of-dry-lining-in-edinburgh">What are the cons of dry lining in Edinburgh?</a></li>
+<li><a href="/drylining-faq/what-is-the-difference-between-a-plasterer-and-a-dryliner">What is the difference between a plasterer and a dryliner?</a></li>
+        </ul>
+      </section>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
+        <a href="/faq/" class="btn btn-outline">All FAQs</a>
         <a href="/get-quote/" class="btn btn-primary">Get a Quote</a>
       </div>
     </article>

@@ -3,31 +3,26 @@ import Layout from '../../../layouts/Layout.astro';
 
 const question = "Is dry lining suitable for bathrooms and kitchens?";
 const answer = "Bathrooms and kitchens can be dry lined, but the correct boards and moisture protection must be used. Moisture-resistant plasterboard is suitable for areas exposed to humidity and occasional splashing. In shower enclosures, wet rooms and places exposed to direct water, a proper waterproof backer board or tanking system is usually more appropriate. Joints, edges, corners and openings around pipes should be sealed carefully to prevent moisture reaching the cavity. Good ventilation is also essential because kitchens and bathrooms regularly produce steam. Dry lining should never be installed over active leaks, damp masonry or damaged plumbing. These problems need to be repaired first. An experienced contractor can specify different boards for separate areas depending on the likely level of water and humidity exposure.";
+const description = "Bathrooms and kitchens can be dry lined, but the correct boards and moisture protection must be used. Moisture-resistant plasterboard is suitable for areas";
 const canonical = '/drylining-faq/is-dry-lining-suitable-for-bathrooms-and-kitchens/';
-const description = "Bathrooms and kitchens can be dry lined, but the correct boards and moisture protection must be used. Moisture-resistant plasterboard is suitable for areas e...";
 
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: answer,
-          },
-        },
-      ],
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dryliningedinburgh.co.uk/' },
-        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/drylining-faq/' },
-        { '@type': 'ListItem', position: 3, name: "Is dry lining suitable for bathrooms and kitchens?", item: 'https://dryliningedinburgh.co.uk/drylining-faq/is-dry-lining-suitable-for-bathrooms-and-kitchens/' },
+        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/faq/' },
+        { '@type': 'ListItem', position: 3, name: question, item: 'https://dryliningedinburgh.co.uk/drylining-faq/is-dry-lining-suitable-for-bathrooms-and-kitchens/' },
       ],
     },
   ],
@@ -35,7 +30,7 @@ const schema = {
 ---
 
 <Layout
-  title="Is dry lining suitable for bathrooms and kitchens? | Drylining Edinburgh"
+  title={question + ' | Drylining Edinburgh'}
   description={description}
   canonical={canonical}
   schema={schema}
@@ -50,12 +45,21 @@ const schema = {
       </header>
 
       <section style="padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 22px;">
-        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text); white-space: pre-wrap;">{answer}</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text);">{answer}</p>
       </section>
 
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="/drylining-faq/" class="btn btn-outline">Back to FAQ Hub</a>
-        <a href="/faq/" class="btn btn-outline">View FAQ</a>
+      <section style="margin: 24px 0; padding: 18px 0; border-top: 1px solid var(--border);">
+        <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text);">Related Questions</h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+<li><a href="/drylining-faq/how-much-does-drylining-cost-in-edinburgh">How much does drylining cost in Edinburgh?</a></li>
+<li><a href="/drylining-faq/what-is-the-difference-between-drywall-and-drylining">What is the difference between drywall and drylining?</a></li>
+<li><a href="/drylining-faq/what-are-the-cons-of-dry-lining-in-edinburgh">What are the cons of dry lining in Edinburgh?</a></li>
+<li><a href="/drylining-faq/what-is-the-difference-between-a-plasterer-and-a-dryliner">What is the difference between a plasterer and a dryliner?</a></li>
+        </ul>
+      </section>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
+        <a href="/faq/" class="btn btn-outline">All FAQs</a>
         <a href="/get-quote/" class="btn btn-primary">Get a Quote</a>
       </div>
     </article>
