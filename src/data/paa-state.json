@@ -1,5 +1,5 @@
 {
-  "nextIndex": 21,
+  "nextIndex": 22,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -105,6 +105,11 @@
       "slug": "what-is-dot-and-dab-dry-lining",
       "question": "What is dot and dab dry lining?",
       "createdAt": "2026-07-28"
+    },
+    {
+      "slug": "what-is-metal-frame-dry-lining",
+      "question": "What is metal frame dry lining?",
+      "createdAt": "2026-07-29"
     }
   ]
 }
