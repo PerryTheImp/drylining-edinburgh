@@ -1,5 +1,5 @@
 {
-  "nextIndex": 22,
+  "nextIndex": 23,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -110,6 +110,11 @@
       "slug": "what-is-metal-frame-dry-lining",
       "question": "What is metal frame dry lining?",
       "createdAt": "2026-07-29"
+    },
+    {
+      "slug": "is-insulated-plasterboard-worth-using",
+      "question": "Is insulated plasterboard worth using?",
+      "createdAt": "2026-07-30"
     }
   ]
 }

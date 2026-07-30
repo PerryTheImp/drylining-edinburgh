@@ -3,26 +3,31 @@ import Layout from '../../../layouts/Layout.astro';
 
 const question = "Is insulated plasterboard worth using?";
 const answer = "Insulated plasterboard can be worthwhile in rooms with cold external walls, poor thermal performance or limited space. It combines plasterboard with a layer of insulation, allowing both materials to be fitted together. This can make installation quicker and create a thinner wall build-up than some separate framing systems. Insulated plasterboard may reduce heat loss, improve comfort and make internal wall surfaces feel warmer. However, it costs more than standard plasterboard and must be installed carefully. Gaps between boards or poor sealing around windows and floors can create cold spots. Moisture control is particularly important in older stone properties, where unsuitable materials may trap water vapour. Whether it offers good value depends on the building, insulation thickness, available space and heating costs.";
-const description = "Insulated plasterboard can be worthwhile in rooms with cold external walls, poor thermal performance or limited space. It combines plasterboard with a laye";
 const canonical = '/drylining-faq/is-insulated-plasterboard-worth-using/';
+const description = "Insulated plasterboard can be worthwhile in rooms with cold external walls, poor thermal performance or limited space. It combines plasterboard with a layer...";
 
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: answer,
-      },
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: answer,
+          },
+        },
+      ],
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dryliningedinburgh.co.uk/' },
-        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/faq/' },
-        { '@type': 'ListItem', position: 3, name: question, item: 'https://dryliningedinburgh.co.uk/drylining-faq/is-insulated-plasterboard-worth-using/' },
+        { '@type': 'ListItem', position: 2, name: 'PAA', item: 'https://dryliningedinburgh.co.uk/drylining-faq/' },
+        { '@type': 'ListItem', position: 3, name: "Is insulated plasterboard worth using?", item: 'https://dryliningedinburgh.co.uk/drylining-faq/is-insulated-plasterboard-worth-using/' },
       ],
     },
   ],
@@ -30,7 +35,7 @@ const schema = {
 ---
 
 <Layout
-  title={question + ' | Drylining Edinburgh'}
+  title="Is insulated plasterboard worth using? | Drylining Edinburgh"
   description={description}
   canonical={canonical}
   schema={schema}
@@ -45,21 +50,12 @@ const schema = {
       </header>
 
       <section style="padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 22px;">
-        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text);">{answer}</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--text); white-space: pre-wrap;">{answer}</p>
       </section>
 
-      <section style="margin: 24px 0; padding: 18px 0; border-top: 1px solid var(--border);">
-        <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text);">Related Questions</h3>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-<li><a href="/drylining-faq/how-much-does-drylining-cost-in-edinburgh">How much does drylining cost in Edinburgh?</a></li>
-<li><a href="/drylining-faq/what-is-the-difference-between-drywall-and-drylining">What is the difference between drywall and drylining?</a></li>
-<li><a href="/drylining-faq/what-are-the-cons-of-dry-lining-in-edinburgh">What are the cons of dry lining in Edinburgh?</a></li>
-<li><a href="/drylining-faq/what-is-the-difference-between-a-plasterer-and-a-dryliner">What is the difference between a plasterer and a dryliner?</a></li>
-        </ul>
-      </section>
-
-      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
-        <a href="/faq/" class="btn btn-outline">All FAQs</a>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="/drylining-faq/" class="btn btn-outline">Back to FAQ Hub</a>
+        <a href="/faq/" class="btn btn-outline">View FAQ</a>
         <a href="/get-quote/" class="btn btn-primary">Get a Quote</a>
       </div>
     </article>
