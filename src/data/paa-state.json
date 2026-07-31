@@ -1,5 +1,5 @@
 {
-  "nextIndex": 23,
+  "nextIndex": 24,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -115,6 +115,11 @@
       "slug": "is-insulated-plasterboard-worth-using",
       "question": "Is insulated plasterboard worth using?",
       "createdAt": "2026-07-30"
+    },
+    {
+      "slug": "can-pipes-and-electrical-cables-be-hidden-behind-dry-lining",
+      "question": "Can pipes and electrical cables be hidden behind dry lining?",
+      "createdAt": "2026-07-31"
     }
   ]
 }
