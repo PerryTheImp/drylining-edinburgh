@@ -1,5 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const siteUrl = 'https://dryliningedinburgh.co.uk';
+const areaName = 'Musselburgh';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,33 +10,105 @@ const schema = {
       "@type": "LocalBusiness",
       "name": "Drylining Edinburgh",
       "@id": "https://dryliningedinburgh.co.uk/#business",
-      "areaServed": { "@type": "City", "name": "Musselburgh" },
+      "areaServed": { "@type": "Place", "name": "Musselburgh" },
       "serviceType": "Drylining, Partition Walls, Suspended Ceilings"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "Areas", "item": "https://dryliningedinburgh.co.uk/areas/" },
-        { "@type": "ListItem", "position": 3, "name": "Musselburgh", "item": "https://dryliningedinburgh.co.uk/areas/musselburgh/" }
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl + "/" },
+        { "@type": "ListItem", position: 2, name: "Areas", item: siteUrl + "/areas/" },
+        { "@type": "ListItem", position: 3, name: "Musselburgh", item: siteUrl + "/areas/musselburgh/" }
       ]
     }
   ]
 };
 ---
-<Layout title="Drylining Musselburgh | Partition Walls & Suspended Ceilings" description="Drylining contractors in Musselburgh. Partition walls, suspended ceilings, plasterboard installation for homes and businesses in East Lothian. Free quotes." canonical="/areas/musselburgh/" schema={schema}>
-<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
-  <img src="/images/area-musselburgh.jpg" alt="Musselburgh with drylining services" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
-  <div class="container" style="position:relative;z-index:1;text-align:center;">
-    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Drylining in Musselburgh</h1>
-    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Professional drylining services in Musselburgh and East Lothian. Residential and commercial partition walls, suspended ceilings, and plasterboard.</p>
+
+<section class="hero-area" style="position: relative; min-height: 400px; display: flex; align-items: center; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); overflow: hidden;">
+  <img src="/images/hero-main.jpg" alt="Drylining services in Musselburgh and East Lothian" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.2;" />
+  <div class="container" style="position: relative; z-index: 1; max-width: 900px; padding: 4rem 1rem; text-align: center;">
+    <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">Drylining in Musselburgh</h1>
+    <p style="color: rgba(255,255,255,0.85); font-size: 1.0625rem; max-width: 600px; margin: 0 auto; line-height: 1.7;">CSCS-accredited drylining contractors delivering partition walls, suspended ceilings, and plasterboard across Musselburgh, East Lothian, and the wider EH postcode area.</p>
   </div>
 </section>
-<section class="section"><div class="container" style="max-width:900px;">
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Musselburgh, known as the 'Honest Toun', is Scotland's oldest burgh and one of East Lothian's most desirable places to live and work. <strong>Drylining Edinburgh</strong> brings professional drylining services to Musselburgh and the surrounding East Lothian area.</p>
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">From period property renovations near the racecourse to modern commercial fit-outs along the High Street, our experienced contractors deliver quality drylining with minimal disruption to your home or business.</p>
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Services in Musselburgh</h2>
-<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li>Residential drylining and plasterboard installation</li><li>Partition walls for homes and offices</li><li>Suspended ceilings for retail and commercial</li><li>Metal stud partitioning for industrial units</li><li>Taping & jointing for professional finishes</li></ul>
-<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Musselburgh Quote</a></div>
-</div></section>
-</Layout>
+
+<div style="max-width: 900px; margin: 0 auto; padding: 0 1rem;">
+  <p style="padding: 1rem 1.5rem; background: var(--accent); border-left: 4px solid var(--primary); border-radius: 4px; margin: 2rem 0; font-size: 0.9375rem; color: var(--text); line-height: 1.8;"><strong>TL;DR:</strong> Drylining Edinburgh provides drylining, partition walls, and suspended ceilings across Musselburgh (EH21), East Lothian, and the wider council area. Experienced with historic town properties, new build estates, and commercial fit-outs across East Lothian.</p>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:3rem 0 1rem;">Drylining Services in Musselburgh</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">Musselburgh is East Lothian's largest town with a population of around 21,000 residents in the EH21 postcode area. Home to the famous Musselburgh Racecourse, the River Esk estuary, and one of Scotland's oldest burghs, the area offers a unique mix of historic properties, modern residential developments, and coastal commercial sites. This diversity means our drylining contractors work on everything from historic property restorations around the town centre and racecourse to new build developments along the A6110 corridor and coastal regeneration zones.</p>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;">Musselburgh's ongoing regeneration projects — including the town centre improvements, the River Esk waterfront developments, and the A6110 corridor enhancements — create consistent demand for commercial drylining services. We deliver partition wall installation, suspended ceilings, and fire-rated wall systems for office refurbishments, retail units, healthcare premises, and residential developments throughout the East Lothian area. All work is carried out to Scottish Building Standards Part H and Part T standards.</p>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">What We Do in Musselburgh</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">Our Musselburgh crew handles everything from single-room domestic renovations on King Street to large-scale commercial fit-outs around the Racecourse — covering partition walls, suspended ceilings, and plasterboard installation across the entire EH21 postcode region.</p>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.875rem;margin-bottom:1.5rem;">
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Period property drylining</strong> — Internal wall insulation, room conversions, and partition walls in historic burgh properties and listed buildings around King Street and the Racecourse area</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>New build handover drylining</strong> — Pre-completion drylining for housing developments in Easthouses, Macmerry, and the Musselburgh town centre regeneration zones</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Commercial fit-outs</strong> — Office refurbs, retail units, and restaurant conversions along King Street, the Racecourse area, and the A6110 corridor</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Fire-rated walls</strong> — Multi-storey residential and commercial buildings require Scottish Building Standards compliance, delivered with full documentation for East Lothian Council building standards</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Suspended ceilings</strong> — Office refurbs, healthcare premises, and education facilities throughout the Musselburgh and East Lothian area</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Acoustic partitions</strong> — Residential blocks, student accommodation, and hotel conversions near the Racecourse hotels and East Lothian's hospitality sector</span></li>
+    </ul>
+  </div></section>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Areas of Musselburgh We Cover</h2>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Musselburgh town centre and King Street (EH21)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Racecourse and Eastfield (EH21)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Easthouses (EH21)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Macmerry (EH21)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Dunglass (EH21)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Gogar and South Gullane (EH21)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Rainworth and Ormiston (EH22)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Pencaitland and Haddington (EH41)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Tranent and Wallyford (EH33)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Gorebridge and Borthwick (EH26)</span></li>
+    </ul>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Musselburgh Building Standards & Planning</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">Musselburgh falls under <strong>East Lothian Council</strong> for building standards and planning. The town contains several listed buildings, particularly in the historic town centre and near the Racecourse conservation areas. Many properties are within designated <strong>Musselburgh Conservation Areas</strong>, meaning any internal structural alterations or external drylining insulation may require listed building consent or planning permission. We work closely with clients, architects, and the council building standards surveyors to ensure every project — from a simple room partition in a Georgian house on King Street to a large commercial fit-out around the Racecourse — is fully compliant with current Scottish Building Standards.</p>
+  </div></section>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Why Choose Us for Musselburgh Projects</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">As a Musselburgh-based drylining team with daily operations across East Lothian, we understand the town's unique demands. From managing access on the A6110 corridor to working around the Racecourse's event schedules and the coastal environment's moisture concerns, our crew knows the area inside out. All operatives are DBS checked, fully uniformed, and experienced in delivering quality work in Musselburgh's historic and coastal environments.</p>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Related Services</h2>
+    <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0.75rem;margin-bottom:1.5rem;">
+      <li><a href="/services/partition-walls/" style="color:var(--primary);text-decoration:underline;">Partition Walls</a></li>
+      <li><a href="/services/suspended-ceilings/" style="color:var(--primary);text-decoration:underline;">Suspended Ceilings</a></li>
+      <li><a href="/services/plasterboard-installation/" style="color:var(--primary);text-decoration:underline;">Plasterboard Installation</a></li>
+      <li><a href="/services/drylining-contractors/" style="color:var(--primary);text-decoration:underline;">Drylining Contractors</a></li>
+      <li><a href="/services/taping-and-jointing/" style="color:var(--primary);text-decoration:underline;">Taping &amp; Jointing</a></li>
+      <li><a href="/services/metal-stud-partitioning/" style="color:var(--primary);text-decoration:underline;">Metal Stud Partitioning</a></li>
+    </ul>
+  </div></section>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Nearby Areas</h2>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/edinburgh/" style="color:var(--primary);text-decoration:underline;">Edinburgh</a> — 10 minutes via A6110</li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/dalkeith/" style="color:var(--primary);text-decoration:underline;">Dalkeith</a> — 10 minutes via A68</li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/peebles/" style="color:var(--primary);text-decoration:underline;">Peebles</a> — 35 minutes via A7</li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/livingston/" style="color:var(--primary);text-decoration:underline;">Livingston</a> — 40 minutes via M8</li>
+    </ul>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Get a Free Musselburgh Quote</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:2rem;">We offer free, no-obligation site visits and written quotes for all drylining projects across Musselburgh. Call us or fill in our quick form.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:0.875rem 2rem;">Get a Free Musselburgh Quote</a>
+      <a href="tel:08008203090" class="btn btn-outline" style="font-size:1.0625rem;padding:0.875rem 2rem;">FREEPHONE 0800 820 3090</a>
+    </div>
+  </div></section>
+</div>

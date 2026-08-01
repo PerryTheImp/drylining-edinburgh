@@ -1,5 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const siteUrl = 'https://dryliningedinburgh.co.uk';
+const areaName = 'Dalkeith';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,33 +10,105 @@ const schema = {
       "@type": "LocalBusiness",
       "name": "Drylining Edinburgh",
       "@id": "https://dryliningedinburgh.co.uk/#business",
-      "areaServed": { "@type": "City", "name": "Dalkeith" },
+      "areaServed": { "@type": "Place", "name": "Dalkeith" },
       "serviceType": "Drylining, Partition Walls, Suspended Ceilings"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "Areas", "item": "https://dryliningedinburgh.co.uk/areas/" },
-        { "@type": "ListItem", "position": 3, "name": "Dalkeith", "item": "https://dryliningedinburgh.co.uk/areas/dalkeith/" }
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl + "/" },
+        { "@type": "ListItem", position: 2, name: "Areas", item: siteUrl + "/areas/" },
+        { "@type": "ListItem", position: 3, name: "Dalkeith", item: siteUrl + "/areas/dalkeith/" }
       ]
     }
   ]
 };
 ---
-<Layout title="Drylining Dalkeith | Partition Walls & Suspended Ceilings" description="Drylining contractors in Dalkeith. Partition walls, suspended ceilings, plasterboard installation for homes and businesses in Midlothian. Free quotes." canonical="/areas/dalkeith/" schema={schema}>
-<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
-  <img src="/images/area-dalkeith.jpg" alt="Dalkeith with drylining services" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
-  <div class="container" style="position:relative;z-index:1;text-align:center;">
-    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Drylining in Dalkeith</h1>
-    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Professional drylining services in Dalkeith and Midlothian. Residential and commercial partition walls, suspended ceilings, and plasterboard.</p>
+
+<section class="hero-area" style="position: relative; min-height: 400px; display: flex; align-items: center; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); overflow: hidden;">
+  <img src="/images/hero-main.jpg" alt="Drylining services in Dalkeith and Midlothian" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.2;" />
+  <div class="container" style="position: relative; z-index: 1; max-width: 900px; padding: 4rem 1rem; text-align: center;">
+    <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">Drylining in Dalkeith</h1>
+    <p style="color: rgba(255,255,255,0.85); font-size: 1.0625rem; max-width: 600px; margin: 0 auto; line-height: 1.7;">CSCS-accredited drylining contractors delivering partition walls, suspended ceilings, and plasterboard across Dalkeith, Midlothian, and the wider EH/Midlothian area.</p>
   </div>
 </section>
-<section class="section"><div class="container" style="max-width:900px;">
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Dalkeith is the historic county town of Midlothian, with a mix of traditional properties and modern developments. <strong>Drylining Edinburgh</strong> provides expert drylining services throughout Dalkeith and the surrounding Midlothian area.</p>
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">From renovating period homes in the town centre to fitting out new commercial units, our experienced team delivers professional drylining with respect for the local character and building styles of Dalkeith.</p>
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Services in Dalkeith</h2>
-<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li>Residential drylining and plasterboard</li><li>Partition walls for homes and offices</li><li>Suspended ceilings for commercial spaces</li><li>Metal stud partitioning</li><li>Taping & jointing for seamless finishes</li></ul>
-<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Dalkeith Quote</a></div>
-</div></section>
-</Layout>
+
+<div style="max-width: 900px; margin: 0 auto; padding: 0 1rem;">
+  <p style="padding: 1rem 1.5rem; background: var(--accent); border-left: 4px solid var(--primary); border-radius: 4px; margin: 2rem 0; font-size: 0.9375rem; color: var(--text); line-height: 1.8;"><strong>TL;DR:</strong> Drylining Edinburgh provides drylining, partition walls, and suspended ceilings across Dalkeith (EH22), Midlothian, and the wider council area. Experienced with historic town properties, new build estates, and commercial fit-outs across Midlothian.</p>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:3rem 0 1rem;">Drylining Services in Dalkeith</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">Dalkeith is Midlothian's largest town with a population of around 20,000 residents in the EH22 postcode area. Home to Dalkeith Palace, the Midlothian rural council headquarters, and one of Scotland's most attractive historic towns, the area offers a mix of Georgian properties, modern residential developments, and rural commercial sites. This diversity means our drylining contractors work on everything from historic property restorations around Dalkeith Palace to new build developments in the town centre and rural commercial conversions across Midlothian.</p>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;">Dalkeith's ongoing regeneration projects — including the town centre improvements, the Midlothian Leisure Centre upgrades, and the A6101 corridor enhancements — create consistent demand for commercial drylining services. We deliver partition wall installation, suspended ceilings, and fire-rated wall systems for office refurbishments, retail units, healthcare premises, and residential developments throughout the Midlothian area. All work is carried out to Scottish Building Standards Part H and Part T standards.</p>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">What We Do in Dalkeith</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">Our Dalkeith crew handles everything from single-room domestic renovations on Eastgate to large-scale commercial fit-outs in the town centre — covering partition walls, suspended ceilings, and plasterboard installation across the entire Dalkeith and Midlothian area.</p>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.875rem;margin-bottom:1.5rem;">
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Period property drylining</strong> — Internal wall insulation, room conversions, and partition walls in historic Georgian properties and listed buildings around Dalkeith Palace and the Old Town area</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>New build handover drylining</strong> — Pre-completion drylining for housing developments in Lasswade, Bonnyrigg, and the Dalkeith town centre regeneration zones</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Commercial fit-outs</strong> — Office refurbs, retail units, and restaurant conversions along Eastgate, the town centre, and the M602 corridor</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Fire-rated walls</strong> — Multi-storey residential and commercial buildings require Scottish Building Standards compliance, delivered with full documentation for Midlothian Council building standards</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Suspended ceilings</strong> — Office refurbs, healthcare premises, and education facilities throughout the Midlothian area</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Acoustic partitions</strong> — Residential blocks, student accommodation, and hotel conversions near the Edinburgh fringe venues and Midlothian hotel sector</span></li>
+    </ul>
+  </div></section>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Areas of Dalkeith We Cover</h2>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Dalkeith town centre and Eastgate (EH22)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Dalkeith Palace and Park (EH22)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Lasswade (EH18)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Bonnyrigg (EH19)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Rosewell (EH22)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Newtongrange (EH22)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Bushwood and Dalhousie (EH22)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Middleton and Newtongrange (EH22)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Braehead and Polton (EH22)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Gorebridge and Borthwick (EH26)</span></li>
+    </ul>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Dalkeith Building Standards & Planning</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">Dalkeith falls under <strong>Midlothian Council</strong> for building standards and planning. The town contains several listed buildings, particularly around Dalkeith Palace and the Old Town conservation areas. Many properties are within designated <strong>Dalkeith Conservation Areas</strong>, meaning any internal structural alterations or external drylining insulation may require listed building consent or planning permission. We work closely with clients, architects, and the council building standards surveyors to ensure every project — from a simple room partition in a Georgian house on Eastgate to a large commercial fit-out in the town centre — is fully compliant with current Scottish Building Standards.</p>
+  </div></section>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Why Choose Us for Dalkeith Projects</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">As a Dalkeith-based drylining team with daily operations across Midlothian, we understand the town's unique demands. From parking permits for town centre sites to working around Dalkeith Palace's conservation restrictions and managing access on the A6101 corridor, our crew knows the area inside out. All operatives are DBS checked, fully uniformed, and experienced in delivering quality work in Dalkeith's historic and rural environments.</p>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Related Services</h2>
+    <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0.75rem;margin-bottom:1.5rem;">
+      <li><a href="/services/partition-walls/" style="color:var(--primary);text-decoration:underline;">Partition Walls</a></li>
+      <li><a href="/services/suspended-ceilings/" style="color:var(--primary);text-decoration:underline;">Suspended Ceilings</a></li>
+      <li><a href="/services/plasterboard-installation/" style="color:var(--primary);text-decoration:underline;">Plasterboard Installation</a></li>
+      <li><a href="/services/drylining-contractors/" style="color:var(--primary);text-decoration:underline;">Drylining Contractors</a></li>
+      <li><a href="/services/taping-and-jointing/" style="color:var(--primary);text-decoration:underline;">Taping &amp; Jointing</a></li>
+      <li><a href="/services/metal-stud-partitioning/" style="color:var(--primary);text-decoration:underline;">Metal Stud Partitioning</a></li>
+    </ul>
+  </div></section>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Nearby Areas</h2>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/edinburgh/" style="color:var(--primary);text-decoration:underline;">Edinburgh</a> — 15 minutes via A68</li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/musselburgh/" style="color:var(--primary);text-decoration:underline;">Musselburgh</a> — 10 minutes via A68</li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/livingston/" style="color:var(--primary);text-decoration:underline;">Livingston</a> — 30 minutes via A68</li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/peebles/" style="color:var(--primary);text-decoration:underline;">Peebles</a> — 25 minutes via A7</li>
+    </ul>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Get a Free Dalkeith Quote</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:2rem;">We offer free, no-obligation site visits and written quotes for all drylining projects across Dalkeith. Call us or fill in our quick form.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:0.875rem 2rem;">Get a Free Dalkeith Quote</a>
+      <a href="tel:08008203090" class="btn btn-outline" style="font-size:1.0625rem;padding:0.875rem 2rem;">FREEPHONE 0800 820 3090</a>
+    </div>
+  </div></section>
+</div>

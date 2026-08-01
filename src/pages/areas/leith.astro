@@ -1,5 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const siteUrl = 'https://dryliningedinburgh.co.uk';
+const areaName = 'Leith';
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -7,33 +10,105 @@ const schema = {
       "@type": "LocalBusiness",
       "name": "Drylining Edinburgh",
       "@id": "https://dryliningedinburgh.co.uk/#business",
-      "areaServed": { "@type": "City", "name": "Leith" },
+      "areaServed": { "@type": "Place", "name": "Leith" },
       "serviceType": "Drylining, Partition Walls, Suspended Ceilings"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "Areas", "item": "https://dryliningedinburgh.co.uk/areas/" },
-        { "@type": "ListItem", "position": 3, "name": "Leith", "item": "https://dryliningedinburgh.co.uk/areas/leith/" }
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl + "/" },
+        { "@type": "ListItem", position: 2, name: "Areas", item: siteUrl + "/areas/" },
+        { "@type": "ListItem", position: 3, name: "Leith", item: siteUrl + "/areas/leith/" }
       ]
     }
   ]
 };
 ---
-<Layout title="Drylining Leith | Partition Walls & Suspended Ceilings" description="Drylining contractors in Leith and the Shore. Partition walls, suspended ceilings, plasterboard installation for homes and businesses. Free quotes." canonical="/areas/leith/" schema={schema}>
-<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
-  <img src="/images/area-leith.jpg" alt="Leith waterfront with drylining services" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
-  <div class="container" style="position:relative;z-index:1;text-align:center;">
-    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Drylining in Leith</h1>
-    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Professional drylining, partition walls, and suspended ceiling services in Leith and the Shore. Fast quotes, reliable results.</p>
+
+<section class="hero-area" style="position: relative; min-height: 400px; display: flex; align-items: center; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); overflow: hidden;">
+  <img src="/images/hero-main.jpg" alt="Drylining services in Leith and The Shore" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.2;" />
+  <div class="container" style="position: relative; z-index: 1; max-width: 900px; padding: 4rem 1rem; text-align: center;">
+    <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">Drylining in Leith</h1>
+    <p style="color: rgba(255,255,255,0.85); font-size: 1.0625rem; max-width: 600px; margin: 0 auto; line-height: 1.7;">CSCS-accredited drylining contractors delivering partition walls, suspended ceilings, and plasterboard across Leith, The Shore, and the wider Edinburgh EH6 postcode area.</p>
   </div>
 </section>
-<section class="section"><div class="container" style="max-width:900px;">
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Leith is one of Edinburgh's most vibrant and rapidly developing areas, with a mix of historic tenements, modern apartments, and thriving commercial spaces along the Shore. At <strong>Drylining Edinburgh</strong>, we provide expert drylining services tailored to Leith's diverse property landscape.</p>
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">From renovating flats in traditional tenements to fitting out new restaurants and offices along the waterfront, our experienced team understands the unique requirements of working in Leith. We deliver professional results with respect for the area's character and your property.</p>
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Drylining Services in Leith</h2>
-<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li>Drylining for residential renovations and new builds</li><li>Partition walls for open-plan conversions</li><li>Suspended ceilings for commercial units and offices</li><li>Metal stud partitioning for retail fit-outs</li><li>Plasterboard and taping & jointing</li></ul>
-<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Leith Quote</a></div>
-</div></section>
-</Layout>
+
+<div style="max-width: 900px; margin: 0 auto; padding: 0 1rem;">
+  <p style="padding: 1rem 1.5rem; background: var(--accent); border-left: 4px solid var(--primary); border-radius: 4px; margin: 2rem 0; font-size: 0.9375rem; color: var(--text); line-height: 1.8;"><strong>TL;DR:</strong> Drylining Edinburgh provides drylining, partition walls, and suspended ceilings across Leith (EH6), The Shore, and the wider Edinburgh council area. Experienced with historic waterfront properties, Newhaven regeneration, and commercial fit-outs across Edinburgh's EH6 postcode.</p>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:3rem 0 1rem;">Drylining Services in Leith</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">Leith is Edinburgh's historic waterfront district with a population of around 25,000 residents in the EH6 postcode area. Home to The Shore's iconic 17th-century buildings, the Royal Yacht Britannia, and one of Scotland's most vibrant regeneration zones, the area offers a unique mix of listed waterfront properties, modern waterfront apartments, and commercial developments along the Waterfront and Leith Walk. This diversity means our drylining contractors work on everything from historic property restorations on The Shore to commercial fit-outs in the Ocean Terminal area and the Newhaven regeneration zone.</p>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;">Leith's ongoing regeneration projects — including the Waterfront expansion, the Newhaven harbour improvements, and the Leith Walk retail corridor upgrades — create consistent demand for commercial drylining services. We deliver partition wall installation, suspended ceilings, and fire-rated wall systems for office refurbishments, retail units, healthcare premises, and residential conversions throughout the EH6 postcode area. All work is carried out to Scottish Building Standards Part H and Part T standards.</p>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">What We Do in Leith</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">Our Leith crew handles everything from single-room domestic renovations on Constitution Street to large-scale commercial fit-outs in Ocean Terminal — covering partition walls, suspended ceilings, and plasterboard installation across the entire EH6 postcode region.</p>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.875rem;margin-bottom:1.5rem;">
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Period property drylining</strong> — Internal wall insulation, room conversions, and partition walls in historic waterfront properties and Georgian tenements across The Shore and Constitution Street</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>New build handover drylining</strong> — Pre-completion drylining for waterfront apartment developments and residential schemes in Newhaven and Leith Walk</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Commercial fit-outs</strong> — Office refurbs, retail units, and restaurant conversions along Ocean Terminal, Leith Walk, and the Waterfront</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Fire-rated walls</strong> — Multi-storey residential and commercial buildings require Scottish Building Standards compliance, delivered with full documentation for City of Edinburgh Council building standards</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Suspended ceilings</strong> — Office refurbs, healthcare premises, and education facilities throughout the Leith and EH6 postcode area</span></li>
+      <li style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--primary);font-weight:700;">•</span><span><strong>Acoustic partitions</strong> — Residential blocks, student accommodation, and hotel conversions near the University of Edinburgh's Leith campus</span></li>
+    </ul>
+  </div></section>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Areas of Leith We Cover</h2>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>The Shore and Newhaven (EH6)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Leith Walk and Constitution Street (EH6)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Ocean Terminal and Waterfront (EH6)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Granton Road (EH6)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Great Junction Street (EH6)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Logan Place and Leith Links (EH6)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Bruntsfield Links (EH6)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Seafield and Portobello (EH6)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Restalrig and Craigmillar Park (EH7)</span></li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><span>Seafield Gardens (EH6)</span></li>
+    </ul>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Leith Building Standards & Planning</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">Leith falls under <strong>City of Edinburgh Council</strong> for building standards and planning. The area contains numerous listed buildings, particularly in The Shore and the Newhaven conservation areas. Many properties are within <strong>Leith Conservation Areas</strong>, meaning any internal structural alterations or external drylining insulation may require listed building consent or planning permission. We work closely with clients, architects, and the council building standards surveyors to ensure every project — from a simple room partition in a Georgian house on Constitution Street to a large commercial fit-out in Ocean Terminal — is fully compliant with current Scottish Building Standards.</p>
+  </div></section>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Why Choose Us for Leith Projects</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:1.5rem;">As a Leith-based drylining team with daily operations across the waterfront district, we understand the area's unique demands. From parking permits for waterfront sites to working around The Shore's conservation restrictions and managing tight access on narrow closes, our crew knows the area inside out. All operatives are DBS checked, fully uniformed, and experienced in delivering quality work in Leith's historic environment.</p>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Related Services</h2>
+    <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0.75rem;margin-bottom:1.5rem;">
+      <li><a href="/services/partition-walls/" style="color:var(--primary);text-decoration:underline;">Partition Walls</a></li>
+      <li><a href="/services/suspended-ceilings/" style="color:var(--primary);text-decoration:underline;">Suspended Ceilings</a></li>
+      <li><a href="/services/plasterboard-installation/" style="color:var(--primary);text-decoration:underline;">Plasterboard Installation</a></li>
+      <li><a href="/services/drylining-contractors/" style="color:var(--primary);text-decoration:underline;">Drylining Contractors</a></li>
+      <li><a href="/services/taping-and-jointing/" style="color:var(--primary);text-decoration:underline;">Taping &amp; Jointing</a></li>
+      <li><a href="/services/metal-stud-partitioning/" style="color:var(--primary);text-decoration:underline;">Metal Stud Partitioning</a></li>
+    </ul>
+  </div></section>
+
+  <section class="section"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Nearby Areas</h2>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/edinburgh/" style="color:var(--primary);text-decoration:underline;">Edinburgh</a> — 10 minutes via A1</li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/livingston/" style="color:var(--primary);text-decoration:underline;">Livingston</a> — 25 minutes via M8</li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/falkirk/" style="color:var(--primary);text-decoration:underline;">Falkirk</a> — 35 minutes via M9</li>
+      <li style="display:flex;gap:0.5rem;align-items:center;"><span style="color:var(--primary);">•</span><a href="/areas/musselburgh/" style="color:var(--primary);text-decoration:underline;">Musselburgh</a> — 10 minutes via A6110</li>
+    </ul>
+  </div></section>
+
+  <section class="section" style="background:var(--accent);"><div class="container" style="max-width:900px;">
+    <h2 style="font-size:1.5rem;font-weight:700;color:var(--secondary);margin:2rem 0 1rem;">Get a Free Leith Quote</h2>
+    <p style="color:var(--text);font-size:1.0625rem;line-height:1.8;margin-bottom:2rem;">We offer free, no-obligation site visits and written quotes for all drylining projects across Leith. Call us or fill in our quick form.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:0.875rem 2rem;">Get a Free Leith Quote</a>
+      <a href="tel:08008203090" class="btn btn-outline" style="font-size:1.0625rem;padding:0.875rem 2rem;">FREEPHONE 0800 820 3090</a>
+    </div>
+  </div></section>
+</div>
