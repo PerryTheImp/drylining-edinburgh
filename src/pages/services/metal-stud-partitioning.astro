@@ -1,41 +1,188 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-const schema = {
+
+const serviceName = 'Metal Stud Partitioning';
+const serviceSlug = 'metal-stud-partitioning';
+
+const faqJsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "serviceType": "Metal Stud Partitioning",
-      "provider": { "@type": "LocalBusiness", "name": "Drylining Edinburgh", "@id": "https://dryliningedinburgh.co.uk/#business" },
-      "areaServed": { "@type": "City", "name": "Edinburgh" },
-      "description": "Metal stud partitioning in Edinburgh. Lightweight, strong metal frame walls for commercial fit-outs. Fire-rated and acoustic options available."
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://dryliningedinburgh.co.uk/services/" },
-        { "@type": "ListItem", "position": 3, "name": "Metal Stud Partitioning", "item": "https://dryliningedinburgh.co.uk/services/metal-stud-partitioning/" }
-      ]
-    }
-  ]
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is metal stud partitioning?","acceptedAnswer":{"@type":"Answer","text":"Metal stud partitioning is a modern wall framing system using lightweight steel studs and tracks. It creates strong, straight walls that are fire-resistant, dimensionally stable, and easy to modify in the future."}},
+    {"@type":"Question","name":"Is metal stud better than timber framing?","acceptedAnswer":{"@type":"Answer","text":"Metal studs offer several advantages over timber: they do not warp, rot, or shrink; they are fire-resistant; and they are lighter and easier to handle. They are the preferred choice for commercial and modern residential projects."}},
+    {"@type":"Question","name":"How long does metal stud partitioning take to install?","acceptedAnswer":{"@type":"Answer","text":"A typical office partition wall takes 1-2 days. Larger commercial fit-outs in Edinburgh may take 3-7 days depending on the number of partitions and complexity of the layout."}},
+    {"@type":"Question","name":"Can metal stud walls be soundproofed?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install acoustic insulation within the cavity and can use double-layer plasterboard with acoustic boards to achieve excellent sound reduction for offices, meeting rooms, and bedrooms."}},
+    {"@type":"Question","name":"Are metal stud partitions fire-rated?","acceptedAnswer":{"@type":"Answer","text":"Yes. When combined with fire-rated plasterboard, metal stud partitions can achieve fire ratings from 30 minutes up to 120 minutes, meeting Scottish Building Standards requirements."}},
+    {"@type":"Question","name":"Can metal stud walls be moved or reconfigured later?","acceptedAnswer":{"@type":"Answer","text":"Yes. One of the key benefits of metal stud partitioning is that walls can be dismantled and reconfigured more easily than blockwork or traditional stud walls, making them ideal for flexible office layouts."}},
+    {"@type":"Question","name":"What areas do you cover for metal stud partitioning in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"We provide metal stud partitioning across Edinburgh city centre, Leith, Newington, Stockbridge, Bruntsfield, Morningside, Portobello, and all surrounding areas including Livingston, Falkirk, Dalkeith, and Musselburgh."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Metal Stud Partitioning Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q175263",
+  about: { "@type": "Thing", name: "Partition wall", sameAs: ['https://www.wikidata.org/entity/Q175263', 'https://en.wikipedia.org/wiki/Partition_wall'] },
+  sameAs: "https://en.wikipedia.org/wiki/Drywall",
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business",
+    knowsAbout: ['https://en.wikipedia.org/wiki/Drywall', 'https://en.wikipedia.org/wiki/Plaster', 'https://en.wikipedia.org/wiki/Partition_wall', 'https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom', 'https://en.wikipedia.org/wiki/Construction_worker', 'https://en.wikipedia.org/wiki/General_contractor', 'https://en.wikipedia.org/wiki/Cold-formed_steel', 'https://en.wikipedia.org/wiki/Dropped_ceiling'],
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and the Lothians",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+    geo: { "@type": "GeoCoordinates", "latitude": 55.9533, "longitude": -3.1883 }
+  },
 };
 ---
-<Layout title="Metal Stud Partitioning Edinburgh | Commercial Partition Walls" description="Expert metal stud partitioning in Edinburgh. Lightweight, strong metal frame walls for commercial fit-outs. Faster to install than timber framing. Free quotes." canonical="/services/metal-stud-partitioning/" schema={schema}>
-<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
-  <img src="/images/service-metal-stud.jpg" alt="Metal stud partitioning installation in Edinburgh" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
-  <div class="container" style="position:relative;z-index:1;text-align:center;">
-    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Metal Stud Partitioning in Edinburgh</h1>
-    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Lightweight, strong metal stud partitions perfect for commercial fit-outs. Faster to install and easier to modify than traditional timber framing.</p>
+
+<Layout title="Metal Stud Partitioning Edinburgh | Lightweight Commercial Walls" description="Metal stud partitioning in Edinburgh for offices, retail, and commercial fit-outs. Strong, lightweight, and easy to modify. CSCS-accredited team with Scottish Building Standards compliance. Free quotes." canonical="/services/metal-stud-partitioning/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
+  <img src="/images/service-metal-stud.jpg" alt="Metal stud partitioning framework in an Edinburgh commercial building" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Metal Stud Partitioning</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Metal Stud Partitioning in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Strong, lightweight metal stud partitions for commercial and residential projects across Edinburgh. Faster installation, easier modifications, full Scottish Building Standards compliance.</p>
   </div>
 </section>
+
 <section class="section"><div class="container" style="max-width:900px;">
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Metal stud partitioning is the go-to choice for modern commercial interiors. Unlike timber framing, metal studs are resistant to warping, rot, and pests, making them ideal for offices, retail units, healthcare facilities, and industrial spaces across Edinburgh.</p>
-<img src="/images/service-metal-stud.jpg" alt="Metal stud partition wall construction in Edinburgh" style="border-radius:var(--radius);width:100%;max-width:800px;margin:2rem auto;display:block;box-shadow:var(--shadow-lg);">
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Advantages of Metal Stud Partitions</h2>
-<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li><strong>Lightweight yet strong</strong> - Easier to transport and faster to install than timber</li><li><strong>Fire-resistant</strong> - Non-combustible material improves building safety</li><li><strong>Straight and true</strong> - No warping or twisting over time</li><li><strong>Easy to modify</strong> - Simple to relocate or reconfigure walls later</li><li><strong>Recyclable</strong> - Environmentally friendly material choice</li></ul>
+
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Metal stud partitioning offers straight, fire-resistant, and lightweight wall framing for offices, retail, and homes across Edinburgh. CSCS-accredited installation with Scottish Building Standards compliance and 12-month guarantee.</p>
+</div>
+
 <h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Metal Stud Partitioning Service</h2>
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We supply and install complete metal stud partition systems including C-stud and U-track framing, plasterboard cladding, insulation, fire-rated boards, and acoustic treatments. Our Edinburgh-based team works to tight deadlines and delivers professional results every time.</p>
-<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Metal Stud Quote</a></div>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Metal stud partitioning has become the preferred choice for modern construction and refurbishment projects across Edinburgh. Unlike traditional timber framing, metal studs are straight, dimensionally stable, and resistant to warping, rot, and pests. At <strong>Drylining Edinburgh</strong>, we specialise in metal stud partition systems that deliver speed, strength, and flexibility for both commercial and residential clients throughout the capital and the Lothians.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Edinburgh's dynamic property market — from New Town and Stockbridge office conversions to Leith Waterfront commercial fit-outs, Bruntsfield residential renovations, and Portobello retail units — creates consistent demand for professional metal stud partitioning. Our CSCS-accredited team delivers partition walls that meet Scottish Building Standards Part A structural requirements and Part B fire safety regulations, ensuring every installation is safe, compliant, and built to last.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Metal C-stud and U-track framing systems (50mm, 70mm, 92mm, 146mm profiles)</li>
+  <li>Single and double-layer plasterboard cladding</li>
+  <li>Acoustic insulation for sound-rated partitions</li>
+  <li>Fire-rated partitions (30-120 minutes)</li>
+  <li>Integrated door frames and glazing apertures</li>
+  <li>Demountable and relocatable partition options</li>
+  <li>Corner bead and trim finishing</li>
+  <li>Professional taping and jointing for seamless surfaces</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Choose Metal Stud Partitioning?</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Consistently straight and level walls:</strong> Metal studs do not warp, twist, or bow over time, ensuring your walls remain perfectly straight in Edinburgh's historic and modern buildings alike.</li>
+  <li><strong>Fire-resistant and non-combustible:</strong> Steel framing adds fire safety to your building and meets Part B Scottish Building Standards when combined with fire-rated boards from British Gypsum or Knauf.</li>
+  <li><strong>No warping, shrinking, or rot:</strong> Unlike timber, metal studs are unaffected by moisture, temperature changes, and pests — particularly important for Edinburgh's older properties with solid stone walls.</li>
+  <li><strong>Lightweight and easy to handle:</strong> Metal studs are lighter than timber, making them faster to install and reducing structural load on older Edinburgh buildings where load-bearing capacity is a concern.</li>
+  <li><strong>Ideal for large-scale commercial fit-outs:</strong> Metal stud partitioning is the industry standard for Edinburgh's growing commercial property sector, including office refurbs on St Andrew Square and retail fit-outs on Princes Street.</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials & Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use industry-leading products from trusted manufacturers to ensure your metal stud partitions are strong, compliant, and built to last across Edinburgh's diverse property portfolio.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Galvanised steel C-studs and U-tracks (50mm, 70mm, 92mm, and 146mm profiles)</li>
+  <li>British Gypsum Gyproc plasterboard (standard, moisture-resistant, fire-rated, soundbloc)</li>
+  <li>Knauf plasterboard and metal framing systems</li>
+  <li>Rockwool and Isover acoustic insulation batts</li>
+  <li>Fire-rated intumescent sealants and cavity barriers</li>
+  <li>Steel corner beads and edge trim</li>
+  <li>Joint compound and paper tape for seamless finishing</li>
+  <li>Celotex and Kingspan insulated plasterboard for thermal upgrades</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications & Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Metal stud partitioning is suitable for a wide range of building types and project sizes across Edinburgh.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Office fit-outs and open-plan reconfigurations in the New Town and Stockbridge</li>
+  <li>Retail store fitting and display wall construction on Princes Street and St James Centre</li>
+  <li>Healthcare facility partition systems for NHS Lothian and private clinics</li>
+  <li>School and education building interiors across Edinburgh Council areas</li>
+  <li>Residential extensions and loft conversions in Morningside, Bruntsfield, and Marchmont</li>
+  <li>Industrial unit and warehouse partitioning in Leith and Portobello</li>
+  <li>Hotels and hospitality refurbishment in the Old Town and West End</li>
+  <li>Student accommodation and HMO conversions across the city</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will assess your layout, load-bearing requirements, and any acoustic or fire-rating needs across your Edinburgh property.</li>
+  <li><strong>Detailed Plan:</strong> We confirm stud sizes, board types, insulation, and finishing specifications. Everything is agreed upfront with no hidden extras — including Scottish Building Standards compliance documentation.</li>
+  <li><strong>Professional Installation:</strong> Our CSCS-registered team installs the metal stud framework, fixes plasterboard to both sides, and completes joints with professional taping and finishing.</li>
+  <li><strong>Quality Check & Handover:</strong> We inspect every wall for straightness and finish quality, provide full compliance documentation, and leave your site clean and ready for decoration.</li>
+</ol>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Metal Stud Partitioning Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide metal stud partitioning services in the following Edinburgh areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book metal stud partitioning often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/partition-walls/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Partition Walls</a>
+  <a href="/services/taping-and-jointing/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Taping & Jointing</a>
+  <a href="/services/plasterboard-installation/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Plasterboard Installation</a>
+  <a href="/services/suspended-ceilings/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Suspended Ceilings</a>
+</div>
+
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Metal Stud Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote for your Edinburgh project.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Metal Stud Partitioning</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is metal stud partitioning?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Metal stud partitioning is a modern wall framing system using lightweight steel studs and tracks. It creates strong, straight walls that are fire-resistant, dimensionally stable, and easy to modify in the future.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Is metal stud better than timber framing?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Metal studs offer several advantages over timber: they do not warp, rot, or shrink; they are fire-resistant; and they are lighter and easier to handle. They are the preferred choice for commercial and modern residential projects.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How long does metal stud partitioning take to install?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">A typical office partition wall takes 1-2 days. Larger commercial fit-outs in Edinburgh may take 3-7 days depending on the number of partitions and complexity of the layout.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can metal stud walls be soundproofed?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We install acoustic insulation within the cavity and can use double-layer plasterboard with acoustic boards to achieve excellent sound reduction for offices, meeting rooms, and bedrooms.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Are metal stud partitions fire-rated?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. When combined with fire-rated plasterboard, metal stud partitions can achieve fire ratings from 30 minutes up to 120 minutes, meeting Scottish Building Standards requirements.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can metal stud walls be moved or reconfigured later?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. One of the key benefits of metal stud partitioning is that walls can be dismantled and reconfigured more easily than blockwork or traditional stud walls, making them ideal for flexible office layouts.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover for metal stud partitioning in Edinburgh?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide metal stud partitioning across Edinburgh city centre, Leith, Newington, Stockbridge, Bruntsfield, Morningside, Portobello, and all surrounding areas including Livingston, Falkirk, Dalkeith, and Musselburgh.</p>
+  </div>
+</div>
+
 </div></section>
 </Layout>

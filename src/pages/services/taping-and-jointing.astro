@@ -1,41 +1,189 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-const schema = {
+
+const serviceName = 'Taping and Jointing';
+const serviceSlug = 'taping-and-jointing';
+
+const faqJsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "serviceType": "Taping and Jointing",
-      "provider": { "@type": "LocalBusiness", "name": "Drylining Edinburgh", "@id": "https://dryliningedinburgh.co.uk/#business" },
-      "areaServed": { "@type": "City", "name": "Edinburgh" },
-      "description": "Expert taping and jointing in Edinburgh. Smooth, crack-resistant finishes ready for decoration. No need for wet plastering."
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://dryliningedinburgh.co.uk/services/" },
-        { "@type": "ListItem", "position": 3, "name": "Taping & Jointing", "item": "https://dryliningedinburgh.co.uk/services/taping-and-jointing/" }
-      ]
-    }
-  ]
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is taping and jointing?","acceptedAnswer":{"@type":"Answer","text":"Taping and jointing is the process of covering plasterboard joints and screw holes with jointing compound and paper tape. It creates a smooth, seamless finish ready for painting without the need for wet plastering."}},
+    {"@type":"Question","name":"How long does taping and jointing take in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"A typical room takes 2-3 days including drying time between coats. Larger projects in Edinburgh take proportionally longer, but the process is still faster than traditional wet plastering."}},
+    {"@type":"Question","name":"Is taping and jointing better than plastering?","acceptedAnswer":{"@type":"Answer","text":"Taping and jointing is faster, cleaner, and more cost-effective than wet plastering. It produces a smooth, crack-resistant finish that is indistinguishable from plastered walls and ready for decoration sooner."}},
+    {"@type":"Question","name":"Will the joints crack over time?","acceptedAnswer":{"@type":"Answer","text":"When done correctly, taped joints are highly resistant to cracking. We use paper tape and multiple coats of jointing compound to create a flexible, durable seam that moves with the building."}},
+    {"@type":"Question","name":"Can you tape and joint ceilings as well as walls?","acceptedAnswer":{"@type":"Answer","text":"Yes. We provide taping and jointing for both walls and ceilings, including bulkheads, bulkhead details, and complex shapes."}},
+    {"@type":"Question","name":"Do I need to sand between coats?","acceptedAnswer":{"@type":"Answer","text":"We handle all sanding between coats as part of our service. Our team uses dust extraction equipment to minimise mess and leaves your surfaces smooth and ready for painting."}},
+    {"@type":"Question","name":"What areas do you cover for taping and jointing in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"We provide taping and jointing services across Edinburgh city centre, Leith, Newington, Stockbridge, Bruntsfield, Morningside, Portobello, and all surrounding areas including Livingston, Falkirk, Dalkeith, and Musselburgh."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Taping and Jointing Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q213825",
+  about: { "@type": "Thing", name: "Drywall", sameAs: ['https://www.wikidata.org/entity/Q213825', 'https://en.wikipedia.org/wiki/Drywall'] },
+  sameAs: "https://en.wikipedia.org/wiki/Drywall",
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business",
+    knowsAbout: ['https://en.wikipedia.org/wiki/Drywall', 'https://en.wikipedia.org/wiki/Plaster', 'https://en.wikipedia.org/wiki/Partition_wall', 'https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom', 'https://en.wikipedia.org/wiki/Construction_worker', 'https://en.wikipedia.org/wiki/General_contractor', 'https://en.wikipedia.org/wiki/Cold-formed_steel', 'https://en.wikipedia.org/wiki/Dropped_ceiling'],
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and the Lothians",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+    geo: { "@type": "GeoCoordinates", "latitude": 55.9533, "longitude": -3.1883 }
+  },
 };
 ---
-<Layout title="Taping & Jointing Edinburgh | Seamless Drywall Finishes" description="Professional taping and jointing in Edinburgh. Smooth, crack-resistant finishes ready for painting. No wet plaster needed. Faster, cleaner, and cost-effective. Free quotes." canonical="/services/taping-and-jointing/" schema={schema}>
-<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
-  <img src="/images/service-taping.jpg" alt="Taping and jointing work in Edinburgh" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
-  <div class="container" style="position:relative;z-index:1;text-align:center;">
-    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Taping & Jointing in Edinburgh</h1>
-    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Smooth, crack-resistant finishes with expert taping and jointing. No need for full plastering - faster, cleaner, and ready for decoration.</p>
+
+<Layout title="Taping & Jointing Edinburgh | Smooth, Crack-Resistant Finishes" description="Expert taping and jointing in Edinburgh. Seamless plasterboard finishes without wet plastering. British Gypsum and Knauf products. Ready for painting. Free quotes." canonical="/services/taping-and-jointing/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
+  <img src="/images/service-taping.jpg" alt="Taping and jointing work on plasterboard walls in an Edinburgh property" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Taping & Jointing</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Taping & Jointing in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Smooth, professional plasterboard finishes without the mess and drying time of traditional wet plastering across Edinburgh. Ready for decoration in days, not weeks.</p>
   </div>
 </section>
+
 <section class="section"><div class="container" style="max-width:900px;">
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Taping and jointing is the final stage of drylining that creates an invisible seam between plasterboard panels. At <strong>Drylining Edinburgh</strong>, our skilled finishers apply jointing compound and paper tape with precision, building up thin layers and sanding between coats to achieve a flawless surface ready for painting.</p>
-<img src="/images/service-taping.jpg" alt="Professional taping and jointing finish in Edinburgh" style="border-radius:var(--radius);width:100%;max-width:800px;margin:2rem auto;display:block;box-shadow:var(--shadow-lg);">
+
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Expert taping and jointing for walls and ceilings across Edinburgh. Smooth, crack-resistant finishes ready for painting from British Gypsum and Knauf products. Faster and cleaner than traditional plastering with Scottish Building Standards compliance. 12-month guarantee.</p>
+</div>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Taping & Jointing Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Taping and jointing is the modern alternative to wet plastering. Instead of applying wet plaster over plasterboard joints, our skilled technicians apply jointing compound and paper tape to create an invisible, crack-resistant seam. The result is a perfectly smooth wall or ceiling that is ready for painting or wallpapering in a fraction of the time.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Edinburgh's property market — from new build apartments in the Leith Waterfront and Fountainbridge to loft conversions in Stockbridge, office refurbishments in the New Town, and residential extensions in Morningside and Bruntsfield — demands finishers who can deliver flawless results quickly and cleanly. Our team uses professional-grade jointing compounds from British Gypsum (Gyproc) and Knauf, delivering finishes that meet the highest quality standards across all Edinburgh projects. Whether you're finishing a single room in a Victorian tenement on King Street or taping and jointing an entire new development in the Edinburgh Enterprise Zone, we deliver consistent, professional results.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Inspect and prepare all board joints and screw holes</li>
+  <li>Apply jointing tape and first coat of compound (embedding coat)</li>
+  <li>Second coat for seamless blending over taped joints</li>
+  <li>Third coat for final smoothing and feathered edges</li>
+  <li>Sanding to a smooth, paint-ready finish using dust extraction</li>
+  <li>Metal and flexible corner bead installation for crisp, durable edges</li>
+  <li>Bulkhead and complex shape jointing for feature ceilings and cornices</li>
+  <li>Final inspection and site cleanup before decoration handover</li>
+</ul>
+
 <h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Choose Taping & Jointing?</h2>
-<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li><strong>No wet plaster</strong> - Avoid the mess and drying time of traditional plastering</li><li><strong>Faster completion</strong> - Rooms are ready for decoration sooner</li><li><strong>Crack-resistant</strong> - Properly taped joints prevent cracking over time</li><li><strong>Cost-effective</strong> - Less labour and material than full plastering</li><li><strong>Clean finish</strong> - Minimal dust and disruption during the process</li></ul>
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Taping & Jointing Process</h2>
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We apply paper tape to all board joints, embed corner beads for clean edges, and build up three coats of jointing compound - each sanded smooth before the next. The result is a professional-quality finish that is indistinguishable from plastered walls and ready for painting or wallpapering.</p>
-<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Taping Quote</a></div>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Faster than plastering:</strong> Taping and jointing is significantly faster than wet plastering, with no lengthy drying times. Rooms are ready for decoration in days, not weeks — important for Edinburgh's fast-moving property market and commercial projects with tight deadlines.</li>
+  <li><strong>Cleaner process:</strong> Jointing compound produces minimal dust during application and no wet plaster mess. We use dust extraction for sanding to keep your Edinburgh property clean throughout the process.</li>
+  <li><strong>Crack-resistant finish:</strong> Properly taped joints are flexible and move with the building, preventing the cracking that can occur as wet plaster dries and shrinks — particularly important for Edinburgh's older properties that experience natural settlement.</li>
+  <li><strong>Cost-effective:</strong> Less labour and material than full plastering, making it ideal for large areas, multiple rooms, and commercial projects across Edinburgh.</li>
+  <li><strong>Professional results:</strong> Our skilled finishers achieve a flawless surface that is indistinguishable from plastered walls and ready for painting or wallpapering, with the added benefit of no drying time waiting period.</li>
+  <li><strong>Consistent quality:</strong> Unlike wet plastering which depends heavily on weather conditions and humidity, taping and jointing produces reliable results year-round regardless of Edinburgh's climate.</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials & Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use professional-grade materials from leading UK manufacturers to ensure a durable, crack-resistant finish on every Edinburgh project.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>British Gypsum Gyproc joint compound (All Purpose, Multi-Finish, TopCoat) and finishing products</li>
+  <li>Knauf jointing systems — Knauf Rapid, Knauf TopCoat, and ready-mixed compounds</li>
+  <li>Paper jointing tape for strong, flexible seams between boards</li>
+  <li>Scrim tape for internal corners and board intersections</li>
+  <li>Metal corner beads for crisp, durable external corners</li>
+  <li>Flexible corner beads for curved and bulkhead details</li>
+  <li>Dust extraction equipment for clean, residue-free sanding</li>
+  <li>Protective sheeting for floors, furnishings, and Edinburgh property fixtures</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications & Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our taping and jointing services are suitable for all types of drylined surfaces across Edinburgh and the Lothians.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>New build residential properties and housing developments in the Lothians</li>
+  <li>Home renovations, extensions, and loft conversions in Morningside, Bruntsfield, Marchmont, and Portobello</li>
+  <li>Commercial office fit-outs and refurbishments in the New Town, Stockbridge, and St Andrew Square</li>
+  <li>Retail shop fitting and display walls on Princes Street and St James Centre</li>
+  <li>School and education building upgrades across Edinburgh Council areas</li>
+  <li>Healthcare and care home interior works for NHS Lothian and private healthcare providers</li>
+  <li>Industrial unit and warehouse linings in Leith, Portobello, and the Edinburgh Enterprise Zone</li>
+  <li>Student accommodation and HMO conversions throughout the Edinburgh city centre</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will assess your project scope and provide a detailed, no-obligation quote for your Edinburgh property.</li>
+  <li><strong>Detailed Plan:</strong> We confirm the scope, timeline, and any specific requirements including board type, jointing standard, and finishing level. Everything is agreed upfront with no hidden extras.</li>
+  <li><strong>Professional Application:</strong> Our skilled finishers apply tape and compound in multiple coats (typically 3 coats), sanding between each layer for a flawless result. We work cleanly with dust extraction and minimal disruption.</li>
+  <li><strong>Quality Check & Handover:</strong> We inspect every joint and corner under raking light, ensure the surface is paint-ready, and leave your site clean with full quality documentation.</li>
+</ol>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Taping & Jointing Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide taping and jointing services in the following Edinburgh areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book taping and jointing often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/plasterboard-installation/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Plasterboard Installation</a>
+  <a href="/services/partition-walls/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Partition Walls</a>
+  <a href="/services/metal-stud-partitioning/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Metal Stud Partitioning</a>
+  <a href="/services/suspended-ceilings/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Suspended Ceilings</a>
+</div>
+
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Taping Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote for your Edinburgh project.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Taping & Jointing</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is taping and jointing?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Taping and jointing is the process of covering plasterboard joints and screw holes with jointing compound and paper tape. It creates a smooth, seamless finish ready for painting without the need for wet plastering.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How long does taping and jointing take in Edinburgh?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">A typical room takes 2-3 days including drying time between coats. Larger projects in Edinburgh take proportionally longer, but the process is still faster than traditional wet plastering.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Is taping and jointing better than plastering?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Taping and jointing is faster, cleaner, and more cost-effective than wet plastering. It produces a smooth, crack-resistant finish that is indistinguishable from plastered walls and ready for decoration sooner.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Will the joints crack over time?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">When done correctly, taped joints are highly resistant to cracking. We use paper tape and multiple coats of jointing compound to create a flexible, durable seam that moves with the building.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can you tape and joint ceilings as well as walls?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We provide taping and jointing for both walls and ceilings, including bulkheads, bulkhead details, and complex shapes.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Do I need to sand between coats?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We handle all sanding between coats as part of our service. Our team uses dust extraction equipment to minimise mess and leaves your surfaces smooth and ready for painting.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover for taping and jointing in Edinburgh?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide taping and jointing services across Edinburgh city centre, Leith, Newington, Stockbridge, Bruntsfield, Morningside, Portobello, and all surrounding areas including Livingston, Falkirk, Dalkeith, and Musselburgh.</p>
+  </div>
+</div>
+
 </div></section>
 </Layout>

@@ -1,41 +1,188 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-const schema = {
+
+const serviceName = 'Partition Walls';
+const serviceSlug = 'partition-walls';
+
+const faqJsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "serviceType": "Partition Walls",
-      "provider": { "@type": "LocalBusiness", "name": "Drylining Edinburgh", "@id": "https://dryliningedinburgh.co.uk/#business" },
-      "areaServed": { "@type": "City", "name": "Edinburgh" },
-      "description": "Professional partition wall installation in Edinburgh. Metal stud and timber partitions for homes, offices, and retail. Sound-rated and fire-rated options."
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://dryliningedinburgh.co.uk/services/" },
-        { "@type": "ListItem", "position": 3, "name": "Partition Walls", "item": "https://dryliningedinburgh.co.uk/services/partition-walls/" }
-      ]
-    }
-  ]
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is a partition wall?","acceptedAnswer":{"@type":"Answer","text":"A partition wall is a non-load-bearing interior wall used to divide open spaces into separate rooms or areas. Partition walls are lightweight, cost-effective, and can be modified or removed in the future."}},
+    {"@type":"Question","name":"How much does partition wall installation cost in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"Partition wall costs depend on size, materials, and any acoustic or fire-rating requirements. Single-layer partitions start from around £45-£65 per square metre. We provide free, detailed quotes for every project."}},
+    {"@type":"Question","name":"Can partition walls be soundproofed?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install acoustic insulation within the partition cavity and can use double-layer plasterboard with acoustic boards to achieve excellent sound reduction for offices, bedrooms, and meeting rooms."}},
+    {"@type":"Question","name":"Are partition walls fire-rated?","acceptedAnswer":{"@type":"Answer","text":"Yes. When combined with fire-rated plasterboard, partition walls can achieve fire ratings from 30 minutes up to 120 minutes, meeting Part B building regulation requirements."}},
+    {"@type":"Question","name":"How long does it take to install a partition wall?","acceptedAnswer":{"@type":"Answer","text":"A single partition wall takes 1-2 days. Multiple partitions or complex layouts may take 3-5 days. We provide accurate timelines during your quote."}},
+    {"@type":"Question","name":"Can partition walls include doors and windows?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can integrate standard and fire-rated doors, glazing panels, and sliding doors into partition wall systems to create fully functional rooms."}},
+    {"@type":"Question","name":"What areas do you cover for partition walls in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"We provide partition wall installation across Edinburgh city centre, Leith, Newington, Stockbridge, Bruntsfield, Morningside, Portobello, and all surrounding areas including Livingston, Falkirk, Dalkeith, and Musselburgh."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Partition Walls Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q175263",
+  about: { "@type": "Thing", name: "Partition wall", sameAs: ['https://www.wikidata.org/entity/Q175263', 'https://en.wikipedia.org/wiki/Partition_wall'] },
+  sameAs: "https://en.wikipedia.org/wiki/Drywall",
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business",
+    knowsAbout: ['https://en.wikipedia.org/wiki/Drywall', 'https://en.wikipedia.org/wiki/Plaster', 'https://en.wikipedia.org/wiki/Partition_wall', 'https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom', 'https://en.wikipedia.org/wiki/Construction_worker', 'https://en.wikipedia.org/wiki/General_contractor', 'https://en.wikipedia.org/wiki/Cold-formed_steel', 'https://en.wikipedia.org/wiki/Dropped_ceiling'],
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and the Lothians",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+    geo: { "@type": "GeoCoordinates", "latitude": 55.9533, "longitude": -3.1883 }
+  },
 };
 ---
-<Layout title="Partition Walls Edinburgh | Metal Stud & Drywall Partitions" description="Expert partition wall installation in Edinburgh. Metal stud and timber partition walls for homes, offices, and retail spaces. Sound-rated and fire-rated options. Free quotes." canonical="/services/partition-walls/" schema={schema}>
-<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
-  <img src="/images/service-partition.jpg" alt="Partition wall installation in Edinburgh office" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
-  <div class="container" style="position:relative;z-index:1;text-align:center;">
-    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Partition Walls in Edinburgh</h1>
-    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Build durable, cost-effective partition walls to divide open-plan offices, retail units, and homes. Sound-rated and fire-rated options available.</p>
+
+<Layout title="Partition Walls Edinburgh | Office & Residential Installation" description="Expert partition wall installation in Edinburgh. Metal stud and timber frame partitions for offices, retail, and homes. Sound-rated and fire-rated options. Free quotes." canonical="/services/partition-walls/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
+  <img src="/images/service-partition.jpg" alt="Partition wall installation in an Edinburgh office building" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Partition Walls</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Partition Walls in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Flexible, cost-effective partition wall solutions for offices, retail units, and residential properties across Edinburgh. Metal stud and timber options with acoustic and fire-rating.</p>
   </div>
 </section>
+
 <section class="section"><div class="container" style="max-width:900px;">
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Partition walls are one of the most versatile ways to reconfigure interior space without major structural work. At <strong>Drylining Edinburgh</strong>, we install both metal stud and timber-framed partition walls for residential, commercial, and industrial properties across Edinburgh and the Lothians.</p>
-<img src="/images/service-partition.jpg" alt="Professional partition wall installation in Edinburgh" style="border-radius:var(--radius);width:100%;max-width:800px;margin:2rem auto;display:block;box-shadow:var(--shadow-lg);">
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Types of Partition Walls We Install</h2>
-<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li><strong>Metal stud partitions</strong> - Lightweight, strong, and fire-resistant. Ideal for offices and commercial spaces.</li><li><strong>Timber stud partitions</strong> - Cost-effective and easy to modify. Great for residential projects.</li><li><strong>Sound-rated partitions</strong> - With acoustic insulation for meeting rooms, bedrooms, and studios.</li><li><strong>Fire-rated partitions</strong> - Compliant with building regulations for safety-critical areas.</li></ul>
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Where We Install Partition Walls</h2>
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our partition wall services cover Edinburgh city centre, Leith, Livingston, Falkirk, Dalkeith, Musselburgh, and all surrounding areas. Whether you need a single dividing wall in a flat, an office fit-out across New Town and Stockbridge, or a full commercial build-out in the Leith Waterfront or Bruntsfield, we have the experience and team to deliver on time and on budget.</p>
-<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Partition Wall Quote</a></div>
+
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Professional partition wall installation for offices, retail, and homes across Edinburgh. Metal stud and timber options, sound-rated and fire-rated, with Scottish Building Standards compliance and 12-month guarantee.</p>
+</div>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Partition Wall Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Partition walls are one of the fastest and most affordable ways to divide open-plan spaces into functional rooms. At <strong>Drylining Edinburgh</strong>, we design and install partition walls using both timber and metal stud framing, with plasterboard finishes that look clean and professional across Edinburgh's diverse property types.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Edinburgh's property landscape — from Georgian townhouses in New Town and Stockbridge to modern office blocks in St Andrew Square and the Leith Waterfront, plus residential properties across Morningside, Bruntsfield, Marchmont, and Portobello — demands versatile partition solutions. Whether you need a single room division in a student flat on King Street, an open-plan office layout in the New Town, or a full commercial build-out in the Leith Waterfront regeneration zone, our experienced team delivers on time and on budget.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Standard single-layer plasterboard partitions</li>
+  <li>Double-layer soundproof partitions with acoustic insulation</li>
+  <li>Fire-rated partitions (30–120 minutes)</li>
+  <li>Metal stud partitions for commercial fit-outs</li>
+  <li>Timber stud partitions for residential projects</li>
+  <li>Demountable and relocatable partitions</li>
+  <li>Integrated door and glazing frames</li>
+  <li>Corner bead and professional joint finishing</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Choose Our Partition Walls?</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Fast and cost-effective:</strong> Partition walls are significantly cheaper and faster to install than traditional brick or block walls, with minimal disruption to your Edinburgh property or business operations.</li>
+  <li><strong>Flexible and adaptable:</strong> Unlike permanent walls, partition walls can be modified, extended, or removed as your needs change — ideal for Edinburgh's dynamic commercial property market.</li>
+  <li><strong>Sound-rated options:</strong> We install acoustic insulation and sound-rated plasterboard (including British Gypsum SoundBloc and Knauf Acoustic boards) to create quiet, private spaces in offices and homes.</li>
+  <li><strong>Fire-rated compliance:</strong> Our fire-rated partitions meet Part B Scottish Building Standards for commercial and public buildings, with full certification documentation provided.</li>
+  <li><strong>Professional finish:</strong> Every partition is finished with corner beads, tape, and jointing compound for a seamless surface ready for painting or wallpapering — indistinguishable from plastered walls.</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials & Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use high-quality materials from leading UK manufacturers to ensure your partition walls are strong, compliant, and built to last.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Galvanised steel C-studs and U-tracks (50mm, 70mm, 92mm profiles)</li>
+  <li>Sawn timber studs for residential partitions (treated 45mm × 47mm)</li>
+  <li>British Gypsum Gyproc plasterboard (standard, moisture-resistant, fire-rated, SoundBloc)</li>
+  <li>Knauf plasterboard and jointing systems</li>
+  <li>Rockwool and Isover acoustic insulation batts (40mm, 50mm, 75mm)</li>
+  <li>Fire-rated intumescent sealants and cavity barriers</li>
+  <li>Steel corner beads and edge trim</li>
+  <li>Joint compound and paper tape for seamless finishing</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications & Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our partition wall services cover a wide range of building types and project sizes across Edinburgh.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Office space division and room creation in the New Town, Stockbridge, and St Andrew Square</li>
+  <li>Retail store fitting and back-of-house areas on Princes Street and St James Centre</li>
+  <li>Residential room division and extensions in Morningside, Bruntsfield, and Marchmont</li>
+  <li>Warehouse and industrial unit partitioning in Leith and Portobello</li>
+  <li>Healthcare facility room separation for NHS Lothian and private clinics</li>
+  <li>School and education building interiors across Edinburgh Council areas</li>
+  <li>Studio and workshop space configuration in the West End and Leith</li>
+  <li>Student accommodation and HMO conversions throughout the city</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will assess your space, discuss your layout needs, and provide a detailed, no-obligation quote for your Edinburgh project.</li>
+  <li><strong>Detailed Plan:</strong> We confirm stud type, board specification, insulation, and any door or glazing integrations. Everything is agreed upfront with full Scottish Building Standards compliance documentation.</li>
+  <li><strong>Professional Installation:</strong> Our CSCS-registered team installs the framing, fixes plasterboard, and completes all joints and finishing to a professional standard.</li>
+  <li><strong>Quality Check & Handover:</strong> We inspect every partition for straightness and finish quality, provide full compliance documentation, and leave your site clean and ready for decoration.</li>
+</ol>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Partition Walls Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide partition wall services in the following Edinburgh areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book partition walls often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/metal-stud-partitioning/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Metal Stud Partitioning</a>
+  <a href="/services/taping-and-jointing/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Taping & Jointing</a>
+  <a href="/services/plasterboard-installation/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Plasterboard Installation</a>
+  <a href="/services/suspended-ceilings/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Suspended Ceilings</a>
+</div>
+
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Partition Wall Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote for your Edinburgh project.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Partition Walls</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is a partition wall?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">A partition wall is a non-load-bearing interior wall used to divide open spaces into separate rooms or areas. Partition walls are lightweight, cost-effective, and can be modified or removed in the future.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How much does partition wall installation cost in Edinburgh?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Partition wall costs depend on size, materials, and any acoustic or fire-rating requirements. Single-layer partitions start from around £45-£65 per square metre. We provide free, detailed quotes for every project.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can partition walls be soundproofed?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We install acoustic insulation within the partition cavity and can use double-layer plasterboard with acoustic boards to achieve excellent sound reduction for offices, bedrooms, and meeting rooms.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Are partition walls fire-rated?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. When combined with fire-rated plasterboard, partition walls can achieve fire ratings from 30 minutes up to 120 minutes, meeting Part B building regulation requirements.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How long does it take to install a partition wall?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">A single partition wall takes 1-2 days. Multiple partitions or complex layouts may take 3-5 days. We provide accurate timelines during your quote.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can partition walls include doors and windows?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We can integrate standard and fire-rated doors, glazing panels, and sliding doors into partition wall systems to create fully functional rooms.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover for partition walls in Edinburgh?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide partition wall installation across Edinburgh city centre, Leith, Newington, Stockbridge, Bruntsfield, Morningside, Portobello, and all surrounding areas including Livingston, Falkirk, Dalkeith, and Musselburgh.</p>
+  </div>
+</div>
+
 </div></section>
 </Layout>

@@ -1,41 +1,190 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-const schema = {
+
+const serviceName = 'Plasterboard Installation';
+const serviceSlug = 'plasterboard-installation';
+
+const faqJsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "serviceType": "Plasterboard Installation",
-      "provider": { "@type": "LocalBusiness", "name": "Drylining Edinburgh", "@id": "https://dryliningedinburgh.co.uk/#business" },
-      "areaServed": { "@type": "City", "name": "Edinburgh" },
-      "description": "Precision plasterboard installation in Edinburgh. Expert fitting for walls and ceilings. Moisture-resistant, fire-rated, and acoustic options."
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://dryliningedinburgh.co.uk/services/" },
-        { "@type": "ListItem", "position": 3, "name": "Plasterboard Installation", "item": "https://dryliningedinburgh.co.uk/services/plasterboard-installation/" }
-      ]
-    }
-  ]
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is plasterboard installation?","acceptedAnswer":{"@type":"Answer","text":"Plasterboard installation is the process of measuring, cutting, and fixing plasterboard sheets to walls and ceilings. It forms the foundation of drylining and provides a smooth surface ready for decoration."}},
+    {"@type":"Question","name":"How long does plasterboard installation take in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"A single room takes 1-2 days. Whole-house installations typically take 3-7 days depending on the number of rooms and any complex features like ceilings or bulkheads."}},
+    {"@type":"Question","name":"What types of plasterboard do you install in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"We install standard wallboard, moisture-resistant boards for bathrooms and kitchens, fire-rated boards for safety compliance, acoustic boards for sound insulation, and insulated plasterboard for thermal efficiency."}},
+    {"@type":"Question","name":"Do I need plastering after plasterboard installation?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. We offer taping and jointing as an alternative to wet plastering, which produces a smooth, paint-ready finish without the mess and drying time of traditional plaster."}},
+    {"@type":"Question","name":"Can plasterboard be installed on existing brick walls?","acceptedAnswer":{"@type":"Answer","text":"Yes. We use the dot and dab method or timber battens to fix plasterboard directly to brick and block walls, creating a smooth surface and improving insulation — ideal for Edinburgh's older properties."}},
+    {"@type":"Question","name":"Is plasterboard installation messy?","acceptedAnswer":{"@type":"Answer","text":"We work cleanly and efficiently, keeping dust and debris to a minimum. Our team uses dust extraction equipment and protects floors and furnishings throughout the installation."}},
+    {"@type":"Question","name":"What areas do you cover for plasterboard installation in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"We provide plasterboard installation across Edinburgh city centre, Leith, Newington, Stockbridge, Bruntsfield, Morningside, Portobello, and all surrounding areas including Livingston, Falkirk, Dalkeith, and Musselburgh."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Plasterboard Installation Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q942297",
+  about: { "@type": "Thing", name: "Plasterboard", sameAs: ['https://www.wikidata.org/entity/Q942297', 'https://en.wikipedia.org/wiki/Drywall'] },
+  sameAs: "https://en.wikipedia.org/wiki/Drywall",
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business",
+    knowsAbout: ['https://en.wikipedia.org/wiki/Drywall', 'https://en.wikipedia.org/wiki/Plaster', 'https://en.wikipedia.org/wiki/Partition_wall', 'https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom', 'https://en.wikipedia.org/wiki/Construction_worker', 'https://en.wikipedia.org/wiki/General_contractor', 'https://en.wikipedia.org/wiki/Cold-formed_steel', 'https://en.wikipedia.org/wiki/Dropped_ceiling'],
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and the Lothians",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+    geo: { "@type": "GeoCoordinates", "latitude": 55.9533, "longitude": -3.1883 }
+  },
 };
 ---
-<Layout title="Plasterboard Installation Edinburgh | Walls & Ceilings" description="Professional plasterboard installation in Edinburgh. Precision fitting for walls and ceilings. Moisture-resistant, fire-rated, and acoustic boards. Free quotes." canonical="/services/plasterboard-installation/" schema={schema}>
-<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
-  <img src="/images/service-plasterboard.jpg" alt="Plasterboard installation in Edinburgh" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
-  <div class="container" style="position:relative;z-index:1;text-align:center;">
-    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Plasterboard Installation in Edinburgh</h1>
-    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Precision plasterboard fitting for walls and ceilings. Seamless joints, professional finishing, and minimal disruption to your project timeline.</p>
+
+<Layout title="Plasterboard Installation Edinburgh | Walls & Ceilings" description="Expert plasterboard installation in Edinburgh. Precision fitting for walls and ceilings with seamless joints and professional finishing. British Gypsum and Knauf products. Free quotes." canonical="/services/plasterboard-installation/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
+  <img src="/images/service-plasterboard.jpg" alt="Plasterboard installation on an Edinburgh residential property" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Plasterboard Installation</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Plasterboard Installation in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Precision plasterboard fitting for walls and ceilings across Edinburgh. Seamless joints, professional finishing, and minimal disruption to your project timeline.</p>
   </div>
 </section>
+
 <section class="section"><div class="container" style="max-width:900px;">
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Plasterboard is the foundation of modern drylining. At <strong>Drylining Edinburgh</strong>, we provide expert plasterboard installation for walls, ceilings, and feature structures across Edinburgh and the Lothians. Our team ensures every board is cut precisely, fixed securely, and finished to a professional standard.</p>
-<img src="/images/service-plasterboard.jpg" alt="Professional plasterboard fitting in Edinburgh property" style="border-radius:var(--radius);width:100%;max-width:800px;margin:2rem auto;display:block;box-shadow:var(--shadow-lg);">
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Types of Plasterboard We Install</h2>
-<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li><strong>Standard wallboard</strong> - For general walls and ceilings in dry areas</li><li><strong>Moisture-resistant board</strong> - For bathrooms, kitchens, and utility areas</li><li><strong>Fire-rated board</strong> - Where building regulations require fire resistance</li><li><strong>Acoustic board</strong> - For sound insulation between rooms and offices</li><li><strong>Thermal board</strong> - Pre-insulated for improved energy efficiency</li></ul>
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Installation Process</h2>
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We measure every surface accurately, cut boards to fit around sockets, pipes, and fixtures, and fix them securely to studs or direct-to-brick using the appropriate method. Our team works cleanly and efficiently, minimising dust and disruption to your property.</p>
-<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Plasterboard Quote</a></div>
+
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Expert plasterboard installation for walls and ceilings across Edinburgh. Standard, moisture-resistant, fire-rated, and acoustic options from British Gypsum and Knauf. CSCS-accredited team with 12-month guarantee.</p>
+</div>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Plasterboard Installation Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Plasterboard is the foundation of modern drylining. At <strong>Drylining Edinburgh</strong>, we provide expert plasterboard installation for walls, ceilings, and custom features in residential, commercial, and industrial properties across Edinburgh and the Lothians. Our team ensures every board is cut precisely, fixed securely, and finished to a professional standard.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Edinburgh's diverse property stock — from Victorian tenements in Newington and Marchmont to modern developments in the Leith Waterfront regeneration zone, historic Georgian properties in Stockbridge and Bruntsfield, and commercial spaces in the New Town — demands skilled plasterboard installers who understand both traditional and contemporary building methods. We work with all fixing methods including direct-to-brick dot and dab, timber stud framing, and metal stud systems, ensuring every installation meets Scottish Building Standards Part H (thermal) and Part C (structural) requirements.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Standard wall and ceiling plasterboard installation</li>
+  <li>Moisture-resistant boards for bathrooms and kitchens (Gyproc Showerliner, Knauf MoistureResist)</li>
+  <li>Fire-rated plasterboard (30–120 minutes for stairwells, communal areas, and fire compartments)</li>
+  <li>Acoustic plasterboard (SoundBloc, Knauf Acoustic) for sound insulation between flats and offices</li>
+  <li>Tapered edge and square edge options for different finishing requirements</li>
+  <li>Insulated plasterboard (Celotex, Kingspan, Rockwool) for thermal upgrades on solid walls</li>
+  <li>Dot and dab direct-to-brick applications — ideal for Edinburgh's solid stone and brick walls</li>
+  <li>Timber and metal stud framing for board fixing on new builds and extensions</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Choose Our Plasterboard Installation?</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Precision cutting and fitting:</strong> Our team measures and cuts every board with accuracy, ensuring tight joints and a flawless finish around sockets, pipes, and fixtures — critical in Edinburgh's older properties with irregular wall surfaces.</li>
+  <li><strong>Minimal disruption:</strong> We work cleanly and efficiently, using dust extraction and protective measures to keep your Edinburgh property tidy throughout the installation, whether it's a home renovation in Morningside or an office fit-out on North Bridge.</li>
+  <li><strong>Board expertise:</strong> We help you choose the right board type for each room and application — from moisture-resistant bathrooms to fire-rated corridors in multi-storey buildings and acoustic bedrooms in student HMOs across the city.</li>
+  <li><strong>Complete service:</strong> From framing to finishing, we handle every stage including stud work, board fixing, taping, jointing, and final sanding — delivering a paint-ready surface ready for decoration.</li>
+  <li><strong>Scottish Building Standards compliance:</strong> Every installation meets current Part H thermal, Part C structural, and Part B fire safety requirements with full documentation provided.</li>
+  <li><strong>12-month guarantee:</strong> All our plasterboard installations are backed by a workmanship guarantee for your peace of mind.</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials & Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use industry-leading plasterboard products from trusted UK manufacturers to ensure durability, compliance, and a premium finish on every Edinburgh project.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>British Gypsum Gyproc plasterboard (standard wallboard, Gyproc Showerliner, fire-rated, SoundBloc, Firecode)</li>
+  <li>Knauf plasterboard (Platinum, MoistureResist, D34 Fireboard, Acoustic)</li>
+  <li>Metal C-studs and U-tracks (50mm, 70mm, 92mm profiles) for stud framing</li>
+  <li>Gyproc drywall adhesive for dot and dab applications on brick and block walls</li>
+  <li>Joint compound, paper tape, and scrim tape for seamless finishing</li>
+  <li>Insulation-backed plasterboard (Celotex XYLI, Kingspan K118, Rockwool MultiPlus)</li>
+  <li>Fire-rated intumescent sealants and cavity barriers for fire compartments</li>
+  <li>Moisture-resistant boards for wet areas (bathrooms, kitchens, utility rooms)</li>
+  <li>Metal corner beads and edge trim for durable corners</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications & Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our plasterboard installation services are suitable for a wide range of building types and project sizes across Edinburgh and the Lothians.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>New build residential properties and housing estates in the Lothians</li>
+  <li>Home renovations, extensions, and loft conversions in Morningside, Bruntsfield, Marchmont, and Portobello</li>
+  <li>Commercial office fit-outs and refurbishments in the New Town, Stockbridge, and St Andrew Square</li>
+  <li>Retail shop fitting and display wall construction on Princes Street and St James Centre</li>
+  <li>School and education building upgrades across Edinburgh Council areas</li>
+  <li>Healthcare and care home interior works for NHS Lothian and private healthcare providers</li>
+  <li>Industrial unit partitioning and warehouse linings in Leith and Portobello</li>
+  <li>Student accommodation and HMO conversions throughout the Edinburgh city centre</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will assess your project, recommend the best board types for your property, and provide a detailed, no-obligation quote.</li>
+  <li><strong>Detailed Plan:</strong> We confirm board types, fixing methods, insulation requirements, and timeline. No hidden extras — everything is agreed upfront with full Scottish Building Standards compliance documentation.</li>
+  <li><strong>Professional Installation:</strong> Our CSCS-registered team measures, cuts, and fixes boards with precision, working cleanly and efficiently with minimal disruption to your Edinburgh property.</li>
+  <li><strong>Quality Check & Handover:</strong> We inspect every joint and surface, ensure compliance with all building standards, and leave your space ready for decoration with full documentation.</li>
+</ol>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Plasterboard Installation Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide plasterboard installation services in the following Edinburgh areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book plasterboard installation often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/taping-and-jointing/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Taping & Jointing</a>
+  <a href="/services/partition-walls/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Partition Walls</a>
+  <a href="/services/suspended-ceilings/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Suspended Ceilings</a>
+  <a href="/services/metal-stud-partitioning/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Metal Stud Partitioning</a>
+</div>
+
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Plasterboard Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote for your Edinburgh project.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Plasterboard Installation</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is plasterboard installation?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Plasterboard installation is the process of measuring, cutting, and fixing plasterboard sheets to walls and ceilings. It forms the foundation of drylining and provides a smooth surface ready for decoration.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How long does plasterboard installation take in Edinburgh?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">A single room takes 1-2 days. Whole-house installations typically take 3-7 days depending on the number of rooms and any complex features like ceilings or bulkheads.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What types of plasterboard do you install in Edinburgh?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We install standard wallboard, moisture-resistant boards for bathrooms and kitchens, fire-rated boards for safety compliance, acoustic boards for sound insulation, and insulated plasterboard for thermal efficiency.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Do I need plastering after plasterboard installation?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Not necessarily. We offer taping and jointing as an alternative to wet plastering, which produces a smooth, paint-ready finish without the mess and drying time of traditional plaster.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can plasterboard be installed on existing brick walls?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We use the dot and dab method or timber battens to fix plasterboard directly to brick and block walls, creating a smooth surface and improving insulation — ideal for Edinburgh's solid stone and brick properties.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Is plasterboard installation messy?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We work cleanly and efficiently, keeping dust and debris to a minimum. Our team uses dust extraction equipment and protects floors and furnishings throughout the installation.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover for plasterboard installation in Edinburgh?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide plasterboard installation across Edinburgh city centre, Leith, Newington, Stockbridge, Bruntsfield, Morningside, Portobello, and all surrounding areas including Livingston, Falkirk, Dalkeith, and Musselburgh.</p>
+  </div>
+</div>
+
 </div></section>
 </Layout>

@@ -1,44 +1,191 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-const schema = {
+
+const serviceName = 'Suspended Ceilings';
+const serviceSlug = 'suspended-ceilings';
+
+const faqJsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "serviceType": "Suspended Ceilings",
-      "provider": { "@type": "LocalBusiness", "name": "Drylining Edinburgh", "@id": "https://dryliningedinburgh.co.uk/#business" },
-      "areaServed": { "@type": "City", "name": "Edinburgh" },
-      "description": "Professional suspended ceiling installation in Edinburgh. Drop ceilings for offices, retail, and healthcare. Improves acoustics and hides services."
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryliningedinburgh.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://dryliningedinburgh.co.uk/services/" },
-        { "@type": "ListItem", "position": 3, "name": "Suspended Ceilings", "item": "https://dryliningedinburgh.co.uk/services/suspended-ceilings/" }
-      ]
-    }
-  ]
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is a suspended ceiling?","acceptedAnswer":{"@type":"Answer","text":"A suspended ceiling is a secondary ceiling hung below the main structural ceiling. It creates a clean visual plane, hides services like ductwork and cabling, and allows easy access for maintenance."}},
+    {"@type":"Question","name":"How long does suspended ceiling installation take in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"A typical office suspended ceiling takes 2-3 days. Larger commercial spaces in Edinburgh may take 4-7 days depending on the area and any integrated services like lighting or air vents."}},
+    {"@type":"Question","name":"Can suspended ceilings improve acoustics?","acceptedAnswer":{"@type":"Answer","text":"Yes. Acoustic ceiling tiles absorb sound and significantly reduce noise levels in open-plan offices, meeting rooms, and call centres. We install mineral fibre and perforated metal tiles for optimal sound control."}},
+    {"@type":"Question","name":"Are suspended ceilings fire-rated?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install fire-rated ceiling systems that meet Part B Scottish Building Standards. Fire-rated tiles and grid systems provide protection and slow the spread of fire through ceiling voids."}},
+    {"@type":"Question","name":"Can you integrate lighting into suspended ceilings?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can integrate LED panels, recessed downlights, emergency lighting, and air conditioning vents into suspended ceiling systems for a seamless, professional finish."}},
+    {"@type":"Question","name":"What types of ceiling tiles do you install?","acceptedAnswer":{"@type":"Answer","text":"We install mineral fibre tiles, metal tiles (perforated and plain), plasterboard suspended ceilings, fire-rated tiles, and moisture-resistant tiles for kitchens and bathrooms."}},
+    {"@type":"Question","name":"What areas do you cover for suspended ceilings in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"We provide suspended ceiling installation across Edinburgh city centre, Leith, Newington, Stockbridge, Bruntsfield, Morningside, Portobello, and all surrounding areas including Livingston, Falkirk, Dalkeith, and Musselburgh."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Suspended Ceilings Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q175294",
+  about: { "@type": "Thing", name: "Dropped ceiling", sameAs: ['https://www.wikidata.org/entity/Q175294', 'https://en.wikipedia.org/wiki/Dropped_ceiling'] },
+  sameAs: "https://en.wikipedia.org/wiki/Drywall",
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business",
+    knowsAbout: ['https://en.wikipedia.org/wiki/Drywall', 'https://en.wikipedia.org/wiki/Plaster', 'https://en.wikipedia.org/wiki/Partition_wall', 'https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom', 'https://en.wikipedia.org/wiki/Construction_worker', 'https://en.wikipedia.org/wiki/General_contractor', 'https://en.wikipedia.org/wiki/Cold-formed_steel', 'https://en.wikipedia.org/wiki/Dropped_ceiling'],
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and the Lothians",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+    geo: { "@type": "GeoCoordinates", "latitude": 55.9533, "longitude": -3.1883 }
+  },
 };
 ---
-<Layout title="Suspended Ceilings Edinburgh | Drop Ceiling Installation" description="Expert suspended ceiling installation in Edinburgh. Clean, modern drop ceilings for offices, retail, and healthcare. Improves acoustics and hides services. Free quotes." canonical="/services/suspended-ceilings/" schema={schema}>
-<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;">
-  <img src="/images/service-suspended-ceilings.jpg" alt="Suspended ceiling installation in Edinburgh" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
-  <div class="container" style="position:relative;z-index:1;text-align:center;">
-    <h1 style="font-size:2.5rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Suspended Ceilings in Edinburgh</h1>
-    <p style="font-size:1.0625rem;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;">Install clean, modern suspended ceilings that hide services, improve acoustics, and enhance lighting. Ideal for offices, retail, and healthcare.</p>
+
+<Layout title="Suspended Ceilings Edinburgh | Office & Commercial Installation" description="Professional suspended ceiling installation in Edinburgh. Conceal services, improve acoustics, and modernise your space. Armstrong, Rockfon, Ecophon systems. Free quotes." canonical="/services/suspended-ceilings/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
+  <img src="/images/service-ceiling.jpg" alt="Suspended ceiling installation in an Edinburgh commercial building" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Suspended Ceilings</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Suspended Ceilings in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Modern suspended ceilings that hide services, improve acoustics, and give your Edinburgh office or retail space a clean, professional finish. Armstrong, Rockfon, and Ecophon systems.</p>
   </div>
 </section>
+
 <section class="section"><div class="container" style="max-width:900px;">
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Suspended ceilings are a practical and cost-effective way to modernise interior spaces while hiding ductwork, cabling, and pipes. At <strong>Drylining Edinburgh</strong>, we install high-quality suspended ceiling systems for offices, retail units, healthcare facilities, and residential properties across Edinburgh and the Lothians.</p>
-<img src="/images/service-suspended-ceilings.jpg" alt="Modern suspended ceiling installation in Edinburgh office" style="border-radius:var(--radius);width:100%;max-width:800px;margin:2rem auto;display:block;box-shadow:var(--shadow-lg);">
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Types of Suspended Ceilings We Install</h2>
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We supply and install ceiling systems from leading brands including Armstrong, Rockfon, and Ecophon. Our range includes lay-in mineral fibre tiles, clip-in metal tiles, fire-rated ceiling systems, and acoustic baffles — all fitted to Scottish building regulations.</p>
-<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;"><li><strong>Mineral fibre ceiling tiles</strong> - Standard and acoustic grades, ideal for offices and commercial spaces. NRC ratings up to 0.85.</li><li><strong>Metal ceiling tiles</strong> - Perforated and plain finishes for retail and modern interiors. Powder-coated options available.</li><li><strong>Acoustic baffle ceilings</strong> - 3-sided exposed suspension systems for warehouses, call centres, and high-ceiling spaces.</li><li><strong>Fire-rated ceiling systems</strong> - Tested and certified to meet Part B Scottish building regulations.</li><li><strong>Moisture-resistant tiles</strong> - For kitchens, bathrooms, and swimming pool areas.</li><li><strong>Access panels and grid systems</strong> - Easy maintenance access for MEP services above the ceiling.</li></ul>
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Benefits of Suspended Ceilings</h2>
-<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;"><li>Hide electrical, plumbing, and HVAC services</li><li>Improve room acoustics with acoustic ceiling tiles</li><li>Enhance lighting distribution with integrated fixtures</li><li>Easy access for maintenance and repairs</li><li>Fire-rated and moisture-resistant options available</li><li>Quick installation with minimal disruption</li></ul>
-<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Suspended Ceiling Process</h2>
-<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We begin with a detailed survey of your space to determine the best ceiling system for your needs. Our team then installs the grid framework, fits the ceiling tiles, and integrates lighting and ventilation as required. Every installation is completed to building regulation standards and backed by our guarantee.</p>
-<div style="margin-top:2.5rem;text-align:center;"><a href="/get-quote/" class="btn btn-primary" style="font-size:1.0625rem;padding:1rem 2.5rem;">Get a Free Ceiling Quote</a></div>
+
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Professional suspended ceiling installation for offices, retail, and commercial spaces across Edinburgh. Mineral fibre, metal, and acoustic tile options with integrated lighting and Scottish Building Standards compliance. 12-month guarantee.</p>
+</div>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Suspended Ceiling Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Suspended ceilings are one of the most effective ways to modernise a commercial interior. At <strong>Drylining Edinburgh</strong>, we install high-quality suspended ceiling systems that conceal ductwork, wiring, and plumbing while improving acoustics and lighting distribution across Edinburgh's diverse property portfolio.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Edinburgh's commercial property sector — from office spaces on St Andrew Square and North Bridge to retail units on Princes Street and George Street, healthcare facilities across NHS Lothian, and education buildings throughout the city — demands ceiling systems that are durable, compliant, and visually clean. We supply and install ceiling systems from industry-leading manufacturers including Armstrong, Rockfon, and Ecophon, all fitted to Scottish Building Standards Part B fire safety and Part T ventilation requirements.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Mineral fibre ceiling tiles (standard and acoustic grades)</li>
+  <li>Metal ceiling tiles (perforated and plain finishes)</li>
+  <li>Plasterboard suspended ceilings</li>
+  <li>Fire-rated ceiling systems (30–120 minutes)</li>
+  <li>Moisture-resistant tiles for kitchens, bathrooms, and pool areas</li>
+  <li>Integrated lighting and air vent cutouts</li>
+  <li>Emergency lighting and smoke detector integration</li>
+  <li>Easy-access ceiling tiles for MEP services maintenance</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Install a Suspended Ceiling?</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Hide unsightly services:</strong> Suspended ceilings create a clean visual plane that conceals electrical cables, ductwork, pipes, and structural elements — essential in Edinburgh's older buildings where services are exposed.</li>
+  <li><strong>Improve acoustics:</strong> Acoustic ceiling tiles absorb sound and significantly reduce noise levels in open-plan offices, meeting rooms, call centres, and hospitality venues across Edinburgh.</li>
+  <li><strong>Enhance lighting:</strong> Integrated LED panels and downlights create even light distribution, eliminating dark spots and reducing energy costs — important for Edinburgh's growing ESG-driven commercial market.</li>
+  <li><strong>Easy maintenance access:</strong> Individual ceiling tiles can be removed to access building services for maintenance and repairs without damaging the ceiling surface.</li>
+  <li><strong>Fire safety:</strong> Fire-rated ceiling tiles and grid systems slow the spread of fire through ceiling voids and meet Scottish Building Standards Part B requirements for commercial and public buildings.</li>
+  <li><strong>Quick installation:</strong> Suspended ceilings install faster than solid ceilings with minimal disruption to your Edinburgh business operations or residential property.</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials & Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use high-quality ceiling systems and tiles from trusted manufacturers to ensure durability, compliance, and a professional finish across all Edinburgh projects.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Armstrong suspended ceiling grid systems (24mm and 15mm profile options)</li>
+  <li>Rockfon mineral fibre ceiling tiles (NRC ratings up to 0.95)</li>
+  <li>Ecophon acoustic ceiling solutions for demanding acoustic environments</li>
+  <li>British Gypsum ceiling tiles (standard, acoustic, and moisture-resistant)</li>
+  <li>Metal ceiling tiles (perforated, plain, and powder-coated finishes)</li>
+  <li>Fire-rated tiles and grid components for Part B compliance</li>
+  <li>LED panel lights and recessed downlight integration</li>
+  <li>Air conditioning vent cutouts and diffusers</li>
+  <li>Emergency lighting and smoke detector integration</li>
+  <li>Perimeter trim and edge finishing</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications & Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our suspended ceiling services are suitable for a wide range of commercial and public buildings across Edinburgh.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Open-plan offices and co-working spaces in the New Town, Stockbridge, and St Andrew Square</li>
+  <li>Retail stores and shopping centres on Princes Street, St James Centre, and Fort Kinnaird</li>
+  <li>Healthcare facilities and care homes across NHS Lothian and private clinics</li>
+  <li>Schools, colleges, and universities including Edinburgh Napier and Heriot-Watt campuses</li>
+  <li>Warehouse and industrial unit offices in Leith, Portobello, and the Edinburgh Enterprise Zone</li>
+  <li>Call centres and customer service hubs across the city</li>
+  <li>Leisure centres and community buildings in the Lothians</li>
+  <li>Hotels and hospitality venues in the Old Town, West End, and Leith Waterfront</li>
+</ul>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will survey your space and recommend the best ceiling system for your needs, including tile type, grid layout, and lighting integration.</li>
+  <li><strong>Detailed Plan:</strong> We confirm tile type, grid layout, lighting integration, and timeline. Everything is agreed upfront with no hidden extras, including Scottish Building Standards compliance documentation.</li>
+  <li><strong>Professional Installation:</strong> Our experienced team installs the grid framework, fits the ceiling tiles, and integrates lighting and ventilation as required. We work cleanly and efficiently to minimise disruption.</li>
+  <li><strong>Quality Check & Handover:</strong> We inspect every tile, test lighting and services, and leave your space looking professional and modern with full compliance documentation.</li>
+</ol>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Suspended Ceilings Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide suspended ceiling services in the following Edinburgh areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book suspended ceilings often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/plasterboard-installation/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Plasterboard Installation</a>
+  <a href="/services/partition-walls/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Partition Walls</a>
+  <a href="/services/metal-stud-partitioning/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Metal Stud Partitioning</a>
+  <a href="/services/taping-and-jointing/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Taping & Jointing</a>
+</div>
+
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Ceiling Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote for your Edinburgh project.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Suspended Ceilings</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is a suspended ceiling?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">A suspended ceiling is a secondary ceiling hung below the main structural ceiling. It creates a clean visual plane, hides services like ductwork and cabling, and allows easy access for maintenance.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How long does suspended ceiling installation take in Edinburgh?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">A typical office suspended ceiling takes 2-3 days. Larger commercial spaces in Edinburgh may take 4-7 days depending on the area and any integrated services like lighting or air vents.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can suspended ceilings improve acoustics?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. Acoustic ceiling tiles absorb sound and significantly reduce noise levels in open-plan offices, meeting rooms, and call centres. We install mineral fibre and perforated metal tiles for optimal sound control.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Are suspended ceilings fire-rated?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We install fire-rated ceiling systems that meet Part B Scottish Building Standards. Fire-rated tiles and grid systems provide protection and slow the spread of fire through ceiling voids.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can you integrate lighting into suspended ceilings?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We can integrate LED panels, recessed downlights, emergency lighting, and air conditioning vents into suspended ceiling systems for a seamless, professional finish.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What types of ceiling tiles do you install?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We install mineral fibre tiles, metal tiles (perforated and plain), plasterboard suspended ceilings, fire-rated tiles, and moisture-resistant tiles for kitchens and bathrooms.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover for suspended ceilings in Edinburgh?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide suspended ceiling installation across Edinburgh city centre, Leith, Newington, Stockbridge, Bruntsfield, Morningside, Portobello, and all surrounding areas including Livingston, Falkirk, Dalkeith, and Musselburgh.</p>
+  </div>
+</div>
+
 </div></section>
 </Layout>
