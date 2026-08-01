@@ -1,5 +1,5 @@
 {
-  "nextIndex": 24,
+  "nextIndex": 25,
   "generated": [
     {
       "slug": "how-much-does-drylining-cost-in-edinburgh",
@@ -120,6 +120,11 @@
       "slug": "can-pipes-and-electrical-cables-be-hidden-behind-dry-lining",
       "question": "Can pipes and electrical cables be hidden behind dry lining?",
       "createdAt": "2026-07-31"
+    },
+    {
+      "slug": "does-dry-lining-reduce-the-size-of-a-room",
+      "question": "Does dry lining reduce the size of a room?",
+      "createdAt": "2026-08-01"
     }
   ]
 }
