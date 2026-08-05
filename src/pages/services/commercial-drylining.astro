@@ -1,0 +1,199 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceName = 'Commercial Drylining';
+const serviceSlug = 'commercial-drylining';
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is commercial drylining?","acceptedAnswer":{"@type":"Answer","text":"Commercial drylining is the installation of plasterboard systems in offices, retail units, warehouses, and public buildings. It includes partition walls, ceiling systems, and feature walls delivered to tight deadlines and professional standards."}},
+    {"@type":"Question","name":"How long does a commercial drylining project take?","acceptedAnswer":{"@type":"Answer","text":"Small office fit-outs take 3-5 days. Large retail or warehouse projects may take 2-4 weeks. We provide detailed timelines during your quote and work to agreed schedules."}},
+    {"@type":"Question","name":"Can you work out of hours to minimise business disruption?","acceptedAnswer":{"@type":"Answer","text":"Yes. We regularly work evenings, weekends, and overnight to ensure minimal disruption to your business operations."}},
+    {"@type":"Question","name":"Do you provide fire-rated commercial drylining?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install fire-rated plasterboard and cavity barriers to meet Scottish Building Standards Section 2 (Fire) for offices, schools, and healthcare facilities."}},
+    {"@type":"Question","name":"Are your operatives CSCS accredited?","acceptedAnswer":{"@type":"Answer","text":"Yes. All our commercial drylining operatives hold valid CSCS cards and are fully insured for work on active construction sites."}},
+    {"@type":"Question","name":"What types of commercial buildings do you work on?","acceptedAnswer":{"@type":"Answer","text":"We work on offices, retail chains, warehouses, schools, healthcare facilities, industrial units, and public buildings across Edinburgh and the Lothians."}},
+    {"@type":"Question","name":"What areas do you cover for commercial drylining?","acceptedAnswer":{"@type":"Answer","text":"We provide commercial drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Commercial Drylining Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q213825",
+  about: { "@type": "Thing", name: "Drywall", sameAs: ['https://www.wikidata.org/entity/Q213825', 'https://en.wikipedia.org/wiki/Drywall'] },
+  sameAs: "https://en.wikipedia.org/wiki/Drywall",
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business",
+    knowsAbout: ['https://en.wikipedia.org/wiki/Drywall', 'https://en.wikipedia.org/wiki/Plaster', 'https://en.wikipedia.org/wiki/Partition_wall', 'https://en.wikipedia.org/wiki/Building_regulations_in_the_United_Kingdom', 'https://en.wikipedia.org/wiki/Construction_worker', 'https://en.wikipedia.org/wiki/General_contractor', 'https://en.wikipedia.org/wiki/Cold-formed_steel', 'https://en.wikipedia.org/wiki/Dropped_ceiling'],
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and surrounding areas",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+    geo: { "@type": "GeoCoordinates", "latitude": 55.9533, "longitude": -3.1883 }
+  },
+};
+---
+
+<Layout title="Commercial Drylining Edinburgh | Offices, Retail & Warehouses" description="Large-scale commercial drylining in Edinburgh for offices, retail spaces, warehouses, and public buildings. Tight deadlines, professional standards, free quotes. CSCS accredited." canonical="/services/commercial-drylining/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<!-- Hero -->
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
+  <img src="/images/service-commercial.jpg" alt="Commercial drylining project in an Edinburgh office building" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Commercial Drylining</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Commercial Drylining in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Large-scale drylining for offices, retail units, warehouses, and public buildings. We work to tight deadlines with zero compromise on quality.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container" style="max-width:900px;">
+
+<!-- TL;DR -->
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Professional commercial drylining for offices, retail, warehouses, and public buildings across Edinburgh. CSCS-accredited teams, tight deadline delivery, and 12-month workmanship guarantee.</p>
+</div>
+
+<!-- What We Offer -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Commercial Drylining Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Commercial drylining projects demand a different level of coordination, speed, and professionalism. At <strong>Drylining Edinburgh</strong>, we have extensive experience working on large-scale commercial fit-outs for offices, retail chains, warehouses, schools, and healthcare facilities across Edinburgh, the Lothians, and Central Scotland.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Edinburgh's thriving construction sector — from regeneration projects in Sighthill and Fountainbridge to student accommodation developments, hotel refurbishments along Princes Street, and office fit-outs in the St James and Leith Waterfront areas — requires a drylining partner who understands the pace and precision of commercial construction.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Office partition walls and room dividers</li>
+  <li>Retail fit-out drylining and feature walls</li>
+  <li>Warehouse and industrial unit drylining</li>
+  <li>Public building and school drylining</li>
+  <li>Healthcare facility partition systems</li>
+  <li>Fire-rated and acoustic commercial walls</li>
+  <li>Suspended ceiling systems with integrated services</li>
+  <li>Out-of-hours and weekend working available</li>
+</ul>
+
+<!-- Why Choose Us -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Contractors Choose Us</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>CSCS-accredited team:</strong> All our commercial drylining operatives hold valid CSCS cards and are fully insured for work on active construction sites.</li>
+  <li><strong>Tight deadline delivery:</strong> We understand that downtime costs money. Our project managers plan meticulously and coordinate with other trades to keep your build on track.</li>
+  <li><strong>Edinburgh-specific experience:</strong> We know Edinburgh's construction landscape — from the constrained sites of the New Town and Old Town to large-scale regeneration projects in Sighthill, Fountainbridge, and Leith.</li>
+  <li><strong>Regular progress updates:</strong> Our project managers provide clear communication, our installers arrive on time with the right materials, and our finishing is consistently praised by main contractors.</li>
+  <li><strong>Out-of-hours working:</strong> We offer evening, weekend, and overnight shifts to minimise business disruption and keep your project moving.</li>
+  <li><strong>15+ years commercial experience:</strong> We have completed commercial drylining projects ranging from single retail units to multi-floor office fit-outs and warehouse complexes.</li>
+</ul>
+
+<!-- Materials -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials & Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use industry-leading products from trusted manufacturers to ensure durability, compliance, and a premium finish on every commercial project.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>British Gypsum Gyproc plasterboard (standard, moisture-resistant, fire-rated, soundbloc)</li>
+  <li>Knauf plasterboard and jointing systems for commercial applications</li>
+  <li>Metal C-studs and U-tracks (50mm, 70mm, 92mm profiles)</li>
+  <li>Fire-rated intumescent sealants and cavity barriers</li>
+  <li>Acoustic insulation for office and retail noise control</li>
+  <li>Suspended ceiling grid systems and mineral fibre tiles</li>
+  <li>Integrated lighting and air vent cutouts</li>
+</ul>
+
+<!-- Applications -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications & Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our commercial drylining services are suitable for a wide range of building types and project sizes across Edinburgh.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Office fit-outs and open-plan to cellular conversions</li>
+  <li>Retail chain roll-outs and shop fitting (Princes Street, St James Quarter, Orchard Brae)</li>
+  <li>Warehouse and industrial unit partitioning (Fountainbridge, Ingliston, Sighthill)</li>
+  <li>School and education building upgrades (City of Edinburgh Council projects)</li>
+  <li>Healthcare and care home interior works</li>
+  <li>Public building refurbishments</li>
+  <li>Call centre and co-working space fit-outs</li>
+  <li>Student accommodation drylining (Edinburgh has 20,000+ student bedrooms)</li>
+</ul>
+
+<!-- How It Works -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will assess your commercial project and provide a detailed, no-obligation quote with timelines.</li>
+  <li><strong>Detailed Plan:</strong> We confirm materials, schedule, and specifications. We coordinate with other trades and plan around your business hours.</li>
+  <li><strong>Professional Installation:</strong> Our CSCS-registered team works cleanly, efficiently, and to the highest standards with regular progress updates.</li>
+  <li><strong>Quality Check & Handover:</strong> We inspect every detail, ensure compliance with building regulations, and hand over your completed space on time.</li>
+</ol>
+
+<!-- Areas -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Commercial Drylining Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide commercial drylining services in the following areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<!-- Related Services -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book commercial drylining often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/partition-walls/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Partition Walls</a>
+  <a href="/services/taping-and-jointing/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Taping &amp; Jointing</a>
+  <a href="/services/plasterboard-installation/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Plasterboard Installation</a>
+  <a href="/services/suspended-ceilings/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Suspended Ceilings</a>
+</div>
+
+<!-- CTA -->
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Commercial Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote for your commercial project.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Commercial Drylining</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is commercial drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Commercial drylining is the installation of plasterboard systems in offices, retail units, warehouses, and public buildings. It includes partition walls, ceiling systems, and feature walls delivered to tight deadlines and professional standards.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How long does a commercial drylining project take?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Small office fit-outs take 3-5 days. Large retail or warehouse projects may take 2-4 weeks. We provide detailed timelines during your quote and work to agreed schedules.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can you work out of hours to minimise business disruption?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We regularly work evenings, weekends, and overnight to ensure minimal disruption to your business operations.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Do you provide fire-rated commercial drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We install fire-rated plasterboard and cavity barriers to meet Scottish Building Standards Section 2 (Fire) for offices, schools, and healthcare facilities.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Are your operatives CSCS accredited?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. All our commercial drylining operatives hold valid CSCS cards and are fully insured for work on active construction sites.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What types of commercial buildings do you work on?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We work on offices, retail chains, warehouses, schools, healthcare facilities, industrial units, and public buildings across Edinburgh and the Lothians.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover for commercial drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide commercial drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas.</p>
+  </div>
+</div>
+
+</div></section>
+</Layout>

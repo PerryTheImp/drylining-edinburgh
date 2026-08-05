@@ -1,0 +1,199 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceName = 'Acoustic Drylining';
+const serviceSlug = 'acoustic-drylining';
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is acoustic drylining?","acceptedAnswer":{"@type":"Answer","text":"Acoustic drylining is a specialist construction system designed to reduce sound transmission between rooms and spaces. It combines acoustic plasterboard, sound-absorbing insulation within the frame, and careful sealing of all gaps and joints to achieve significant noise reduction."}},
+    {"@type":"Question","name":"How much noise reduction can acoustic drylining achieve?","acceptedAnswer":{"@type":"Answer","text":"A well-designed acoustic drylining system can achieve sound reductions of 45-52 dB (Rw), depending on the construction. This means voices, music, and everyday noise are significantly reduced, making rooms much quieter and more private."}},
+    {"@type":"Question","name":"Where is acoustic drylining most useful?","acceptedAnswer":{"@type":"Answer","text":"Acoustic drylining is ideal for bedrooms, home offices, music studios, meeting rooms, flats sharing walls, hotel rooms, student accommodation, schools, and any space where noise reduction is important. In Edinburgh's dense New Town and Old Town tenements, acoustic drylining is particularly valuable for sound insulation between flats."}},
+    {"@type":"Question","name":"What materials are used in acoustic drylining?","acceptedAnswer":{"@type":"Answer","text":"We use acoustic plasterboard such as Gyproc Soundbloc, combined with acoustic mineral wool insulation within the cavity, resilient channels where required, and carefully sealed joints and edges. Double-layer board systems provide even higher performance."}},
+    {"@type":"Question","name":"Can acoustic drylining be installed in existing rooms?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can install acoustic drylining over existing walls in existing Edinburgh properties, including Victorian tenements and Georgian townhouses. The system typically adds 50-100 mm to the wall thickness depending on the construction, and the finished surface is smooth and ready for decoration."}},
+    {"@type":"Question","name":"Do acoustic drylining systems comply with Scottish Building Standards?","acceptedAnswer":{"@type":"Answer","text":"Yes. All our acoustic drylining installations comply with Scottish Building Standards Section 4 (Sound) and meet or exceed the required Rw performance values for residential, commercial, and student accommodation projects across Scotland."}},
+    {"@type":"Question","name":"What areas do you cover for acoustic drylining?","acceptedAnswer":{"@type":"Answer","text":"We provide acoustic drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Acoustic Drylining Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q213825",
+  about: { "@type": "Thing", name: "Soundproofing", sameAs: ['https://www.wikidata.org/entity/Q739531', 'https://en.wikipedia.org/wiki/Soundproofing'] },
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business"
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and surrounding areas",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+    geo: { "@type": "GeoCoordinates", "latitude": 55.9533, "longitude": -3.1883 }
+  },
+};
+---
+
+<Layout title="Acoustic Drylining Edinburgh | Soundproof Walls & Rooms" description="Acoustic drylining and soundproofing in Edinburgh for homes, offices, and studios. Reduces noise transmission by 45-52 dB. Gyproc Soundbloc certified. Scottish Building Standards compliant. Free quotes." canonical="/services/acoustic-drylining/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<!-- Hero -->
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
+  <img src="/images/service-acoustic.jpg" alt="Acoustic drylining installation in an Edinburgh flat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Acoustic Drylining</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Acoustic Drylining in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Professional acoustic drylining and soundproofing for homes, offices, and studios across Edinburgh. Reduces noise transmission by 45-52 dB with certified materials and expert installation.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container" style="max-width:900px;">
+
+<!-- TL;DR -->
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Acoustic drylining reduces noise transmission by 45-52 dB using Gyproc Soundbloc, acoustic mineral wool, and resilient channels. Ideal for homes, offices, studios, and meeting rooms across Edinburgh. Scottish Building Standards compliant with 12-month guarantee.</p>
+</div>
+
+<!-- What Is Acoustic Drylining -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">What Is Acoustic Drylining?</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Acoustic drylining is a specialist construction system designed to significantly reduce sound transmission between rooms and spaces. Unlike standard drylining, which focuses on speed and cost-effectiveness, acoustic drylining prioritises sound insulation using a combination of dense plasterboard, sound-absorbing insulation, and carefully designed construction details.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">A well-designed acoustic drylining system can reduce sound transmission by 45 to 52 dB, transforming a noisy, distracting space into one that is calm, quiet, and private. At <strong>Drylining Edinburgh</strong>, we use proven construction methods and certified acoustic products to deliver consistent, measurable sound reduction for every project across Edinburgh, Leith, and the wider Lothians.</p>
+
+<!-- What We Offer -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Acoustic Drylining Services</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Acoustic wall drylining with Gyproc Soundbloc and mineral wool</li>
+  <li>Double-layer acoustic board systems for maximum performance</li>
+  <li>Resilient channel and decoupling systems for superior sound isolation</li>
+  <li>Acoustic ceiling drylining to reduce impact and airborne noise</li>
+  <li>Soundproof partition walls for offices, meeting rooms, and home offices</li>
+  <li>Joint sealing and acoustic sealant application to prevent sound leaks</li>
+  <li>Upgrading existing walls to acoustic specifications</li>
+  <li>Acoustic door and service penetration sealing</li>
+</ul>
+
+<!-- Why Acoustic Drylining -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Choose Acoustic Drylining?</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Significantly quieter rooms:</strong> Acoustic drylining reduces noise transmission by 45-52 dB, making rooms noticeably quieter and more private.</li>
+  <li><strong>Scottish Building Standards compliant:</strong> All our acoustic installations meet Scottish Building Standards Section 4 (Sound) requirements for residential, commercial, and student accommodation.</li>
+  <li><strong>Perfect for Edinburgh tenements:</strong> Edinburgh's New Town and Old Town tenements can be particularly noisy between flats. Acoustic drylining solves shared-wall sound transfer effectively.</li>
+  <li><strong>Minimal space loss:</strong> Modern acoustic drylining systems deliver excellent sound reduction with only 50-100 mm of added wall thickness.</li>
+  <li><strong>Smooth finish:</strong> The finished surface is smooth and ready for decoration, indistinguishable from standard drylining.</li>
+  <li><strong>Suitable for all property types:</strong> Whether you have a Victorian tenement flat, a modern new build, or a commercial office, we can design an acoustic drylining system that delivers the performance you need.</li>
+</ul>
+
+<!-- Materials & Specifications -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials &amp; Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use premium acoustic materials from trusted manufacturers to ensure your drylining delivers the sound performance and durability you need.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Gyproc Soundbloc acoustic plasterboard</li>
+  <li>Acoustic mineral wool insulation (Rockwool, Isover)</li>
+  <li>Resilient channels and decoupling frames</li>
+  <li>Acoustic sealants and acoustic gaskets</li>
+  <li>Double-layer board systems for maximum performance</li>
+  <li>Standard and moisture-resistant plasterboard where required</li>
+</ul>
+
+<!-- Applications & Use Cases -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications &amp; Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our acoustic drylining services are suitable for a wide range of building types and project sizes across Edinburgh.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Victorian and Georgian tenement flat soundproofing (New Town, Old Town)</li>
+  <li>Home office noise reduction in residential properties</li>
+  <li>Music studio and recording room acoustics</li>
+  <li>Meeting room and boardroom soundproofing in commercial offices</li>
+  <li>Student accommodation acoustic walls</li>
+  <li>Hotel room soundproofing</li>
+  <li>Flats sharing party walls (Morningside, Bruntsfield, Stockbridge)</li>
+  <li>School and education building acoustic treatment</li>
+</ul>
+
+<!-- How It Works -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will assess your acoustic requirements and provide a detailed, no-obligation quote with performance specifications.</li>
+  <li><strong>Detailed Plan:</strong> We confirm materials, construction method, and acoustic performance targets. We coordinate with other trades to keep your build on schedule.</li>
+  <li><strong>Professional Installation:</strong> Our CSCS-registered team works cleanly, efficiently, and to the highest standards with regular progress updates.</li>
+  <li><strong>Quality Check &amp; Handover:</strong> We inspect every detail, ensure compliance with Scottish Building Standards, and hand over your completed space on time.</li>
+</ol>
+
+<!-- Areas -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Acoustic Drylining Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide acoustic drylining services in the following areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<!-- Related Services -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book acoustic drylining often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/partition-walls/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Partition Walls</a>
+  <a href="/services/taping-and-jointing/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Taping &amp; Jointing</a>
+  <a href="/services/plasterboard-installation/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Plasterboard Installation</a>
+  <a href="/services/suspended-ceilings/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Suspended Ceilings</a>
+</div>
+
+<!-- CTA -->
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Acoustic Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote for your acoustic drylining project.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Acoustic Drylining</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is acoustic drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Acoustic drylining is a specialist construction system designed to reduce sound transmission between rooms and spaces. It combines acoustic plasterboard, sound-absorbing insulation within the frame, and careful sealing of all gaps and joints to achieve significant noise reduction.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How much noise reduction can acoustic drylining achieve?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">A well-designed acoustic drylining system can achieve sound reductions of 45-52 dB (Rw), depending on the construction. This means voices, music, and everyday noise are significantly reduced, making rooms much quieter and more private.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Where is acoustic drylining most useful?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Acoustic drylining is ideal for bedrooms, home offices, music studios, meeting rooms, flats sharing walls, hotel rooms, student accommodation, schools, and any space where noise reduction is important. In Edinburgh's dense New Town and Old Town tenements, acoustic drylining is particularly valuable for sound insulation between flats.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What materials are used in acoustic drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We use acoustic plasterboard such as Gyproc Soundbloc, combined with acoustic mineral wool insulation within the cavity, resilient channels where required, and carefully sealed joints and edges. Double-layer board systems provide even higher performance.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can acoustic drylining be installed in existing rooms?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We can install acoustic drylining over existing walls in existing Edinburgh properties, including Victorian tenements and Georgian townhouses. The system typically adds 50-100 mm to the wall thickness depending on the construction, and the finished surface is smooth and ready for decoration.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Do acoustic drylining systems comply with Scottish Building Standards?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. All our acoustic drylining installations comply with Scottish Building Standards Section 4 (Sound) and meet or exceed the required Rw performance values for residential, commercial, and student accommodation projects across Scotland.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover for acoustic drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide acoustic drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas.</p>
+  </div>
+</div>
+
+</div></section>
+</Layout>

@@ -1,0 +1,195 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceName = 'Insulated Drylining';
+const serviceSlug = 'insulated-drylining';
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is insulated drylining?","acceptedAnswer":{"@type":"Answer","text":"Insulated drylining combines plasterboard with thermal insulation in a single installation system. This can be achieved using insulated plasterboard (which has a rigid insulation layer bonded to the back of the board) or by placing insulation within a timber or metal stud frame behind the plasterboard."}},
+    {"@type":"Question","name":"How much can insulated drylining improve home efficiency?","acceptedAnswer":{"@type":"Answer","text":"Insulated drylining can significantly reduce heat loss through external walls, making rooms warmer in winter and cooler in summer. The exact improvement depends on the insulation type, thickness, and the existing construction, but most homes see noticeable improvements in comfort and heating costs."}},
+    {"@type":"Question","name":"What insulation materials do you use?","acceptedAnswer":{"@type":"Answer","text":"We use PIR insulation boards from Celotex and Kingspan, mineral wool batts from Rockwool and Isover, and insulated plasterboard combining plasterboard with rigid insulation. The best choice depends on your wall type, available space, and performance requirements."}},
+    {"@type":"Question","name":"Is insulated drylining suitable for Edinburgh's older properties?","acceptedAnswer":{"@type":"Answer","text":"Yes, insulated drylining is highly suitable for Edinburgh's vast stock of Victorian, Edwardian, and Georgian sandstone tenements. However, careful consideration of moisture movement and ventilation is essential in these solid wall properties. We always recommend a professional assessment before installation to ensure the right system is specified."}},
+    {"@type":"Question","name":"How much internal space is lost with insulated drylining?","acceptedAnswer":{"@type":"Answer","text":"Insulated drylining typically adds 50 to 120 mm to each treated wall, depending on the insulation thickness required. Insulated plasterboard is the most space-efficient option, while framed systems with separate insulation take up slightly more space."}},
+    {"@type":"Question","name":"What areas do you cover for insulated drylining?","acceptedAnswer":{"@type":"Answer","text":"We provide insulated drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Insulated Drylining Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q213825",
+  about: { "@type": "Thing", name: "Wall insulation", sameAs: ['https://www.wikidata.org/entity/Q13504663', 'https://en.wikipedia.org/wiki/Wall_insulation'] },
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business"
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and surrounding areas",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+    geo: { "@type": "GeoCoordinates", "latitude": 55.9533, "longitude": -3.1883 }
+  },
+};
+---
+
+<Layout title="Insulated Drylining Edinburgh | Thermal Wall Insulation" description="Insulated drylining in Edinburgh for homes and commercial buildings. Improve thermal performance with Celotex, Kingspan, and Rockwool. Scottish Building Standards compliant. Free quotes." canonical="/services/insulated-drylining/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<!-- Hero -->
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
+  <img src="/images/service-insulated.jpg" alt="Insulated drylining installation in an Edinburgh home" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Insulated Drylining</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Insulated Drylining in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Improve thermal performance and reduce heating costs with professional insulated drylining. Using Celotex, Kingspan, and Rockwool materials. Scottish Building Standards compliant with full documentation.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container" style="max-width:900px;">
+
+<!-- TL;DR -->
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Insulated drylining improves thermal performance in homes and commercial buildings across Edinburgh. We use Celotex, Kingspan, and Rockwool materials for efficient wall insulation. Scottish Building Standards compliant with full certification.</p>
+</div>
+
+<!-- What Is Insulated Drylining -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">What Is Insulated Drylining?</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Insulated drylining is a dual-purpose construction system that provides both a smooth internal wall finish and effective thermal insulation in a single installation. Unlike traditional wet plastering, insulated drylining creates a thermal barrier between the internal space and the external wall, significantly reducing heat loss and improving comfort.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">There are two main approaches to insulated drylining. The first uses insulated plasterboard, where a rigid insulation layer is bonded directly to the back of the plasterboard. The second involves installing insulation within a timber or metal stud frame before fixing plasterboard to the frame. Both methods are effective, and the best choice depends on your property type, wall construction, and performance requirements.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">For Edinburgh's vast stock of Victorian and Georgian sandstone tenements (over 300,000 tonnes of sandstone make up the city's iconic architecture), insulated drylining is one of the most effective ways to improve thermal performance without altering the external appearance of the building — a particular advantage in conservation areas across the New Town, Old Town, and Stockbridge.</p>
+
+<!-- What We Offer -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Insulated Drylining Services</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Insulated plasterboard installation (Celotex, Kingspan)</li>
+  <li>Framed cavity insulated drylining with mineral wool</li>
+  <li>Single-wall thermal upgrades for solid wall properties</li>
+  <li>Thermal bridging detail design and installation</li>
+  <li>Vapour control layer and moisture management</li>
+  <li>Scottish Building Standards compliance documentation</li>
+  <li>Insulated drylining for new builds and refurbishments</li>
+  <li>Combined thermal and acoustic insulation systems</li>
+</ul>
+
+<!-- Why Insulated Drylining -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Choose Insulated Drylining?</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Significantly warmer rooms:</strong> Insulated drylining raises the internal surface temperature of cold walls, reducing condensation and making rooms feel more comfortable during colder months.</li>
+  <li><strong>Lower heating costs:</strong> By reducing heat loss through external walls, insulated drylining can lower your heating bills and reduce your carbon footprint.</li>
+  <li><strong>Scottish Building Standards compliant:</strong> Our insulated drylining installations meet the thermal performance requirements of Scottish Building Standards Section 3 (Energy) and Part L of the Building Regulations.</li>
+  <li><strong>Improved moisture control:</strong> Properly designed insulated drylining includes vapour control layers and moisture management to prevent hidden condensation and mould problems — critical for Edinburgh's older properties.</li>
+  <li><strong>Faster than external wall insulation:</strong> Internal insulated drylining is quicker to install than external wall insulation and does not require external works or planning permission in most cases.</li>
+  <li><strong>Suitable for all property types:</strong> Whether you have a solid wall Victorian tenement in the New Town, a modern new build in New Craigmillar, or a commercial property in Leith, we can design an insulated drylining system that delivers the performance you need.</li>
+</ul>
+
+<!-- Materials & Specifications -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials &amp; Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use premium insulation materials from trusted manufacturers to ensure your insulated drylining delivers the thermal performance and durability you need.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Celotex and Kingspan PIR insulated plasterboard</li>
+  <li>Rockwool and Isover mineral wool insulation batts</li>
+  <li>Standard and moisture-resistant plasterboard</li>
+  <li>Vapour control membranes and sealants</li>
+  <li>Timber and metal stud framing systems</li>
+  <li>Thermal bridge detail products to prevent cold bridging</li>
+</ul>
+
+<!-- Applications & Use Cases -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications &amp; Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our insulated drylining services are suitable for a wide range of building types across Edinburgh and the Lothians.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Valetian and Georgian tenement flats (solid wall insulation)</li>
+  <li>Edwardian and Interwar housing in Morningside, Bruntsfield, and Marchmont</li>
+  <li>New build residential properties</li>
+  <li>Commercial office thermal upgrades</li>
+  <li>Hospitality venues and hotel refurbishments</li>
+  <li>Student accommodation thermal improvement</li>
+  <li>Retail unit thermal insulation</li>
+  <li>Properties in conservation areas (no external works required)</li>
+</ul>
+
+<!-- How It Works -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will assess your property and recommend the best insulated drylining system for your needs.</li>
+  <li><strong>Detailed Plan:</strong> We confirm materials, thermal performance targets, and construction method. We also advise on moisture management for your specific property type.</li>
+  <li><strong>Professional Installation:</strong> Our team works cleanly and efficiently, installing the system with attention to detail at every junction and junction detail.</li>
+  <li><strong>Quality Check &amp; Handover:</strong> We inspect every detail, ensure compliance with Scottish Building Standards, and provide full documentation for your completed work.</li>
+</ol>
+
+<!-- Areas -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Insulated Drylining Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide insulated drylining services in the following areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<!-- Related Services -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book insulated drylining often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/partition-walls/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Partition Walls</a>
+  <a href="/services/taping-and-jointing/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Taping &amp; Jointing</a>
+  <a href="/services/acoustic-drylining/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Acoustic Drylining</a>
+  <a href="/services/plasterboard-installation/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Plasterboard Installation</a>
+</div>
+
+<!-- CTA -->
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Insulated Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote for your insulated drylining project.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Insulated Drylining</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is insulated drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Insulated drylining combines plasterboard with thermal insulation in a single installation system. This can be achieved using insulated plasterboard (which has a rigid insulation layer bonded to the back of the board) or by placing insulation within a timber or metal stud frame behind the plasterboard.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How much can insulated drylining improve home efficiency?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Insulated drylining can significantly reduce heat loss through external walls, making rooms warmer in winter and cooler in summer. The exact improvement depends on the insulation type, thickness, and the existing construction, but most homes see noticeable improvements in comfort and heating costs.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What insulation materials do you use?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We use PIR insulation boards from Celotex and Kingspan, mineral wool batts from Rockwool and Isover, and insulated plasterboard combining plasterboard with rigid insulation. The best choice depends on your wall type, available space, and performance requirements.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Is insulated drylining suitable for Edinburgh's older properties?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes, insulated drylining is highly suitable for Edinburgh's vast stock of Victorian, Edwardian, and Georgian sandstone tenements. However, careful consideration of moisture movement and ventilation is essential in these solid wall properties. We always recommend a professional assessment before installation to ensure the right system is specified.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How much internal space is lost with insulated drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Insulated drylining typically adds 50 to 120 mm to each treated wall, depending on the insulation thickness required. Insulated plasterboard is the most space-efficient option, while framed systems with separate insulation take up slightly more space.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover for insulated drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide insulated drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas.</p>
+  </div>
+</div>
+
+</div></section>
+</Layout>

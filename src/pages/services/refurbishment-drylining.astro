@@ -1,0 +1,211 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceName = 'Refurbishment Drylining';
+const serviceSlug = 'refurbishment-drylining';
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is refurbishment drylining?","acceptedAnswer":{"@type":"Answer","text":"Refurbishment drylining involves installing drylining systems in existing buildings during renovation, conversion, or refitting projects. It includes removing old wall coverings, preparing surfaces, and installing new drylining with improved insulation, fire protection, or acoustic performance."}},
+    {"@type":"Question","name":"How long does a drylining refurbishment take?","acceptedAnswer":{"@type":"Answer","text":"The timeline depends on the project size. A single room takes 2-4 days. Full property refurbishments typically take 1-3 weeks. We provide clear timelines during your quote and work efficiently to minimise disruption."}},
+    {"@type":"Question","name":"Can you dryline over existing walls?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can install new drylining over existing walls in refurbishment projects, or remove old coverings and install fresh drylining. We assess the condition of existing walls and recommend the best approach for your property."}},
+    {"@type":"Question","name":"What improvements can be made during refurbishment?","acceptedAnswer":{"@type":"Answer","text":"Refurbishment drylining can add thermal insulation, fire protection, acoustic insulation, and create new room layouts. We often combine drylining with electrical upgrades, insulation, and damp treatment to deliver a complete interior transformation."}},
+    {"@type":"Question","name":"Do you work in occupied properties?","acceptedAnswer":{"@type":"Answer","text":"Yes. We regularly work in occupied homes and business premises, minimising disruption with clean working practices, dust control, and efficient scheduling. We can also work outside normal hours if required."}},
+    {"@type":"Question","name":"What areas do you cover for refurbishment drylining?","acceptedAnswer":{"@type":"Answer","text":"We provide refurbishment drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Refurbishment Drylining Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q213825",
+  about: { "@type": "Thing", name: "Building renovation", sameAs: ['https://www.wikidata.org/entity/Q194244', 'https://en.wikipedia.org/wiki/Building_renovation'] },
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business"
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and surrounding areas",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+    geo: { "@type": "GeoCoordinates", "latitude": 55.9533, "longitude": -3.1883 }
+  },
+};
+---
+
+<Layout title="Refurbishment Drylining Edinburgh | Home & Office Renovations" description="Refurbishment drylining in Edinburgh for home renovations, office fit-outs, and property conversions. Complete interior transformation with improved insulation, fire protection, and modern finishes. Free quotes." canonical="/services/refurbishment-drylining/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<!-- Hero -->
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
+  <img src="/images/service-refurb.jpg" alt="Refurbishment drylining work in an Edinburgh home renovation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Refurbishment Drylining</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Refurbishment Drylining in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Complete drylining solutions for home renovations, office refurbishments, and property conversions. Transform your space with improved insulation, fire protection, and modern finishes.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container" style="max-width:900px;">
+
+<!-- TL;DR -->
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Professional refurbishment drylining for homes, offices, and commercial properties across Edinburgh. We transform existing spaces with new drylining, improved insulation, fire protection, and modern finishes. Clean working, minimal disruption, full documentation.</p>
+</div>
+
+<!-- What Is Refurbishment Drylining -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">What Is Refurbishment Drylining?</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Refurbishment drylining is the process of installing new drylining systems in existing buildings during renovation, conversion, or refitting projects. Unlike new build drylining, refurbishment work involves working in occupied or partially occupied spaces, often with existing walls that need preparation, repair, or complete replacement.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">At <strong>Drylining Edinburgh</strong>, we specialise in drylining refurbishment projects ranging from single-room home renovations to large-scale commercial fit-outs. Edinburgh offers a unique canvas for refurbishment — from Victorian and Georgian tenements across the New Town and Old Town to post-war office blocks in Fountainbridge and Ingliston. Each property type presents distinct challenges that our experienced team is well prepared to handle.</p>
+
+<!-- What We Offer -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Refurbishment Drylining Services</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Complete internal wall stripping and replacement</li>
+  <li>Upgrading old drylining to modern standards</li>
+  <li>New drylining installation over prepared surfaces</li>
+  <li>Combined drylining with thermal and acoustic insulation</li>
+  <li>Fire-rated drylining upgrades for existing buildings</li>
+  <li>Loft conversion and basement conversion drylining</li>
+  <li>Office refurbishment and commercial fit-out drylining</li>
+  <li>Damp treatment preparation and subsequent drylining</li>
+  <li>Tenement flat and townhouse interior refurbishment</li>
+  <li>Historic building interior renewal (listed building compliant)</li>
+</ul>
+
+<!-- The Refurbishment Process -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Refurbishment Process</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Every refurbishment project is different, but our approach is consistent: we assess, plan, execute, and deliver with professional quality and attention to detail.</p>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Site Assessment:</strong> We visit your property, assess the existing condition, identify any issues (damp, structural movement, outdated insulation), and discuss your requirements and budget.</li>
+  <li><strong>Detailed Quotation:</strong> We provide a clear, written quote covering all materials, labour, preparation work, and any additional services such as damp treatment or electrical upgrades. Everything is agreed upfront.</li>
+  <li><strong>Site Preparation:</strong> We protect your property, remove old wall coverings if required, treat any damp or structural issues, and prepare all surfaces for new drylining installation.</li>
+  <li><strong>Drylining Installation:</strong> Our skilled team installs the new drylining system, including any insulation, fire protection, or acoustic treatments as specified. We work cleanly and efficiently.</li>
+  <li><strong>Finishing &amp; Handover:</strong> We complete all taping, jointing, and sanding, conduct a thorough quality check, leave your site clean, and provide documentation for your completed work.</li>
+</ol>
+
+<!-- Why Choose Us -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Why Choose Us for Refurbishment Drylining?</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Experience with existing properties:</strong> We understand the challenges of refurbishment work, from working around existing services to dealing with uneven walls and hidden problems behind old coverings. This is particularly valuable for Edinburgh's diverse property stock, from 16th-century tenements to post-war commercial buildings.</li>
+  <li><strong>Clean working practices:</strong> We use dust extraction, protective sheeting, and careful scheduling to keep your property as clean as possible throughout the project.</li>
+  <li><strong>Flexible scheduling:</strong> We can work around your schedule, including evenings and weekends for commercial clients who need to minimise business disruption.</li>
+  <li><strong>Complete solutions:</strong> We can coordinate with other trades (electricians, plumbers, damp specialists) to deliver a complete refurbishment, not just drylining.</li>
+  <li><strong>12-month guarantee:</strong> All our refurbishment drylining work is backed by a comprehensive workmanship guarantee for your peace of mind.</li>
+  <li><strong>Full documentation:</strong> We provide all necessary certificates, building regulation compliance documentation, and manufacturer guarantees with every project.</li>
+</ul>
+
+<!-- Materials & Specifications -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials &amp; Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use quality materials from trusted manufacturers to ensure your refurbished space performs well and looks great.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>British Gypsum Gyproc plasterboard (standard, moisture-resistant, fire-rated, soundbloc)</li>
+  <li>Knauf plasterboard and jointing systems</li>
+  <li>Tedlar or Celotex PIR insulation for thermal upgrades</li>
+  <li>Rockwool mineral wool for acoustic and fire performance</li>
+  <li>Tedlar PIR insulation for thermal upgrades</li>
+  <li>Metal stud framing systems (50mm, 70mm, 92mm profiles)</li>
+  <li>Timber stud framing where appropriate</li>
+  <li>Intumescent sealants and cavity barriers</li>
+  <li>Damp proof membranes and treatment products</li>
+</ul>
+
+<!-- Applications & Use Cases -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications &amp; Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our refurbishment drylining services are suitable for a wide range of project types across Edinburgh.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Valetian and Georgian tenement flat renovations (New Town, Old Town, Stockbridge)</li>
+  <li>HMO (Houses in Multiple Occupation) conversions and fire upgrades</li>
+  <li>Edwardian and Interwar house refurbishments (Morningside, Bruntsfield, Marchmont)</li>
+  <li>Office and commercial property renovations</li>
+  <li>Retail unit refit-outs and conversions</li>
+  <li>Loft and basement conversion drylining</li>
+  <li>Hotel and hospitality venue refurbishments</li>
+  <li>Student accommodation upgrades and conversions</li>
+  <li>Heritage building interior renewal (listed building consent aware)</li>
+</ul>
+
+<!-- How It Works -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will visit your property, understand your refurbishment goals, and provide a detailed, no-obligation quote.</li>
+  <li><strong>Detailed Plan:</strong> We confirm the scope of works, materials, and timeline. We also advise on any additional improvements such as insulation, fire protection, or acoustic treatment.</li>
+  <li><strong>Professional Installation:</strong> Our skilled team works cleanly and efficiently, with options for out-of-hours working to minimise disruption.</li>
+  <li><strong>Quality Check &amp; Handover:</strong> We inspect every detail, ensure compliance with building regulations, and hand over your transformed space ready for decoration or immediate use.</li>
+</ol>
+
+<!-- Areas -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Refurbishment Drylining Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide refurbishment drylining services in the following areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<!-- Related Services -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book refurbishment drylining often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/partition-walls/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Partition Walls</a>
+  <a href="/services/taping-and-jointing/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Taping &amp; Jointing</a>
+  <a href="/services/insulated-drylining/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Insulated Drylining</a>
+  <a href="/services/commercial-drylining/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Commercial Drylining</a>
+</div>
+
+<!-- CTA -->
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Refurbishment Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote for your refurbishment project.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Refurbishment Drylining</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is refurbishment drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Refurbishment drylining involves installing drylining systems in existing buildings during renovation, conversion, or refitting projects. It includes removing old wall coverings, preparing surfaces, and installing new drylining with improved insulation, fire protection, or acoustic performance.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">How long does a drylining refurbishment take?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">The timeline depends on the project size. A single room takes 2-4 days. Full property refurbishments typically take 1-3 weeks. We provide clear timelines during your quote and work efficiently to minimise disruption.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can you dryline over existing walls?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We can install new drylining over existing walls in refurbishment projects, or remove old coverings and install fresh drylining. We assess the condition of existing walls and recommend the best approach for your property.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What improvements can be made during refurbishment?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Refurbishment drylining can add thermal insulation, fire protection, acoustic insulation, and create new room layouts. We often combine drylining with electrical upgrades, insulation, and damp treatment to deliver a complete interior transformation.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Do you work in occupied properties?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We regularly work in occupied homes and business premises, minimising disruption with clean working practices, dust control, and efficient scheduling. We can also work outside normal hours if required.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover for refurbishment drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide refurbishment drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas.</p>
+  </div>
+</div>
+
+</div></section>
+</Layout>

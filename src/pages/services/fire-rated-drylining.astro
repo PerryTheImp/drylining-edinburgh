@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceName = 'Fire-Rated Drylining';
+const serviceSlug = 'fire-rated-drylining';
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {"@type":"Question","name":"What is fire-rated drylining?","acceptedAnswer":{"@type":"Answer","text":"Fire-rated drylining uses specialist plasterboard and construction methods to provide fire protection for walls and ceilings. The fire rating indicates how long the partition can resist fire — from 30 minutes up to 120 minutes — giving people time to evacuate and firefighters time to respond."}},
+    {"@type":"Question","name":"Which buildings require fire-rated drylining?","acceptedAnswer":{"@type":"Answer","text":"Fire-rated drylining is required in multi-storey buildings, flats, student accommodation, hotels, hospitals, schools, and commercial buildings with more than one storey. Part B of the Scottish Building Standards specifies fire resistance requirements for most building types."}},
+    {"@type":"Question","name":"What fire ratings do you provide?","acceptedAnswer":{"@type":"Answer","text":"We provide fire-rated drylining from 30 minutes up to 120 minutes, using combinations of fire-rated plasterboard, cavity barriers, intumescent sealants, and specialist framing systems to meet the required fire performance."}},
+    {"@type":"Question","name":"Do fire-rated walls look different from standard walls?","acceptedAnswer":{"@type":"Answer","text":"No. Fire-rated drylining looks exactly like standard drylining — smooth, professional, and ready for decoration. The fire protection is built into the construction, not visible from the finished surface."}},
+    {"@type":"Question","name":"Can fire-rated drylining be used in existing buildings?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can upgrade existing drylining to fire-rated specifications or install new fire-rated partitions during refurbishment projects. Our team can assess your building and recommend the appropriate fire rating."}},
+    {"@type":"Question","name":"What certifications do your fire-rated installations carry?","acceptedAnswer":{"@type":"Answer","text":"All our fire-rated drylining work uses British Gypsum and Knauf products that carry manufacturer certifications. We provide documentation with each installation confirming compliance with Scottish Building Standards Section 2 (Fire)."}},
+    {"@type":"Question","name":"What areas do you cover for fire-rated drylining?","acceptedAnswer":{"@type":"Answer","text":"We provide fire-rated drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas."}}
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fire-Rated Drylining Edinburgh",
+  additionalType: "https://www.wikidata.org/entity/Q213825",
+  about: { "@type": "Thing", name: "Fireproof building materials", sameAs: ['https://www.wikidata.org/entity/Q1142199', 'https://en.wikipedia.org/wiki/Fireproof_construction'] },
+  provider: {
+    "@type": "Organization",
+    name: "Drylining Edinburgh",
+    "@id": "https://dryliningedinburgh.co.uk/#business"
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Edinburgh and surrounding areas",
+    sameAs: [
+      "https://en.wikipedia.org/wiki/Edinburgh",
+      "https://www.wikidata.org/entity/Q23436"
+    ],
+    geo: { "@type": "GeoCoordinates", "latitude": 55.9533, "longitude": -3.1883 }
+  },
+};
+---
+
+<Layout title="Fire-Rated Drylining Edinburgh | 30-120 Min Fire Protection" description="Fire-rated drylining in Edinburgh for offices, flats, and commercial buildings. 30-120 minute fire protection with certified materials. Scottish Building Standards compliant. Free quotes." canonical="/services/fire-rated-drylining/">
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+<!-- Hero -->
+<section style="position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);overflow:hidden;border-radius:0 0 14px 14px;">
+  <img src="/images/service-fire.jpg" alt="Fire-rated drylining installation in an Edinburgh commercial building" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;">
+  <div class="container" style="position:relative;z-index:1;text-align:center;padding:60px 20px;">
+    <nav style="font-size:13px;color:rgba(255,255,255,0.70);margin-bottom:12px;">
+      <a href="/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Home</a> / <a href="/services/" style="text-decoration:none;color:rgba(255,255,255,0.70);">Services</a> / <span style="color:#ffffff;">Fire-Rated Drylining</span>
+    </nav>
+    <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:14px;line-height:1.15;">Fire-Rated Drylining in Edinburgh</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.85);max-width:700px;margin:0 auto;line-height:1.6;">Certified fire-rated drylining providing 30 to 120 minutes of fire protection for commercial buildings, flats, and public spaces. Scottish Building Standards compliant with full documentation.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container" style="max-width:900px;">
+
+<!-- TL;DR -->
+<div style="padding:24px;margin-bottom:24px;border-left:4px solid var(--primary);background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="margin:0;font-size:15px;color:var(--text);"><strong>TL;DR:</strong> Professional fire-rated drylining for commercial buildings, flats, and public spaces across Edinburgh. 30-120 minute fire ratings with certified British Gypsum and Knauf products. Scottish Building Standards Section 2 compliant with full documentation.</p>
+</div>
+
+<!-- What Is Fire-Rated Drylining -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">What Is Fire-Rated Drylining?</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Fire-rated drylining is a specialist construction system that provides timed fire protection for walls and ceilings. The fire rating — measured in minutes — indicates how long the partition can resist fire without allowing flames or extreme heat to pass through. In a fire, every minute counts, and fire-rated drylining gives people crucial time to evacuate and firefighters time to respond.</p>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">At <strong>Drylining Edinburgh</strong>, we supply and install fire-rated drylining systems using certified materials from British Gypsum and Knauf. Our installations are designed to meet or exceed the fire resistance requirements specified in Scottish Building Standards Section 2 (Fire), and we provide full documentation with every project. This is essential for Edinburgh's dense urban environment, where multi-storey tenements, student accommodation, and regeneration projects like the NCC Engine Shed and Sighthill developments all require certified fire protection systems.</p>
+
+<!-- What We Offer -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Our Fire-Rated Drylining Services</h2>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>30-minute fire-rated drylining for residential properties</li>
+  <li>60-minute fire-rated partitions for commercial buildings</li>
+  <li>90 and 120-minute fire-rated systems for high-risk areas</li>
+  <li>Fire-rated wall and ceiling installations</li>
+  <li>Cavity barrier installation at floor and ceiling levels</li>
+  <li>Intumescent sealant application around edges and penetrations</li>
+  <li>Fire-rated door frame integration</li>
+  <li>Upgrading existing drylining to fire-rated specifications</li>
+</ul>
+
+<!-- Where Fire-Rated Drylining Is Required -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Where Fire-Rated Drylining Is Required</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Scottish Building Standards Section 2 specifies fire resistance requirements for most building types. In Edinburgh and the Lothians, we regularly install fire-rated drylining in:</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Multi-storey apartment blocks across Edinburgh (EH1–EH36 postcodes)</li>
+  <li>Student accommodation — Edinburgh is a major student city with thousands of halls and HMOs</li>
+  <li>Hotels along Princes Street, George Street, and the New Town area</li>
+  <li>Office buildings in the Financial District, St James, and Leith Walk</li>
+  <li>Schools and education facilities across the City of Edinburgh council area</li>
+  <li>Healthcare and care home refurbishments</li>
+  <li>Retail and leisure complexes including St James Quarter, Orchard Brae, and Staling Mall</li>
+  <li>Multi-unit housing developments and townhouse conversions</li>
+</ul>
+
+<!-- Materials & Specifications -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Materials &amp; Specifications</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We use premium fire-rated materials from trusted manufacturers to ensure your drylining delivers the fire performance and durability you need.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>British Gypsum Gyproc Fireline fire-rated plasterboard</li>
+  <li>Knauf Diamant fire-rated plasterboard for high-performance applications</li>
+  <li>Cavity barriers (steel, mineral wool, and intumescent types)</li>
+  <li>Intumescent sealants for joints, edges, and service penetrations</li>
+  <li>Metal C-studs and U-tracks (50mm, 70mm, 92mm profiles)</li>
+  <li>Fire-rated floor-ceiling edge details</li>
+  <li>Manufacturer fire test certificates and system approvals</li>
+</ul>
+
+<!-- Applications & Use Cases -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Applications &amp; Use Cases</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Our fire-rated drylining services are suitable for a wide range of building types and project sizes across Edinburgh and the Lothians.</p>
+<ul style="list-style:disc;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li>Multi-storey residential flats and apartments</li>
+  <li>Student accommodation and HMOs (Houses in Multiple Occupation)</li>
+  <li>Hotels and hospitality venues (Edinburgh has over 100 hotels)</li>
+  <li>Office buildings and commercial fit-outs</li>
+  <li>Schools, colleges, and university buildings</li>
+  <li>Healthcare facilities and care homes</li>
+  <li>Retail and leisure complexes</li>
+  <li>Warehouse and industrial unit fire compartmentation</li>
+</ul>
+
+<!-- How It Works -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">How It Works</h2>
+<ol style="list-style:decimal;padding-left:1.5rem;color:var(--text);line-height:1.8;font-size:1.0625rem;margin-bottom:1.5rem;">
+  <li><strong>Free Quote:</strong> Call or fill in our form. We will assess your fire safety requirements and provide a detailed, no-obligation quote with fire performance specifications.</li>
+  <li><strong>Detailed Plan:</strong> We confirm the required fire rating, materials, construction method, and certification. We coordinate with other trades and building control.</li>
+  <li><strong>Professional Installation:</strong> Our CSCS-registered team works cleanly, efficiently, and to the highest standards with regular progress updates.</li>
+  <li><strong>Quality Check &amp; Handover:</strong> We inspect every detail, ensure compliance with Scottish Building Standards Section 2 (Fire), and provide full documentation for your completed work.</li>
+</ol>
+
+<!-- Areas -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Fire-Rated Drylining Across Edinburgh</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">We provide fire-rated drylining services in the following areas:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/areas/edinburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Edinburgh</a>
+  <a href="/areas/leith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Leith</a>
+  <a href="/areas/livingston/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Livingston</a>
+  <a href="/areas/dalkeith/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Dalkeith</a>
+  <a href="/areas/musselburgh/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Musselburgh</a>
+  <a href="/areas/falkirk/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Falkirk</a>
+</div>
+<p style="font-size:1.0625rem;margin-bottom:1.5rem;"><a href="/areas/" style="font-weight:600;">View all areas we cover →</a></p>
+
+<!-- Related Services -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Related Services</h2>
+<p style="font-size:1.0625rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Clients who book fire-rated drylining often also require:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem;">
+  <a href="/services/partition-walls/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Partition Walls</a>
+  <a href="/services/taping-and-jointing/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Taping &amp; Jointing</a>
+  <a href="/services/acoustic-drylining/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Acoustic Drylining</a>
+  <a href="/services/commercial-drylining/" style="text-decoration:none;padding:10px 14px;background:var(--white);border-radius:6px;font-size:14px;font-weight:600;border:1px solid var(--border);color:var(--text);">Commercial Drylining</a>
+</div>
+
+<!-- CTA -->
+<div style="padding:32px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius);color:white;margin-top:2.5rem;">
+  <h2 style="margin-bottom:12px;color:white;font-size:28px;">Ready for a Free Fire-Rated Quote?</h2>
+  <p style="margin-bottom:20px;opacity:0.9;font-size:16px;">Call us or fill in our quick form. We will arrange a site visit and provide a detailed, no-obligation quote for your fire-rated drylining project.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="/get-quote/" class="btn btn-primary" style="background:white;color:var(--primary);font-size:16px;padding:14px 28px;">Get a Free Quote</a>
+    <a href="tel:08008203090" class="btn btn-secondary" style="background:transparent;border:2px solid white;color:white;font-size:16px;padding:14px 28px;">FREEPHONE 0800 820 3090</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<h2 style="font-size:1.75rem;font-weight:700;color:var(--secondary);margin:2.5rem 0 1rem;">Frequently Asked Questions about Fire-Rated Drylining</h2>
+<div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What is fire-rated drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Fire-rated drylining uses specialist plasterboard and construction methods to provide fire protection for walls and ceilings. The fire rating indicates how long the partition can resist fire — from 30 minutes up to 120 minutes — giving people time to evacuate and firefighters time to respond.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Which buildings require fire-rated drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Fire-rated drylining is required in multi-storey buildings, flats, student accommodation, hotels, hospitals, schools, and commercial buildings with more than one storey. Part B of the Scottish Building Standards specifies fire resistance requirements for most building types.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What fire ratings do you provide?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide fire-rated drylining from 30 minutes up to 120 minutes, using combinations of fire-rated plasterboard, cavity barriers, intumescent sealants, and specialist framing systems to meet the required fire performance.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Do fire-rated walls look different from standard walls?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">No. Fire-rated drylining looks exactly like standard drylining — smooth, professional, and ready for decoration. The fire protection is built into the construction, not visible from the finished surface.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">Can fire-rated drylining be used in existing buildings?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">Yes. We can upgrade existing drylining to fire-rated specifications or install new fire-rated partitions during refurbishment projects. Our team can assess your building and recommend the appropriate fire rating.</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What certifications do your fire-rated installations carry?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">All our fire-rated drylining work uses British Gypsum and Knauf products that carry manufacturer certifications. We provide documentation with each installation confirming compliance with Scottish Building Standards Section 2 (Fire).</p>
+  </div>
+  <div style="padding:20px;margin-bottom:12px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+    <h3 style="font-size:16px;margin-bottom:8px;color:var(--primary);">What areas do you cover for fire-rated drylining?</h3>
+    <p style="font-size:14px;color:var(--text-light);margin:0;">We provide fire-rated drylining services across Edinburgh, Leith, Livingston, Dalkeith, Musselburgh, Falkirk, and all surrounding Lothians and Central Scotland areas.</p>
+  </div>
+</div>
+
+</div></section>
+</Layout>
